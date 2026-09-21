@@ -177,16 +177,16 @@
 
 .ws-preise__karten {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
     gap: var(--ws-preise-abstand);
     align-items: stretch;
 }
 
-@media (min-width: 62em) {
-    .ws-preise__karten {
-        grid-template-columns: repeat(var(--ws-preise-spalten, 3), minmax(0, 1fr));
-    }
-}
+/* Frueher stand hier ab 62em eine feste Spaltenzahl aus --ws-preise-spalten.
+   Das ging schief, sobald der Inhaltsbereich schmaler ist als das Fenster:
+   vier Tarife in einer 600px-Spalte wurden 150px breit. Entscheidend ist die
+   Breite des Behaelters, nicht die des Fensters - also zaehlt allein die
+   Mindestbreite oben, und die Spaltenzahl ergibt sich daraus. */
 
 .ws-preise__karte {
     position: relative;
@@ -204,20 +204,27 @@
     box-shadow: 0 24px 50px -34px color-mix(in srgb, var(--ws-preise-akzent) 60%, transparent);
 }
 
+/* Die Plakette traegt gepflegten Text beliebiger Laenge. In einer schmalen
+   Matrixspalte bricht "Fuer Agenturen" auf zwei Zeilen - mit fester Hoehe
+   liefe die zweite Zeile ueber die Ueberschrift darunter. Also Mindesthoehe
+   statt Hoehe, und ein Radius, der auch zweizeilig eine Pille bleibt. */
 .ws-preise__plakette {
     position: absolute;
     top: -13px;
     left: 1.75rem;
-    height: 26px;
-    padding: 0 .75rem;
+    min-height: 26px;
+    padding: .3rem .75rem;
     display: inline-flex;
     align-items: center;
-    border-radius: 13px;
+    justify-content: center;
+    border-radius: 999px;
     background: var(--ws-preise-akzent);
     color: var(--ws-preise-akzent-kontrast);
     font-size: .6875rem;
     font-weight: 700;
+    line-height: 1.15;
     letter-spacing: .1em;
+    text-align: center;
     text-transform: uppercase;
 }
 
@@ -307,16 +314,32 @@
     background: #f7f5f0;
 }
 
+/* Wertepaare: Bezeichnung links, Wert rechts. Wird es eng, rutscht der Wert
+   in die naechste Zeile, statt aus der Karte zu laufen - lange Werte wie
+   "1 Projekt / 1 Live-Domain" gibt es in echten Tabellen staendig. */
 .ws-preise__paar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    gap: .875rem;
-    padding: .2rem 0;
+    align-items: baseline;
+    gap: .2rem .875rem;
+    padding: .25rem 0;
     font-size: .8125rem;
 }
 
-.ws-preise__paar-name { color: var(--ws-preise-schrift-leise); }
-.ws-preise__paar-wert { font-weight: 600; font-variant-numeric: tabular-nums; }
+.ws-preise__paar-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    color: var(--ws-preise-schrift-leise);
+}
+
+.ws-preise__paar-wert {
+    flex: 0 1 auto;
+    min-width: 0;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
 
 .ws-preise__karte--favorit .ws-preise__gruppe--pairs { background: var(--ws-preise-akzent-zart); }
 
@@ -447,32 +470,60 @@
 }
 
 .ws-preise__zeile .ws-preise__kopf { flex: 1 1 13rem; }
-.ws-preise__zeile .ws-preise__preisblock { flex: 0 0 auto; margin-left: auto; text-align: right; align-items: flex-end; }
+/* Der Preisblock darf schrumpfen. Sonst frisst ein langer Zusatz wie
+   "Keine Umsatzsteuer, da kein Entgelt." die Breite der Kennzahlen daneben,
+   und deren Bezeichnungen brechen mitten im Wort. */
+.ws-preise__zeile .ws-preise__preisblock {
+    flex: 0 1 auto;
+    max-width: 11.5rem;
+    margin-left: auto;
+    text-align: right;
+    align-items: flex-end;
+}
 .ws-preise__zeile .ws-preise__betrag { font-size: 1.75rem; }
 .ws-preise__zeile .ws-preise__knopf { flex: none; height: 40px; }
 .ws-preise__zeile .ws-preise__plakette { position: static; margin-bottom: .35rem; align-self: flex-start; }
 
+/* Die Kennzahlen stehen in einem gemeinsamen Raster statt in drei eigenen
+   Saeulen: Bezeichnungen in Zeile eins, Werte in Zeile zwei. Sonst schiebt
+   eine zweizeilige Bezeichnung ihren Wert nach unten und die Zeile franst
+   aus. Die Kennzahl selbst traegt deshalb keine eigene Box (display: contents). */
 .ws-preise__kennzahlen {
     flex: 2 1 20rem;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
+    grid-template-rows: auto auto;
+    align-content: center;
+    gap: .2rem 1.25rem;
 }
 
-.ws-preise__kennzahl { display: flex; flex-direction: column; gap: .15rem; }
+.ws-preise__kennzahl { display: contents; }
 
 .ws-preise__kennzahl-name {
+    grid-row: 1;
+    min-width: 0;
     font-size: .6875rem;
     font-weight: 700;
-    letter-spacing: .09em;
+    line-height: 1.3;
+    /* Enger gesperrt als die uebrigen Mikro-Ueberschriften und mit Trennung:
+       Woerter wie "Kundenprojekten" passen sonst in keine Drittelspalte und
+       wuerden hart umbrochen - mit einem einzelnen Buchstaben in Zeile drei. */
+    letter-spacing: .06em;
     text-transform: uppercase;
+    hyphens: auto;
+    overflow-wrap: break-word;
     color: #a8a49b;
 }
 
 .ws-preise__kennzahl-wert {
+    grid-row: 2;
+    min-width: 0;
+    align-self: start;
     font-size: .90625rem;
     font-weight: 600;
+    line-height: 1.3;
     font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
 }
 
 /* --- Aufklapper ---------------------------------------------------------- */
@@ -526,7 +577,18 @@
 
 @media (max-width: 47.99em) {
     .ws-preise__schalter { gap: 1rem; }
-    .ws-preise__kennzahlen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    /* Schmal stehen die Kennzahlen wieder als eigene Bloecke: bei zwei
+       Spalten und drei Kennzahlen gaebe das feste Zeilenraster oben eine
+       ungewollte dritte Spalte. */
+    .ws-preise__kennzahlen {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+        gap: .75rem 1.25rem;
+    }
+
+    .ws-preise__kennzahl { display: flex; flex-direction: column; gap: .15rem; }
+    .ws-preise__kennzahl-name,
+    .ws-preise__kennzahl-wert { grid-row: auto; }
     .ws-preise__zeile .ws-preise__preisblock { margin-left: 0; text-align: left; align-items: flex-start; }
     .ws-preise__zeile .ws-preise__knopf { width: 100%; }
 
