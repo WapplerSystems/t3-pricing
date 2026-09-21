@@ -44,6 +44,19 @@
     white-space: nowrap;
 }
 
+/* --- Einleitung ---------------------------------------------------------- */
+
+.ws-preise__einleitung {
+    max-width: 62ch;
+    margin: 0 0 1.25rem;
+    font-size: .9375rem;
+    line-height: 1.55;
+    color: var(--ws-preise-schrift-leise);
+}
+
+.ws-preise__einleitung > :first-child { margin-top: 0; }
+.ws-preise__einleitung > :last-child { margin-bottom: 0; }
+
 /* --- Schalterleiste ------------------------------------------------------ */
 
 .ws-preise__schalter {

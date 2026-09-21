@@ -17,10 +17,12 @@ in derselben Reihenfolge wie {g.attribute}. Darum genuegt der Zugriff
     <thead>
         <tr>
             <th scope="col" class="ws-preise__matrixecke">
+                <f:comment>
+                Der Beschreibungstext stand frueher hier in der Ecke. Er steht
+                jetzt einmal ueber den Schaltern, in jeder Darstellung - sonst
+                verschwindet er, sobald die Matrix ausgeschaltet ist.
+                </f:comment>
                 <span class="ws-preise__nur-vorlesen"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:leistung"/></span>
-                <f:if condition="{tabelle.description}">
-                    <span class="ws-preise__matrixnotiz">{tabelle.description}</span>
-                </f:if>
             </th>
             <f:for each="{tarife}" as="tarif">
                 <th scope="col" class="ws-preise__matrixkopf{f:if(condition: tarif.plan.favourite, then: ' is-favorit')}">

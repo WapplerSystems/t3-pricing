@@ -14,6 +14,16 @@
      data-zeitraum="{zeitraum}"
      data-steuer="{steuer}">
 
+    <f:comment>
+    Der Beschreibungstext der Tabelle stand frueher nur in der Ecke der Matrix.
+    Ist die Matrix abgeschaltet - und in den Kartendarstellungen ist sie das oft -
+    war er gepflegt, aber nirgends zu sehen. Er gehoert vor die Schalter, weil er
+    erklaert, was die Preise darunter ueberhaupt bedeuten.
+    </f:comment>
+    <f:if condition="{tabelle.description}">
+        <div class="ws-preise__einleitung"><f:format.html>{tabelle.description}</f:format.html></div>
+    </f:if>
+
     <f:render partial="Schalter" arguments="{_all}"/>
 
     <f:switch expression="{darstellung}">
