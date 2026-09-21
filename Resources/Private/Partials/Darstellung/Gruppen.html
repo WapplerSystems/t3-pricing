@@ -2,7 +2,12 @@
 
 <f:comment>Wie die Karten, nur mit sichtbaren Gruppentiteln in der Merkmalsliste.</f:comment>
 
-<div class="ws-preise__karten ws-preise__karten--gruppen" style="--ws-preise-spalten: {tarife -> f:count()};">
+<f:comment>
+Vier Tarife brechen sonst als drei plus eins um. Die Klasse schaltet in
+der CSS auf zwei mal zwei, sobald der Behaelter fuer vier zu schmal ist.
+</f:comment>
+<f:variable name="anzahl" value="{tarife -> f:count()}"/>
+<div class="ws-preise__karten ws-preise__karten--gruppen{f:if(condition: '{anzahl} == 4', then: ' ws-preise__karten--vier')}" style="--ws-preise-spalten: {anzahl};">
     <f:for each="{tarife}" as="tarif">
         <div class="ws-preise__karte{f:if(condition: tarif.plan.favourite, then: ' ws-preise__karte--favorit')}">
 

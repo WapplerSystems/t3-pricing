@@ -22,6 +22,13 @@
     --ws-preise-abstand: 1.5rem;
 
     color: var(--ws-preise-schrift);
+
+    /* Fragepunkt fuer die Behaelterabfragen weiter unten. Die Darstellungen
+       muessen sich nach der Breite ihrer Inhaltsspalte richten, nicht nach der
+       des Fensters - auf einer Seite mit Seitenmenue ist das ein Unterschied
+       von mehreren hundert Pixeln. */
+    container-type: inline-size;
+    container-name: wspreise;
 }
 
 .ws-preise *,
@@ -186,7 +193,20 @@
    Das ging schief, sobald der Inhaltsbereich schmaler ist als das Fenster:
    vier Tarife in einer 600px-Spalte wurden 150px breit. Entscheidend ist die
    Breite des Behaelters, nicht die des Fensters - also zaehlt allein die
-   Mindestbreite oben, und die Spaltenzahl ergibt sich daraus. */
+   Mindestbreite oben, und die Spaltenzahl ergibt sich daraus.
+
+   Eine Ausnahme braucht es trotzdem: bei vier Tarifen laesst auto-fit in einer
+   mitteldbreiten Spalte drei Karten nebeneinander und eine allein darunter.
+   Zwei mal zwei liest sich besser als drei plus eins. Gefragt wird der
+   Behaelter, nicht das Fenster. */
+@container wspreise (max-width: 64rem) {
+    .ws-preise__karten--vier { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@container wspreise (max-width: 32rem) {
+    .ws-preise__karten--vier { grid-template-columns: minmax(0, 1fr); }
+}
+
 
 .ws-preise__karte {
     position: relative;
