@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  WapplerSystems\Pricing\:
+    resource: '../Classes/*'
+
+  WapplerSystems\Pricing\Controller\TableController:
+    public: true
+
+  WapplerSystems\Pricing\View\TablePresenter:
+    public: true

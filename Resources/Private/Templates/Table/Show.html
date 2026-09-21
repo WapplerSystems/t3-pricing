@@ -1,0 +1,54 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="Main">
+
+<f:if condition="{fehlt}">
+    <f:then>
+        <p class="ws-preise-hinweis"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:keineTabelle"/></p>
+    </f:then>
+    <f:else>
+
+<div class="ws-preise ws-preise--{darstellung}"
+     data-waehrung="{waehrung}"
+     data-zeitraum="{zeitraum}"
+     data-steuer="{steuer}">
+
+    <f:render partial="Schalter" arguments="{_all}"/>
+
+    <f:switch expression="{darstellung}">
+        <f:case value="matrix"><f:render partial="Darstellung/Matrix" arguments="{_all}"/></f:case>
+        <f:case value="groups"><f:render partial="Darstellung/Gruppen" arguments="{_all}"/></f:case>
+        <f:case value="rows"><f:render partial="Darstellung/Zeilen" arguments="{_all}"/></f:case>
+        <f:case value="accordion"><f:render partial="Darstellung/Aufklapper" arguments="{_all}"/></f:case>
+        <f:defaultCase><f:render partial="Darstellung/Karten" arguments="{_all}"/></f:defaultCase>
+    </f:switch>
+
+    <f:if condition="{matrixAnzeigen} && {darstellung} != 'matrix'">
+        <f:if condition="{matrixEingeklappt}">
+            <f:then>
+                <details class="ws-preise__aufklapper ws-preise__aufklapper--matrix">
+                    <summary class="ws-preise__aufklapper-kopf">
+                        <span><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:matrixAufklappen"/></span>
+                        <svg class="ws-preise__pfeil" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </summary>
+                    <div class="ws-preise__aufklapper-inhalt">
+                        <f:render partial="Darstellung/Matrix" arguments="{_all}"/>
+                    </div>
+                </details>
+            </f:then>
+            <f:else>
+                <div class="ws-preise__matrix-anhang">
+                    <f:render partial="Darstellung/Matrix" arguments="{_all}"/>
+                </div>
+            </f:else>
+        </f:if>
+    </f:if>
+
+</div>
+
+    </f:else>
+</f:if>
+
+</f:section>
+</html>

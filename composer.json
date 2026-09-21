@@ -1,0 +1,31 @@
+{
+    "name": "wapplersystems/t3-pricing",
+    "type": "typo3-cms-extension",
+    "description": "Preistabellen für TYPO3 — Tarifkarten, Vergleichsmatrix und Kompaktzeilen aus einem Datenmodell. Beliebige Attribute in Gruppen, Preise je Währung, netto oder brutto, Favorit und optionaler Auswählen-Link.",
+    "keywords": ["TYPO3", "pricing", "price table", "comparison matrix", "plans"],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Sven Wappler",
+            "email": "typo3@wappler.systems",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "typo3/cms-core": "^14.0",
+        "typo3/cms-extbase": "^14.0",
+        "typo3/cms-fluid": "^14.0",
+        "typo3/cms-frontend": "^14.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WapplerSystems\\Pricing\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "pricing"
+        }
+    }
+}

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.sheet</sheetTitle>
+                <type>array</type>
+                <el>
+
+                    <settings.table>
+                        <label>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.table</label>
+                        <description>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.table.hint</description>
+                        <config>
+                            <type>group</type>
+                            <allowed>tx_pricing_domain_model_table</allowed>
+                            <size>1</size>
+                            <maxitems>1</maxitems>
+                            <minitems>1</minitems>
+                            <required>1</required>
+                        </config>
+                    </settings.table>
+
+                    <settings.layout>
+                        <label>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.layout</label>
+                        <description>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.layout.hint</description>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <label>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.layout.cards</label>
+                                    <value>cards</value>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <label>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.layout.matrix</label>
+                                    <value>matrix</value>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <label>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.layout.groups</label>
+                                    <value>groups</value>
+                                </numIndex>
+                                <numIndex index="3">
+                                    <label>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.layout.rows</label>
+                                    <value>rows</value>
+                                </numIndex>
+                                <numIndex index="4">
+                                    <label>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.layout.accordion</label>
+                                    <value>accordion</value>
+                                </numIndex>
+                            </items>
+                            <default>cards</default>
+                        </config>
+                    </settings.layout>
+
+                    <settings.showMatrix>
+                        <label>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.showMatrix</label>
+                        <description>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.showMatrix.hint</description>
+                        <displayCond>FIELD:settings.layout:!=:matrix</displayCond>
+                        <config>
+                            <type>check</type>
+                            <renderType>checkboxToggle</renderType>
+                            <default>0</default>
+                        </config>
+                    </settings.showMatrix>
+
+                    <settings.collapseMatrix>
+                        <label>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.collapseMatrix</label>
+                        <description>LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:flexform.collapseMatrix.hint</description>
+                        <displayCond>FIELD:settings.showMatrix:>:0</displayCond>
+                        <config>
+                            <type>check</type>
+                            <renderType>checkboxToggle</renderType>
+                            <default>1</default>
+                        </config>
+                    </settings.collapseMatrix>
+
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

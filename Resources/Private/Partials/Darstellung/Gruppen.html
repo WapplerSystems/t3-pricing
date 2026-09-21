@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>Wie die Karten, nur mit sichtbaren Gruppentiteln in der Merkmalsliste.</f:comment>
+
+<div class="ws-preise__karten ws-preise__karten--gruppen" style="--ws-preise-spalten: {tarife -> f:count()};">
+    <f:for each="{tarife}" as="tarif">
+        <div class="ws-preise__karte{f:if(condition: tarif.plan.favourite, then: ' ws-preise__karte--favorit')}">
+
+            <f:if condition="{tarif.plan.favourite} && {tarif.plan.badge}">
+                <span class="ws-preise__plakette">{tarif.plan.badge}</span>
+            </f:if>
+
+            <div class="ws-preise__kopf">
+                <f:if condition="{tarif.plan.eyebrow}">
+                    <span class="ws-preise__kicker">{tarif.plan.eyebrow}</span>
+                </f:if>
+                <h3 class="ws-preise__name">{tarif.plan.title}</h3>
+                <f:if condition="{tarif.plan.subtitle}">
+                    <p class="ws-preise__unter">{tarif.plan.subtitle}</p>
+                </f:if>
+            </div>
+
+            <f:if condition="{tarif.plan.description}">
+                <div class="ws-preise__text"><f:format.html>{tarif.plan.description}</f:format.html></div>
+            </f:if>
+
+            <div class="ws-preise__merkmale">
+                <f:render partial="Teil/Merkmale" arguments="{tarif: tarif, zeigeGruppentitel: 1}"/>
+            </div>
+
+            <div class="ws-preise__fuss">
+                <f:render partial="Teil/Preis" arguments="{_all}"/>
+                <f:render partial="Teil/Knopf" arguments="{tarif: tarif}"/>
+            </div>
+
+        </div>
+    </f:for>
+</div>
+
+</html>

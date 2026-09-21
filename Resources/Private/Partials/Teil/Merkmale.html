@@ -1,0 +1,37 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>Die Gruppen eines Tarifs auf der Karte. Gruppen, die nur in die Matrix gehoeren, bleiben hier aus.</f:comment>
+<f:for each="{tarif.gruppen}" as="g">
+    <f:if condition="{g.gruppe.inCard}">
+        <div class="ws-preise__gruppe ws-preise__gruppe--{g.gruppe.layout}">
+            <f:if condition="{zeigeGruppentitel}">
+                <div class="ws-preise__gruppentitel">{g.gruppe.title}</div>
+            </f:if>
+
+            <f:if condition="{g.gruppe.layout} == 'pairs'">
+                <f:then>
+                    <f:for each="{g.zeilen}" as="z">
+                        <div class="ws-preise__paar">
+                            <span class="ws-preise__paar-name">{z.attribut.title}</span>
+                            <span class="ws-preise__paar-wert">{z.text}<f:if condition="{z.attribut.unit}"> {z.attribut.unit}</f:if></span>
+                        </div>
+                    </f:for>
+                </f:then>
+                <f:else>
+                    <ul class="ws-preise__liste">
+                        <f:for each="{g.zeilen}" as="z">
+                            <f:if condition="{z.enthalten} || {z.text}">
+                                <li class="ws-preise__listeneintrag">
+                                    <svg class="ws-preise__haken" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                                    <span>{z.attribut.title}<f:if condition="{z.text}"> <strong>{z.text}<f:if condition="{z.attribut.unit}"> {z.attribut.unit}</f:if></strong></f:if></span>
+                                </li>
+                            </f:if>
+                        </f:for>
+                    </ul>
+                </f:else>
+            </f:if>
+        </div>
+    </f:if>
+</f:for>
+
+</html>

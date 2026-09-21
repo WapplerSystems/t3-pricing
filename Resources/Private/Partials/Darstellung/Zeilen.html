@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+Kompaktzeilen: je Tarif eine Zeile. In der Mitte stehen hoechstens drei
+Kennzahlen - also Werte, die keine reine Ja/Nein-Angabe sind und gepflegten
+Text haben. Die Begrenzung laeuft ueber einen Zaehler, weil die Kennzahlen
+ueber mehrere Gruppen verteilt liegen koennen. Der Vergleich ist bewusst
+als "3 > {zaehler}" geschrieben, damit kein rohes Kleinerzeichen in einem
+Attributwert steht.
+</f:comment>
+
+<div class="ws-preise__zeilen">
+    <f:for each="{tarife}" as="tarif">
+        <div class="ws-preise__zeile{f:if(condition: tarif.plan.favourite, then: ' ws-preise__zeile--favorit')}">
+
+            <div class="ws-preise__kopf">
+                <f:if condition="{tarif.plan.favourite} && {tarif.plan.badge}">
+                    <span class="ws-preise__plakette">{tarif.plan.badge}</span>
+                </f:if>
+                <h3 class="ws-preise__name">{tarif.plan.title}</h3>
+                <f:if condition="{tarif.plan.subtitle}">
+                    <p class="ws-preise__unter">{tarif.plan.subtitle}</p>
+                </f:if>
+            </div>
+
+            <div class="ws-preise__kennzahlen">
+                <f:variable name="zaehler" value="0"/>
+                <f:for each="{tarif.gruppen}" as="g">
+                    <f:for each="{g.zeilen}" as="z">
+                        <f:if condition="{z.attribut.valueType} != 'check' && {z.text} && 3 > {zaehler}">
+                            <div class="ws-preise__kennzahl">
+                                <span class="ws-preise__kennzahl-name">{z.attribut.title}</span>
+                                <span class="ws-preise__kennzahl-wert">{z.text}<f:if condition="{z.attribut.unit}"> {z.attribut.unit}</f:if></span>
+                            </div>
+                            <f:variable name="zaehler" value="{zaehler + 1}"/>
+                        </f:if>
+                    </f:for>
+                </f:for>
+            </div>
+
+            <f:render partial="Teil/Preis" arguments="{tarif: tarif, waehrung: waehrung, zeitraum: zeitraum, steuer: steuer}"/>
+
+            <div class="ws-preise__fuss">
+                <f:render partial="Teil/Knopf" arguments="{tarif: tarif}"/>
+            </div>
+
+        </div>
+    </f:for>
+</div>
+
+</html>

@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{zeigeWaehrungsschalter} || {zeigeZeitraumschalter} || {zeigeSteuerschalter}">
+<div class="ws-preise__schalter">
+
+    <f:if condition="{zeigeWaehrungsschalter}">
+        <div class="ws-preise__schaltergruppe">
+            <span class="ws-preise__schalterlabel"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:waehrung"/></span>
+            <div class="ws-preise__segmente" role="group">
+                <f:for each="{waehrungen}" as="w">
+                    <button type="button" class="ws-preise__segment{f:if(condition: '{w} == {waehrung}', then: ' is-aktiv')}" data-schalter="waehrung" data-wert="{w}" aria-pressed="{f:if(condition: '{w} == {waehrung}', then: 'true', else: 'false')}">{w}</button>
+                </f:for>
+            </div>
+        </div>
+    </f:if>
+
+    <f:if condition="{zeigeZeitraumschalter}">
+        <div class="ws-preise__schaltergruppe">
+            <span class="ws-preise__schalterlabel"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:zeitraum"/></span>
+            <div class="ws-preise__segmente" role="group">
+                <f:for each="{zeitraeume}" as="z">
+                    <button type="button" class="ws-preise__segment{f:if(condition: '{z} == {zeitraum}', then: ' is-aktiv')}" data-schalter="zeitraum" data-wert="{z}" aria-pressed="{f:if(condition: '{z} == {zeitraum}', then: 'true', else: 'false')}">{zeitraumtexte.{z}}</button>
+                </f:for>
+            </div>
+        </div>
+    </f:if>
+
+    <f:if condition="{zeigeSteuerschalter}">
+        <div class="ws-preise__schaltergruppe">
+            <span class="ws-preise__schalterlabel"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:preisangabe"/></span>
+            <div class="ws-preise__segmente" role="group">
+                <button type="button" class="ws-preise__segment{f:if(condition: '{steuer} == \'net\'', then: ' is-aktiv')}" data-schalter="steuer" data-wert="net" aria-pressed="{f:if(condition: '{steuer} == \'net\'', then: 'true', else: 'false')}"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:netto"/></button>
+                <button type="button" class="ws-preise__segment{f:if(condition: '{steuer} == \'gross\'', then: ' is-aktiv')}" data-schalter="steuer" data-wert="gross" aria-pressed="{f:if(condition: '{steuer} == \'gross\'', then: 'true', else: 'false')}"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:brutto"/></button>
+            </div>
+        </div>
+    </f:if>
+
+</div>
+</f:if>
+
+</html>

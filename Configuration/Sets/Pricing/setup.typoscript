@@ -1,0 +1,17 @@
+plugin.tx_pricing {
+    view {
+        templateRootPaths {
+            10 = EXT:pricing/Resources/Private/Templates/
+        }
+        partialRootPaths {
+            10 = EXT:pricing/Resources/Private/Partials/
+        }
+        layoutRootPaths {
+            10 = EXT:pricing/Resources/Private/Layouts/
+        }
+    }
+}
+
+page.includeCSS.tx_pricing = EXT:pricing/Resources/Public/Css/pricing.css
+page.includeJSFooter.tx_pricing = EXT:pricing/Resources/Public/JavaScript/pricing.js
+page.includeJSFooter.tx_pricing.defer = 1

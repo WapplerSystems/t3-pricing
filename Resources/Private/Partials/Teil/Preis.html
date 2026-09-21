@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="ws-preise__preisblock">
+    <f:for each="{tarif.preise}" as="p">
+        <span class="ws-preise__preis{f:if(condition: p.aktiv, then: ' is-aktiv')}"
+              data-w="{p.waehrung}" data-z="{p.zeitraum}" data-s="{p.steuer}">
+            <f:if condition="{p.aufAnfrage}">
+                <f:then>
+                    <span class="ws-preise__anfrage">{p.anfragetext}</span>
+                </f:then>
+                <f:else>
+                    <span class="ws-preise__zeichen">{p.zeichen}</span><span class="ws-preise__betrag">{p.betrag}</span><span class="ws-preise__einheit">{p.einheit}</span>
+                </f:else>
+            </f:if>
+        </span>
+    </f:for>
+    <f:if condition="{tarif.plan.priceNote}">
+        <span class="ws-preise__preisnotiz">{tarif.plan.priceNote}</span>
+    </f:if>
+</div>
+
+</html>

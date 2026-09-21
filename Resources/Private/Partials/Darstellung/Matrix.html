@@ -1,0 +1,97 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+Vergleichsmatrix: eine Spalte je Tarif, eine Zeile je Attribut.
+
+Die Zuordnung Zelle -> Wert laeuft ueber den Schleifenindex: der Presenter
+legt {tarif.gruppen} in derselben Reihenfolge an wie {gruppen} und {g.zeilen}
+in derselben Reihenfolge wie {g.attribute}. Darum genuegt der Zugriff
+{tarif.gruppen.{gi.index}.zeilen.{ai.index}} - kein Suchen ueber uids noetig.
+</f:comment>
+
+<f:variable name="spalten" value="{tarife -> f:count()}"/>
+
+<div class="ws-preise__matrixhuelle" tabindex="0" role="region" aria-label="Vergleichsmatrix">
+<table class="ws-preise__matrix" style="--ws-preise-spalten: {spalten};">
+
+    <thead>
+        <tr>
+            <th scope="col" class="ws-preise__matrixecke">
+                <span class="ws-preise__nur-vorlesen"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:leistung"/></span>
+                <f:if condition="{tabelle.description}">
+                    <span class="ws-preise__matrixnotiz">{tabelle.description}</span>
+                </f:if>
+            </th>
+            <f:for each="{tarife}" as="tarif">
+                <th scope="col" class="ws-preise__matrixkopf{f:if(condition: tarif.plan.favourite, then: ' is-favorit')}">
+
+                    <f:if condition="{tarif.plan.favourite} && {tarif.plan.badge}">
+                        <span class="ws-preise__plakette">{tarif.plan.badge}</span>
+                    </f:if>
+
+                    <f:if condition="{tarif.plan.eyebrow}">
+                        <span class="ws-preise__kicker">{tarif.plan.eyebrow}</span>
+                    </f:if>
+                    <span class="ws-preise__name">{tarif.plan.title}</span>
+
+                    <f:render partial="Teil/Preis" arguments="{tarif: tarif, waehrung: waehrung, zeitraum: zeitraum, steuer: steuer}"/>
+                    <f:render partial="Teil/Knopf" arguments="{tarif: tarif}"/>
+
+                </th>
+            </f:for>
+        </tr>
+    </thead>
+
+    <tbody>
+        <f:for each="{gruppen}" as="g" iteration="gi">
+            <f:if condition="{g.gruppe.inMatrix}">
+
+                <tr class="ws-preise__matrixgruppe">
+                    <th scope="colgroup" colspan="{spalten + 1}">{g.gruppe.title}</th>
+                </tr>
+
+                <f:for each="{g.attribute}" as="attribut" iteration="ai">
+                    <tr class="ws-preise__matrixzeile">
+
+                        <th scope="row" class="ws-preise__matrixname">{attribut.title}<f:if condition="{attribut.footnote}"><sup class="ws-preise__fussnote">{attribut.footnote}</sup></f:if></th>
+
+                        <f:for each="{tarife}" as="tarif">
+                            <f:variable name="zeile" value="{tarif.gruppen.{gi.index}.zeilen.{ai.index}}"/>
+                            <td class="ws-preise__matrixzelle{f:if(condition: tarif.plan.favourite, then: ' is-favorit')}">
+                                <f:if condition="{attribut.valueType} == 'check'">
+                                    <f:then>
+                                        <f:if condition="{zeile.enthalten}">
+                                            <f:then>
+                                                <svg class="ws-preise__haken" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                                                <span class="ws-preise__nur-vorlesen"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:enthalten"/></span>
+                                            </f:then>
+                                            <f:else>
+                                                <span class="ws-preise__strich" aria-hidden="true">—</span>
+                                                <span class="ws-preise__nur-vorlesen"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:nichtEnthalten"/></span>
+                                            </f:else>
+                                        </f:if>
+                                    </f:then>
+                                    <f:else>
+                                        <f:if condition="{zeile.text}">
+                                            <f:then><span class="ws-preise__matrixwert">{zeile.text}<f:if condition="{attribut.unit}"> {attribut.unit}</f:if></span></f:then>
+                                            <f:else>
+                                                <span class="ws-preise__strich" aria-hidden="true">—</span>
+                                                <span class="ws-preise__nur-vorlesen"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:nichtEnthalten"/></span>
+                                            </f:else>
+                                        </f:if>
+                                    </f:else>
+                                </f:if>
+                            </td>
+                        </f:for>
+
+                    </tr>
+                </f:for>
+
+            </f:if>
+        </f:for>
+    </tbody>
+
+</table>
+</div>
+
+</html>

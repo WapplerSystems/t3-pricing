@@ -1,0 +1,560 @@
+/* ---------------------------------------------------------------------------
+ * Preistabellen
+ *
+ * Die Farben und Radien stehen als Variablen auf .ws-preise. Ein Sitepackage
+ * ueberschreibt sie dort und faerbt damit alle Darstellungen auf einmal - es
+ * muss keine einzige Regel dupliziert werden.
+ * ------------------------------------------------------------------------- */
+
+.ws-preise {
+    --ws-preise-akzent: #b45309;
+    --ws-preise-akzent-kontrast: #ffffff;
+    --ws-preise-akzent-zart: #fdf6ec;
+    --ws-preise-schrift: #1c1b19;
+    --ws-preise-schrift-leise: #6b6862;
+    --ws-preise-schrift-still: #8c8880;
+    --ws-preise-linie: #e5e1d8;
+    --ws-preise-linie-zart: #f4f1ea;
+    --ws-preise-flaeche: #ffffff;
+    --ws-preise-grund: #faf8f4;
+    --ws-preise-radius: 18px;
+    --ws-preise-radius-klein: 11px;
+    --ws-preise-abstand: 1.5rem;
+
+    color: var(--ws-preise-schrift);
+}
+
+.ws-preise *,
+.ws-preise *::before,
+.ws-preise *::after { box-sizing: border-box; }
+
+.ws-preise__nur-vorlesen {
+    position: absolute;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* --- Schalterleiste ------------------------------------------------------ */
+
+.ws-preise__schalter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.75rem;
+    margin-bottom: var(--ws-preise-abstand);
+}
+
+.ws-preise__schaltergruppe {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.ws-preise__schalterlabel {
+    font-size: .8125rem;
+    font-weight: 600;
+    color: var(--ws-preise-schrift-leise);
+}
+
+.ws-preise__segmente {
+    display: flex;
+    padding: 3px;
+    border: 1px solid var(--ws-preise-linie);
+    border-radius: 10px;
+    background: #f0ede6;
+}
+
+.ws-preise__segment {
+    height: 34px;
+    padding: 0 1rem;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    font: inherit;
+    font-size: .8125rem;
+    font-weight: 500;
+    color: var(--ws-preise-schrift-still);
+    cursor: pointer;
+    transition: background .18s ease, color .18s ease;
+}
+
+.ws-preise__segment.is-aktiv {
+    background: var(--ws-preise-flaeche);
+    box-shadow: 0 1px 2px rgba(28, 27, 25, .1);
+    font-weight: 600;
+    color: var(--ws-preise-schrift);
+}
+
+/* --- Preisangabe --------------------------------------------------------- */
+
+.ws-preise__preisblock {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.ws-preise__preis { display: none; }
+.ws-preise__preis.is-aktiv {
+    display: flex;
+    align-items: baseline;
+    gap: .4rem;
+    flex-wrap: wrap;
+}
+
+.ws-preise__zeichen {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--ws-preise-schrift-leise);
+}
+
+.ws-preise__betrag {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -.02em;
+    font-variant-numeric: tabular-nums;
+}
+
+.ws-preise__einheit {
+    font-size: .9375rem;
+    color: var(--ws-preise-schrift-leise);
+}
+
+.ws-preise__anfrage {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.ws-preise__preisnotiz {
+    font-size: .75rem;
+    color: var(--ws-preise-schrift-still);
+}
+
+/* --- Knopf --------------------------------------------------------------- */
+
+.ws-preise__knopf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 1.4rem;
+    border: 1.5px solid #d9d4c8;
+    border-radius: var(--ws-preise-radius-klein);
+    background: var(--ws-preise-flaeche);
+    color: var(--ws-preise-schrift);
+    font-size: .9375rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: border-color .18s ease, background .18s ease;
+}
+
+.ws-preise__knopf:hover,
+.ws-preise__knopf:focus-visible {
+    border-color: var(--ws-preise-akzent);
+    color: var(--ws-preise-schrift);
+    text-decoration: none;
+}
+
+.ws-preise__knopf--stark {
+    border-color: var(--ws-preise-akzent);
+    background: var(--ws-preise-akzent);
+    color: var(--ws-preise-akzent-kontrast);
+}
+
+.ws-preise__knopf--stark:hover,
+.ws-preise__knopf--stark:focus-visible {
+    background: var(--ws-preise-schrift);
+    border-color: var(--ws-preise-schrift);
+    color: var(--ws-preise-akzent-kontrast);
+}
+
+/* --- Karten -------------------------------------------------------------- */
+
+.ws-preise__karten {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--ws-preise-abstand);
+    align-items: stretch;
+}
+
+@media (min-width: 62em) {
+    .ws-preise__karten {
+        grid-template-columns: repeat(var(--ws-preise-spalten, 3), minmax(0, 1fr));
+    }
+}
+
+.ws-preise__karte {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.125rem;
+    padding: 1.75rem;
+    border: 1px solid var(--ws-preise-linie);
+    border-radius: var(--ws-preise-radius);
+    background: var(--ws-preise-flaeche);
+}
+
+.ws-preise__karte--favorit {
+    border: 1.5px solid var(--ws-preise-akzent);
+    box-shadow: 0 24px 50px -34px color-mix(in srgb, var(--ws-preise-akzent) 60%, transparent);
+}
+
+.ws-preise__plakette {
+    position: absolute;
+    top: -13px;
+    left: 1.75rem;
+    height: 26px;
+    padding: 0 .75rem;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 13px;
+    background: var(--ws-preise-akzent);
+    color: var(--ws-preise-akzent-kontrast);
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.ws-preise__kopf { display: flex; flex-direction: column; gap: .25rem; }
+
+.ws-preise__kicker {
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ws-preise-akzent);
+}
+
+.ws-preise__name {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+}
+
+.ws-preise__unter {
+    margin: 0;
+    font-size: .875rem;
+    color: var(--ws-preise-schrift-leise);
+}
+
+.ws-preise__text {
+    font-size: .875rem;
+    line-height: 1.55;
+    color: var(--ws-preise-schrift-leise);
+}
+
+.ws-preise__text > p:last-child { margin-bottom: 0; }
+
+.ws-preise__merkmale {
+    display: flex;
+    flex-direction: column;
+    gap: 1.125rem;
+}
+
+.ws-preise__fuss {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1.125rem;
+    border-top: 1px solid var(--ws-preise-linie-zart);
+}
+
+/* --- Merkmalsgruppen ----------------------------------------------------- */
+
+.ws-preise__gruppentitel {
+    margin-bottom: .6rem;
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ws-preise-schrift-still);
+}
+
+.ws-preise__liste {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .625rem;
+}
+
+.ws-preise__listeneintrag {
+    display: flex;
+    align-items: flex-start;
+    gap: .625rem;
+    font-size: .875rem;
+    line-height: 1.45;
+}
+
+.ws-preise__haken {
+    flex: none;
+    margin-top: 3px;
+    color: var(--ws-preise-akzent);
+}
+
+.ws-preise__gruppe--pairs {
+    padding: 1rem 1.125rem;
+    border-radius: 12px;
+    background: #f7f5f0;
+}
+
+.ws-preise__paar {
+    display: flex;
+    justify-content: space-between;
+    gap: .875rem;
+    padding: .2rem 0;
+    font-size: .8125rem;
+}
+
+.ws-preise__paar-name { color: var(--ws-preise-schrift-leise); }
+.ws-preise__paar-wert { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.ws-preise__karte--favorit .ws-preise__gruppe--pairs { background: var(--ws-preise-akzent-zart); }
+
+/* --- Vergleichsmatrix ---------------------------------------------------- */
+
+.ws-preise__matrix {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid var(--ws-preise-linie);
+    border-radius: var(--ws-preise-radius);
+    background: var(--ws-preise-flaeche);
+    overflow: hidden;
+}
+
+.ws-preise__matrix th,
+.ws-preise__matrix td {
+    padding: .8rem 1rem;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--ws-preise-linie-zart);
+    font-size: .875rem;
+    font-weight: 400;
+}
+
+.ws-preise__matrix thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid var(--ws-preise-linie);
+    background: #fffdf9;
+}
+
+/* Die Zeilenkoepfe stehen links. Der Schluessel liegt hoeher als die
+   Grundregel fuer th und td weiter oben, sonst gewinnt deren Zentrierung. */
+.ws-preise__matrix .ws-preise__matrixecke,
+.ws-preise__matrix .ws-preise__matrixname {
+    text-align: left;
+    font-weight: 400;
+    color: var(--ws-preise-schrift);
+}
+
+.ws-preise__matrixnotiz {
+    display: block;
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--ws-preise-schrift-leise);
+}
+
+/* Der Kopf einer Tarifspalte ist eine Tabellenzelle - sie darf nicht selbst
+   zum Flex-Behaelter werden, sonst faellt die Zeilenaufteilung auseinander
+   und die Spalten stapeln sich untereinander. Die Kinder stapeln als Bloecke
+   ohnehin. */
+.ws-preise__matrixkopf > * { display: block; }
+.ws-preise__matrixkopf > .ws-preise__name { margin-bottom: .45rem; }
+.ws-preise__matrixkopf > .ws-preise__plakette {
+    position: static;
+    width: fit-content;
+    margin: 0 auto .5rem;
+}
+.ws-preise__matrixkopf .ws-preise__preisblock { align-items: center; margin-bottom: .6rem; }
+.ws-preise__matrixkopf .ws-preise__preis.is-aktiv { justify-content: center; }
+.ws-preise__matrixkopf .ws-preise__betrag { font-size: 1.625rem; }
+.ws-preise__matrixkopf .ws-preise__knopf { height: 38px; font-size: .8125rem; }
+
+.ws-preise__matrixgruppe th {
+    text-align: left;
+    padding: .9rem 1rem .75rem;
+    background: var(--ws-preise-grund);
+    border-top: 1px solid var(--ws-preise-linie);
+    border-bottom: 1px solid var(--ws-preise-linie);
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ws-preise-schrift-leise);
+}
+
+.ws-preise__matrixzeile:nth-of-type(even) { background: #fefdfb; }
+.ws-preise__matrix .is-favorit { background: var(--ws-preise-akzent-zart); }
+.ws-preise__matrix thead .is-favorit { box-shadow: inset 0 3px 0 var(--ws-preise-akzent); }
+
+/* Die Merkmalsspalte traegt den Text, die Tarifspalten teilen sich den Rest. */
+.ws-preise__matrix .ws-preise__matrixecke,
+.ws-preise__matrix .ws-preise__matrixname { width: 34%; }
+
+.ws-preise__strich { color: #c9c4b9; }
+.ws-preise__matrixwert { font-weight: 600; }
+.ws-preise__fussnote {
+    margin-left: .3rem;
+    font-size: .6875rem;
+    color: var(--ws-preise-schrift-still);
+}
+
+.ws-preise__matrixhuelle {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--ws-preise-radius);
+}
+
+.ws-preise__matrixhuelle:focus-visible {
+    outline: 2px solid var(--ws-preise-akzent);
+    outline-offset: 2px;
+}
+
+/* --- Kompaktzeilen ------------------------------------------------------- */
+
+.ws-preise__zeilen {
+    display: flex;
+    flex-direction: column;
+    gap: .625rem;
+}
+
+.ws-preise__zeile {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--ws-preise-linie);
+    border-radius: 14px;
+    background: var(--ws-preise-flaeche);
+}
+
+.ws-preise__zeile--favorit {
+    border: 1.5px solid var(--ws-preise-akzent);
+    background: #fffdf9;
+}
+
+.ws-preise__zeile .ws-preise__kopf { flex: 1 1 13rem; }
+.ws-preise__zeile .ws-preise__preisblock { flex: 0 0 auto; margin-left: auto; text-align: right; align-items: flex-end; }
+.ws-preise__zeile .ws-preise__betrag { font-size: 1.75rem; }
+.ws-preise__zeile .ws-preise__knopf { flex: none; height: 40px; }
+.ws-preise__zeile .ws-preise__plakette { position: static; margin-bottom: .35rem; align-self: flex-start; }
+
+.ws-preise__kennzahlen {
+    flex: 2 1 20rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.ws-preise__kennzahl { display: flex; flex-direction: column; gap: .15rem; }
+
+.ws-preise__kennzahl-name {
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: #a8a49b;
+}
+
+.ws-preise__kennzahl-wert {
+    font-size: .90625rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+/* --- Aufklapper ---------------------------------------------------------- */
+
+.ws-preise__aufklapper {
+    border-top: 1px solid var(--ws-preise-linie-zart);
+}
+
+.ws-preise__karte > .ws-preise__aufklapper {
+    margin: 0 -1.75rem -1.75rem;
+    padding: 0 1.75rem;
+}
+
+.ws-preise__aufklapper-kopf {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
+    font-size: .875rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+.ws-preise__aufklapper-kopf::-webkit-details-marker { display: none; }
+
+.ws-preise__pfeil {
+    flex: none;
+    color: var(--ws-preise-schrift-leise);
+    transition: transform .2s ease;
+}
+
+.ws-preise__aufklapper[open] > .ws-preise__aufklapper-kopf .ws-preise__pfeil { transform: rotate(180deg); }
+.ws-preise__aufklapper[open] > .ws-preise__aufklapper-kopf { color: var(--ws-preise-akzent); }
+
+.ws-preise__aufklapper-inhalt { padding: .25rem 0 1.5rem; }
+
+.ws-preise__aufklapper--matrix {
+    margin-top: var(--ws-preise-abstand);
+    border: 1px solid var(--ws-preise-linie);
+    border-radius: 14px;
+    background: var(--ws-preise-flaeche);
+}
+
+.ws-preise__aufklapper--matrix > .ws-preise__aufklapper-kopf { padding: 1.125rem 1.5rem; }
+.ws-preise__aufklapper--matrix .ws-preise__aufklapper-inhalt { padding: 0 1.5rem 1.5rem; }
+.ws-preise__matrix-anhang { margin-top: var(--ws-preise-abstand); }
+
+/* --- Schmale Breiten ----------------------------------------------------- */
+
+@media (max-width: 47.99em) {
+    .ws-preise__schalter { gap: 1rem; }
+    .ws-preise__kennzahlen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ws-preise__zeile .ws-preise__preisblock { margin-left: 0; text-align: left; align-items: flex-start; }
+    .ws-preise__zeile .ws-preise__knopf { width: 100%; }
+
+    /* Die Matrix bleibt eine Tabelle und wird seitlich geschoben. Geschoben
+       wird die Huelle, nicht die Tabelle selbst - eine Tabelle auf
+       display:block verliert ihre Spaltenaufteilung. */
+    .ws-preise__matrix {
+        table-layout: auto;
+        width: auto;
+        min-width: 100%;
+    }
+
+    .ws-preise__matrix th,
+    .ws-preise__matrix td { white-space: nowrap; }
+
+    .ws-preise__matrix .ws-preise__matrixecke,
+    .ws-preise__matrix .ws-preise__matrixname {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+        width: auto;
+        min-width: 10rem;
+        max-width: 12rem;
+        background: var(--ws-preise-flaeche);
+        white-space: normal;
+        box-shadow: 1px 0 0 var(--ws-preise-linie-zart);
+    }
+
+    .ws-preise__matrix .ws-preise__matrixzeile:nth-of-type(even) .ws-preise__matrixname { background: #fefdfb; }
+    .ws-preise__matrixgruppe th { position: static; }
+}

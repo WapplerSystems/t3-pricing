@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="de" datatype="plaintext" original="messages" date="2026-09-21T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="keineTabelle"><source>Es ist keine Preistabelle ausgewählt.</source></trans-unit>
+            <trans-unit id="waehrung"><source>Währung</source></trans-unit>
+            <trans-unit id="zeitraum"><source>Abrechnung</source></trans-unit>
+            <trans-unit id="zeitraum.month"><source>monatlich</source></trans-unit>
+            <trans-unit id="zeitraum.year"><source>jährlich</source></trans-unit>
+            <trans-unit id="zeitraum.once"><source>einmalig</source></trans-unit>
+            <trans-unit id="zeitraum.custom"><source>sonstige</source></trans-unit>
+            <trans-unit id="preisangabe"><source>Preisangabe</source></trans-unit>
+            <trans-unit id="netto"><source>exkl. MWST</source></trans-unit>
+            <trans-unit id="brutto"><source>inkl. MWST</source></trans-unit>
+            <trans-unit id="matrixAufklappen"><source>Details vergleichen</source></trans-unit>
+            <trans-unit id="weitereLeistungen"><source>Weitere Leistungen</source></trans-unit>
+            <trans-unit id="leistung"><source>Leistung</source></trans-unit>
+            <trans-unit id="enthalten"><source>enthalten</source></trans-unit>
+            <trans-unit id="nichtEnthalten"><source>nicht enthalten</source></trans-unit>
+        </body>
+    </file>
+</xliff>
