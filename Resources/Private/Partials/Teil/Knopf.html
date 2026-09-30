@@ -1,8 +1,18 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<f:comment>Ohne gepflegten Link wird bewusst nichts ausgegeben - kein leerer Knopf, kein Platzhalter.</f:comment>
-<f:if condition="{tarif.plan.selectLink}">
-    <f:link.typolink parameter="{tarif.plan.selectLink}" class="ws-preise__knopf{f:if(condition: tarif.plan.favourite, then: ' ws-preise__knopf--stark')}">{tarif.auswahltext}</f:link.typolink>
+<f:comment>
+    Ohne gepflegten Link wird bewusst nichts ausgegeben - kein leerer Knopf,
+    kein Platzhalter.
+
+    Geprueft wird die fertige Adresse, nicht das Feld. f:link.typolink gibt
+    seinen Inhalt auch dann aus, wenn es keinen Link bauen kann - zeigt der
+    Link auf eine verborgene oder geloeschte Seite, stand "Zur Bestellung"
+    als nackter Text in der Kachel. f:uri.typolink liefert in dem Fall eine
+    leere Zeichenkette, und die Bedingung greift.
+</f:comment>
+<f:variable name="ziel"><f:uri.typolink parameter="{tarif.plan.selectLink}" /></f:variable>
+<f:if condition="{ziel}">
+    <a href="{ziel}" class="ws-preise__knopf{f:if(condition: tarif.plan.favourite, then: ' ws-preise__knopf--stark')}">{tarif.auswahltext}</a>
 </f:if>
 
 </html>
