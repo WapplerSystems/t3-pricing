@@ -435,7 +435,9 @@
 .ws-preise__matrixkopf .ws-preise__preisblock { align-items: center; margin-bottom: .6rem; }
 .ws-preise__matrixkopf .ws-preise__preis.is-aktiv { justify-content: center; }
 .ws-preise__matrixkopf .ws-preise__betrag { font-size: 1.625rem; }
-.ws-preise__matrixkopf .ws-preise__knopf { height: 38px; font-size: .8125rem; }
+/* Die Regel "> * { display: block }" oben trifft auch den Knopf und nimmt ihm
+   das flex, das die Beschriftung senkrecht mittig setzt. */
+.ws-preise__matrixkopf .ws-preise__knopf { display: flex; height: 38px; font-size: .8125rem; }
 
 .ws-preise__matrixgruppe th {
     text-align: left;
