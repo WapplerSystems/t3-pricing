@@ -1,73 +1,72 @@
 /**
- * Preistabellen: die Schalter fuer Waehrung, Zeitraum und Steuer.
+ * Pricing tables: the switches for currency, billing period and tax mode.
  *
- * Es sind alle Kombinationen im Markup, sichtbar ist die mit der Klasse
- * is-aktiv. Umschalten heisst also nur: Klasse umhaengen. Ohne dieses Skript
- * steht die vom Backend vorgegebene Kombination da, die Seite funktioniert
- * vollstaendig.
+ * Every combination is in the markup; the one with the class is-active is
+ * visible. Switching therefore only moves that class. Without this script the
+ * combination configured in the backend stays visible and the page works
+ * completely.
  */
 (function () {
     'use strict';
 
-    function anwenden(wurzel) {
-        var w = wurzel.dataset.waehrung;
-        var z = wurzel.dataset.zeitraum;
-        var s = wurzel.dataset.steuer;
+    function apply(root) {
+        var currency = root.dataset.currency;
+        var period = root.dataset.period;
+        var tax = root.dataset.tax;
 
-        wurzel.querySelectorAll('.ws-preise__preisblock').forEach(function (block) {
-            var angaben = Array.prototype.slice.call(block.querySelectorAll('.ws-preise__preis'));
+        root.querySelectorAll('.ws-pricing__price-block').forEach(function (block) {
+            var prices = Array.prototype.slice.call(block.querySelectorAll('.ws-pricing__price'));
 
-            // Nicht jeder Tarif hat jede Kombination. Der Reihe nach lockern,
-            // damit nie eine leere Stelle stehen bleibt - dieselbe Abstufung
-            // wie im Presenter.
-            var treffer =
-                angaben.filter(function (p) { return p.dataset.w === w && p.dataset.z === z && p.dataset.s === s; })[0] ||
-                angaben.filter(function (p) { return p.dataset.w === w && p.dataset.s === s; })[0] ||
-                angaben.filter(function (p) { return p.dataset.s === s; })[0] ||
-                angaben[0];
+            // Not every plan has every combination. Relax step by step so that
+            // no empty spot is ever left - the same order as in the presenter.
+            var match =
+                prices.filter(function (p) { return p.dataset.currency === currency && p.dataset.period === period && p.dataset.tax === tax; })[0] ||
+                prices.filter(function (p) { return p.dataset.currency === currency && p.dataset.tax === tax; })[0] ||
+                prices.filter(function (p) { return p.dataset.tax === tax; })[0] ||
+                prices[0];
 
-            angaben.forEach(function (p) {
-                p.classList.toggle('is-aktiv', p === treffer);
+            prices.forEach(function (p) {
+                p.classList.toggle('is-active', p === match);
             });
         });
     }
 
-    function verdrahten(wurzel) {
-        wurzel.querySelectorAll('.ws-preise__segment').forEach(function (knopf) {
-            knopf.addEventListener('click', function () {
-                var art = knopf.dataset.schalter;
-                var wert = knopf.dataset.wert;
-                if (!art || !wert) {
+    function bind(root) {
+        root.querySelectorAll('.ws-pricing__segment').forEach(function (button) {
+            button.addEventListener('click', function () {
+                var name = button.dataset.switch;
+                var value = button.dataset.value;
+                if (!name || !value) {
                     return;
                 }
 
-                wurzel.dataset[art] = wert;
+                root.dataset[name] = value;
 
-                wurzel.querySelectorAll('.ws-preise__segment[data-schalter="' + art + '"]').forEach(function (andere) {
-                    var aktiv = andere === knopf;
-                    andere.classList.toggle('is-aktiv', aktiv);
-                    andere.setAttribute('aria-pressed', aktiv ? 'true' : 'false');
+                root.querySelectorAll('.ws-pricing__segment[data-switch="' + name + '"]').forEach(function (other) {
+                    var active = other === button;
+                    other.classList.toggle('is-active', active);
+                    other.setAttribute('aria-pressed', active ? 'true' : 'false');
                 });
 
-                anwenden(wurzel);
+                apply(root);
             });
         });
     }
 
-    function starten() {
-        document.querySelectorAll('.ws-preise').forEach(function (wurzel) {
-            if (wurzel.dataset.verdrahtet === '1') {
+    function init() {
+        document.querySelectorAll('.ws-pricing').forEach(function (root) {
+            if (root.dataset.bound === '1') {
                 return;
             }
-            wurzel.dataset.verdrahtet = '1';
-            verdrahten(wurzel);
-            anwenden(wurzel);
+            root.dataset.bound = '1';
+            bind(root);
+            apply(root);
         });
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', starten);
+        document.addEventListener('DOMContentLoaded', init);
     } else {
-        starten();
+        init();
     }
 })();

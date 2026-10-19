@@ -9,14 +9,14 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 class TableRepository extends Repository
 {
     /**
-     * Das Plugin waehlt eine Preistabelle ueber ihre uid. Wo sie liegt, ist
-     * dann gleichgueltig - sonst muesste jede Seite, die eine Tabelle
-     * einbindet, auch deren Ordner als Startseite gesetzt bekommen.
+     * The plugin selects a pricing table by its uid. Where it is stored does
+     * not matter then - otherwise every page showing a table would also need
+     * its folder set as record storage page.
      */
     public function initializeObject(): void
     {
-        $einstellungen = $this->createQuery()->getQuerySettings();
-        $einstellungen->setRespectStoragePage(false);
-        $this->setDefaultQuerySettings($einstellungen);
+        $querySettings = $this->createQuery()->getQuerySettings();
+        $querySettings->setRespectStoragePage(false);
+        $this->setDefaultQuerySettings($querySettings);
     }
 }

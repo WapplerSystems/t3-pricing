@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="mt" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="tx_pricing_domain_model_table" approved="yes"><source>Pricing table</source><target>Tabella tal-prezzijiet</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_plan" approved="yes"><source>Plan</source><target>Pjan</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_price" approved="yes"><source>Price</source><target>Prezz</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_group" approved="yes"><source>Feature group</source><target>Grupp ta' karatteristiċi</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_attribute" approved="yes"><source>Feature</source><target>Karatteristika</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_value" approved="yes"><source>Value</source><target>Valur</target></trans-unit>
+            <trans-unit id="plugin.table" approved="yes"><source>Pricing table</source><target>Tabella tal-prezzijiet</target></trans-unit>
+            <trans-unit id="plugin.table.description" approved="yes"><source>Plan cards, comparison table or compact rows from one pricing table record.</source><target>Kards tal-pjan, tabella komparattiva jew ringieli kompatti minn rekord wieħed tat-tabella tal-prezzijiet.</target></trans-unit>
+            <trans-unit id="tab.general" approved="yes"><source>General</source><target>Ġenerali</target></trans-unit>
+            <trans-unit id="tab.plans" approved="yes"><source>Plans</source><target>Pjanijiet</target></trans-unit>
+            <trans-unit id="tab.attributes" approved="yes"><source>Features</source><target>Karatteristiċi</target></trans-unit>
+            <trans-unit id="tab.prices" approved="yes"><source>Prices</source><target>Prezzijiet</target></trans-unit>
+            <trans-unit id="tab.highlight" approved="yes"><source>Highlight</source><target>Enfasi</target></trans-unit>
+            <trans-unit id="table.title" approved="yes"><source>Title</source><target>Titlu</target></trans-unit>
+            <trans-unit id="table.description" approved="yes"><source>Introductory note</source><target>Nota introduttorja</target></trans-unit>
+            <trans-unit id="table.description.hint" approved="yes"><source>Shown above the prices in every layout, e.g. “All prices per month, plus VAT.”</source><target>Muri fuq il-prezzijiet f'kull layout, eż. “Il-prezzijiet kollha fix-xahar, flimkien mal-VAT.”</target></trans-unit>
+            <trans-unit id="table.taxMode" approved="yes"><source>Entered amounts are</source><target>L-ammonti mdaħħla huma</target></trans-unit>
+            <trans-unit id="table.taxMode.hint" approved="yes"><source>Defines how the entered amounts are read. Conversion only runs from net to gross, never the other way round.</source><target>Jiddefinixxi kif jinqraw l-ammonti mdaħħla. Il-konverżjoni ssir biss minn nett għal gross, qatt bil-maqlub.</target></trans-unit>
+            <trans-unit id="table.taxMode.net" approved="yes"><source>Net prices</source><target>Prezzijiet nett</target></trans-unit>
+            <trans-unit id="table.taxMode.gross" approved="yes"><source>Gross prices</source><target>Prezzijiet gross</target></trans-unit>
+            <trans-unit id="table.taxRate" approved="yes"><source>Tax rate in percent</source><target>Rata tat-taxxa f'perċentwali</target></trans-unit>
+            <trans-unit id="table.taxRate.hint" approved="yes"><source>Basis for the gross display. 0 skips the conversion.</source><target>Bażi għall-wiri gross. 0 taqbeż il-konverżjoni.</target></trans-unit>
+            <trans-unit id="table.taxSwitchable" approved="yes"><source>Visitors may switch between net and gross</source><target>Il-viżitaturi jistgħu jaqilbu bejn nett u gross</target></trans-unit>
+            <trans-unit id="table.taxSwitchable.hint" approved="yes"><source>Unchecked, the page only shows the option selected above.</source><target>Meta mhux immarkat, il-paġna turi biss l-għażla magħżula hawn fuq.</target></trans-unit>
+            <trans-unit id="table.currencySwitchable" approved="yes"><source>Currency switchable</source><target>Munita li tista' tinbidel</target></trans-unit>
+            <trans-unit id="table.currencySwitchable.hint" approved="yes"><source>The switch only appears if more than one currency is entered for the plans.</source><target>Is-swiċċ jidher biss jekk tiddaħħal aktar minn munita waħda għall-pjanijiet.</target></trans-unit>
+            <trans-unit id="table.periodSwitchable" approved="yes"><source>Billing period switchable</source><target>Perjodu ta' kontijiet jista' jinbidel</target></trans-unit>
+            <trans-unit id="table.periodSwitchable.hint" approved="yes"><source>The switch only appears if more than one period is entered for the plans.</source><target>Is-swiċċ jidher biss jekk jiddaħħal aktar minn perjodu wieħed għall-pjanijiet.</target></trans-unit>
+            <trans-unit id="table.currencyPosition" approved="yes"><source>Currency symbol</source><target>Simbolu tal-munita</target></trans-unit>
+            <trans-unit id="table.currencyPosition.hint" approved="yes"><source>English usually puts it before the amount (“€ 99”), German and most continental European languages after it (“99 €”).</source><target>L-Ingliż normalment ipoġġih qabel l-ammont (“€ 99”), il-Ġermaniż u l-biċċa l-kbira tal-lingwi Ewropej kontinentali warajh (“99 €”).</target></trans-unit>
+            <trans-unit id="table.currencyPosition.before" approved="yes"><source>before the amount (€ 99)</source><target>qabel l-ammont (€ 99)</target></trans-unit>
+            <trans-unit id="table.currencyPosition.after" approved="yes"><source>after the amount (99 €)</source><target>wara l-ammont (99 €)</target></trans-unit>
+            <trans-unit id="table.selectLabel" approved="yes"><source>Button label</source><target>Tikketta tal-buttuna</target></trans-unit>
+            <trans-unit id="table.selectLabel.hint" approved="yes"><source>Applies to all plans without a label of their own. Empty means “Select”.</source><target>Japplika għall-pjanijiet kollha mingħajr tikketta tagħhom. Vojt ifisser “Agħżel”.</target></trans-unit>
+            <trans-unit id="table.selectLabel.placeholder" approved="yes"><source>Select</source><target>Agħżel</target></trans-unit>
+            <trans-unit id="table.plans" approved="yes"><source>Plans</source><target>Pjanijiet</target></trans-unit>
+            <trans-unit id="table.groups" approved="yes"><source>Feature groups</source><target>Gruppi ta' karatteristiċi</target></trans-unit>
+            <trans-unit id="table.groups.hint" approved="yes"><source>Features belong to the table, not to a single plan — that is the only way the comparison table compares like with like.</source><target>Il-karatteristiċi jappartjenu lit-tabella, mhux lil pjan wieħed — dak hu l-uniku mod kif it-tabella komparattiva tqabbel b'mod korrett.</target></trans-unit>
+            <trans-unit id="plan.title" approved="yes"><source>Name</source><target>Isem</target></trans-unit>
+            <trans-unit id="plan.subtitle" approved="yes"><source>Subtitle</source><target>Sottotitlu</target></trans-unit>
+            <trans-unit id="plan.subtitle.hint" approved="yes"><source>One line below the name, e.g. “6 job ads for 30 days each”.</source><target>Linja waħda taħt l-isem, eż. “6 reklami ta' xogħol għal 30 jum kull wieħed”.</target></trans-unit>
+            <trans-unit id="plan.eyebrow" approved="yes"><source>Eyebrow</source><target>Kicker</target></trans-unit>
+            <trans-unit id="plan.eyebrow.hint" approved="yes"><source>Small line above the name, e.g. “48 resources included”.</source><target>Linja żgħira fuq l-isem, eż. “48 riżorsi inklużi”.</target></trans-unit>
+            <trans-unit id="plan.description" approved="yes"><source>Description</source><target>Deskrizzjoni</target></trans-unit>
+            <trans-unit id="plan.favourite" approved="yes"><source>Highlight</source><target>Enfasi</target></trans-unit>
+            <trans-unit id="plan.favourite.hint" approved="yes"><source>The plan gets a border and shadow in the accent colour, and a tinted column in the comparison table.</source><target>Il-pjan jieħu bordura u dell fil-kulur tal-aċċent, u kolonna lewnija fit-tabella komparattiva.</target></trans-unit>
+            <trans-unit id="plan.badge" approved="yes"><source>Badge text</source><target>Test tal-badge</target></trans-unit>
+            <trans-unit id="plan.badge.hint" approved="yes"><source>Empty omits the badge. Common are “Popular” or “Recommended”.</source><target>Vojt iħalli barra l-badge. Komuni huma “Popolari” jew “Rakkomandat”.</target></trans-unit>
+            <trans-unit id="plan.badge.placeholder" approved="yes"><source>Popular</source><target>Popolari</target></trans-unit>
+            <trans-unit id="plan.selectLink" approved="yes"><source>Select button target</source><target>Mira tal-buttuna Agħżel</target></trans-unit>
+            <trans-unit id="plan.selectLink.hint" approved="yes"><source>Without a link no button is rendered — neither an empty one nor a placeholder.</source><target>Mingħajr link ma tiġi rrenduta l-ebda buttuna — la waħda vojta u lanqas placeholder.</target></trans-unit>
+            <trans-unit id="plan.selectLabel" approved="yes"><source>Own label</source><target>Tikketta proprja</target></trans-unit>
+            <trans-unit id="plan.selectLabel.hint" approved="yes"><source>Overrides the label from the pricing table, for this plan only.</source><target>Tissostitwixxi t-tikketta mit-tabella tal-prezzijiet, għal dan il-pjan biss.</target></trans-unit>
+            <trans-unit id="plan.priceNote" approved="yes"><source>Note below the price</source><target>Nota taħt il-prezz</target></trans-unit>
+            <trans-unit id="plan.priceNote.hint" approved="yes"><source>E.g. “billed annually” or “excl. VAT”.</source><target>Eż. “kontijiet kull sena” jew “eskl. VAT”.</target></trans-unit>
+            <trans-unit id="plan.prices" approved="yes"><source>Prices</source><target>Prezzijiet</target></trans-unit>
+            <trans-unit id="plan.attributeValues" approved="yes"><source>Feature values</source><target>Valuri tal-karatteristiċi</target></trans-unit>
+            <trans-unit id="plan.attributeValues.hint" approved="yes"><source>Features without a value count as not included and show a dash. Not every cell has to be filled.</source><target>Karatteristiċi mingħajr valur jgħoddu bħala mhux inklużi u juru sing. Mhux kull ċellola trid timtela.</target></trans-unit>
+            <trans-unit id="price.currency" approved="yes"><source>Currency</source><target>Munita</target></trans-unit>
+            <trans-unit id="price.period" approved="yes"><source>Period</source><target>Perjodu</target></trans-unit>
+            <trans-unit id="price.period.month" approved="yes"><source>per month</source><target>fix-xahar</target></trans-unit>
+            <trans-unit id="price.period.year" approved="yes"><source>per year</source><target>fis-sena</target></trans-unit>
+            <trans-unit id="price.period.once" approved="yes"><source>one-time</source><target>darba waħda</target></trans-unit>
+            <trans-unit id="price.period.custom" approved="yes"><source>custom</source><target>personalizzat</target></trans-unit>
+            <trans-unit id="price.unitLabel" approved="yes"><source>Own unit</source><target>Unità proprja</target></trans-unit>
+            <trans-unit id="price.unitLabel.hint" approved="yes"><source>E.g. “per ad” or “per calendar”.</source><target>Eż. “għal kull reklam” jew “għal kull kalendarju”.</target></trans-unit>
+            <trans-unit id="price.amount" approved="yes"><source>Amount</source><target>Ammont</target></trans-unit>
+            <trans-unit id="price.onRequest" approved="yes"><source>Price on request</source><target>Prezz fuq talba</target></trans-unit>
+            <trans-unit id="price.onRequestLabel" approved="yes"><source>Text instead of the amount</source><target>Test minflok l-ammont</target></trans-unit>
+            <trans-unit id="price.onRequestLabel.hint" approved="yes"><source>Empty means “Price on request”.</source><target>Vojt ifisser “Prezz fuq talba”.</target></trans-unit>
+            <trans-unit id="group.title" approved="yes"><source>Title</source><target>Titlu</target></trans-unit>
+            <trans-unit id="group.layout" approved="yes"><source>Layout</source><target>Layout</target></trans-unit>
+            <trans-unit id="group.layout.hint" approved="yes"><source>A checklist for yes/no features, value pairs for details such as fees or quotas.</source><target>Checklist għal karatteristiċi iva/le, pari ta' valuri għal dettalji bħal ħlasijiet jew kwoti.</target></trans-unit>
+            <trans-unit id="group.layout.list" approved="yes"><source>Checklist</source><target>Checklist</target></trans-unit>
+            <trans-unit id="group.layout.pairs" approved="yes"><source>Value pairs</source><target>Pari ta' valuri</target></trans-unit>
+            <trans-unit id="group.inCard" approved="yes"><source>Show on cards</source><target>Uri fuq il-kards</target></trans-unit>
+            <trans-unit id="group.inCard.hint" approved="yes"><source>Some groups belong in the comparison table only and would overload the card.</source><target>Xi gruppi jappartjenu biss lit-tabella komparattiva u jistgħu jgħabbu żżejjed il-kard.</target></trans-unit>
+            <trans-unit id="group.inMatrix" approved="yes"><source>Show in comparison table</source><target>Uri fit-tabella komparattiva</target></trans-unit>
+            <trans-unit id="group.inMatrix.hint" approved="yes"><source>Unchecked, the group is left out of the comparison table.</source><target>Meta mhux immarkat, il-grupp jitħalla barra mit-tabella komparattiva.</target></trans-unit>
+            <trans-unit id="group.attributes" approved="yes"><source>Features</source><target>Karatteristiċi</target></trans-unit>
+            <trans-unit id="attribute.title" approved="yes"><source>Title</source><target>Titlu</target></trans-unit>
+            <trans-unit id="attribute.valueType" approved="yes"><source>Value type</source><target>Tip ta' valur</target></trans-unit>
+            <trans-unit id="attribute.valueType.hint" approved="yes"><source>Determines how the cell looks in the comparison table.</source><target>Jiddetermina kif tidher iċ-ċellola fit-tabella komparattiva.</target></trans-unit>
+            <trans-unit id="attribute.valueType.check" approved="yes"><source>Check or dash</source><target>Marka jew sing</target></trans-unit>
+            <trans-unit id="attribute.valueType.number" approved="yes"><source>Number</source><target>Numru</target></trans-unit>
+            <trans-unit id="attribute.valueType.text" approved="yes"><source>Text</source><target>Test</target></trans-unit>
+            <trans-unit id="attribute.valueType.percent" approved="yes"><source>Percent</source><target>Perċentwali</target></trans-unit>
+            <trans-unit id="attribute.unit" approved="yes"><source>Unit</source><target>Unità</target></trans-unit>
+            <trans-unit id="attribute.unit.hint" approved="yes"><source>Shown after the value, e.g. “GB” or “users”.</source><target>Muri wara l-valur, eż. “GB” jew “utenti”.</target></trans-unit>
+            <trans-unit id="attribute.footnote" approved="yes"><source>Footnote</source><target>Nota f'qiegħ</target></trans-unit>
+            <trans-unit id="attribute.footnote.hint" approved="yes"><source>Shown in small print after the title in the comparison table.</source><target>Muri b'tipa żgħira wara t-titlu fit-tabella komparattiva.</target></trans-unit>
+            <trans-unit id="value.attribute" approved="yes"><source>Feature</source><target>Karatteristika</target></trans-unit>
+            <trans-unit id="value.included" approved="yes"><source>Included</source><target>Inkluż</target></trans-unit>
+            <trans-unit id="value.included.hint" approved="yes"><source>Applies to features of the type “Check or dash”.</source><target>Japplika għal karatteristiċi tat-tip “Marka jew sing”.</target></trans-unit>
+            <trans-unit id="value.value" approved="yes"><source>Value</source><target>Valur</target></trans-unit>
+            <trans-unit id="value.value.hint" approved="yes"><source>For number, text and percent. E.g. “unlimited”, “up to 48” or “2.1”.</source><target>Għal numru, test u perċentwali. Eż. “illimitat”, “sa 48” jew “2.1”.</target></trans-unit>
+            <trans-unit id="flexform.sheet" approved="yes"><source>Pricing table</source><target>Tabella tal-prezzijiet</target></trans-unit>
+            <trans-unit id="flexform.table" approved="yes"><source>Pricing table</source><target>Tabella tal-prezzijiet</target></trans-unit>
+            <trans-unit id="flexform.table.hint" approved="yes"><source>The record holding plans and features. The same table can appear on several pages in different layouts.</source><target>Ir-rekord li fih il-pjanijiet u l-karatteristiċi. L-istess tabella tista' tidher fuq diversi paġni b'layouts differenti.</target></trans-unit>
+            <trans-unit id="flexform.layout" approved="yes"><source>Layout</source><target>Layout</target></trans-unit>
+            <trans-unit id="flexform.layout.hint" approved="yes"><source>Plan cards for a few plans, compact rows from about five, the comparison table for many features.</source><target>Kards tal-pjan għal ftit pjanijiet, ringieli kompatti minn madwar ħamsa, it-tabella komparattiva għal ħafna karatteristiċi.</target></trans-unit>
+            <trans-unit id="flexform.layout.cards" approved="yes"><source>Plan cards</source><target>Kards tal-pjan</target></trans-unit>
+            <trans-unit id="flexform.layout.matrix" approved="yes"><source>Comparison table</source><target>Tabella komparattiva</target></trans-unit>
+            <trans-unit id="flexform.layout.groups" approved="yes"><source>Cards with feature groups</source><target>Kards bi gruppi ta' karatteristiċi</target></trans-unit>
+            <trans-unit id="flexform.layout.rows" approved="yes"><source>Compact rows</source><target>Ringieli kompatti</target></trans-unit>
+            <trans-unit id="flexform.layout.accordion" approved="yes"><source>Cards with expandable details</source><target>Kards b'dettalji espandibbli</target></trans-unit>
+            <trans-unit id="flexform.showMatrix" approved="yes"><source>Also show comparison table</source><target>Uri wkoll it-tabella komparattiva</target></trans-unit>
+            <trans-unit id="flexform.showMatrix.hint" approved="yes"><source>The comparison table then appears below the chosen layout.</source><target>It-tabella komparattiva mbagħad tidher taħt il-layout magħżul.</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix" approved="yes"><source>Comparison table collapsed</source><target>Tabella komparattiva kollassata</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix.hint" approved="yes"><source>The comparison table only opens on click — keeps the page calm with many features.</source><target>It-tabella komparattiva tiftaħ biss bil-klikk — iżżomm il-paġna kalma b'ħafna karatteristiċi.</target></trans-unit>
+        </body>
+    </file>
+</xliff>

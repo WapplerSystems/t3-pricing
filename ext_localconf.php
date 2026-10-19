@@ -10,6 +10,6 @@ defined('TYPO3') or die();
     [
         \WapplerSystems\Pricing\Controller\TableController::class => 'show',
     ],
-    // Die Schalter laufen im Browser, es gibt nichts Uncachebares.
+    // The switches run in the browser, nothing is uncacheable.
     []
 );

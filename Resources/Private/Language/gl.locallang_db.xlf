@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="gl" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="tx_pricing_domain_model_table" approved="yes"><source>Pricing table</source><target>Táboa de prezos</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_plan" approved="yes"><source>Plan</source><target>Plan</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_price" approved="yes"><source>Price</source><target>Prezo</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_group" approved="yes"><source>Feature group</source><target>Grupo de características</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_attribute" approved="yes"><source>Feature</source><target>Característica</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_value" approved="yes"><source>Value</source><target>Valor</target></trans-unit>
+            <trans-unit id="plugin.table" approved="yes"><source>Pricing table</source><target>Táboa de prezos</target></trans-unit>
+            <trans-unit id="plugin.table.description" approved="yes"><source>Plan cards, comparison table or compact rows from one pricing table record.</source><target>Tarxetas de plan, táboa comparativa ou filas compactas a partir dun rexistro de táboa de prezos.</target></trans-unit>
+            <trans-unit id="tab.general" approved="yes"><source>General</source><target>Xeral</target></trans-unit>
+            <trans-unit id="tab.plans" approved="yes"><source>Plans</source><target>Plans</target></trans-unit>
+            <trans-unit id="tab.attributes" approved="yes"><source>Features</source><target>Características</target></trans-unit>
+            <trans-unit id="tab.prices" approved="yes"><source>Prices</source><target>Prezos</target></trans-unit>
+            <trans-unit id="tab.highlight" approved="yes"><source>Highlight</source><target>Destacado</target></trans-unit>
+            <trans-unit id="table.title" approved="yes"><source>Title</source><target>Título</target></trans-unit>
+            <trans-unit id="table.description" approved="yes"><source>Introductory note</source><target>Nota introdutoria</target></trans-unit>
+            <trans-unit id="table.description.hint" approved="yes"><source>Shown above the prices in every layout, e.g. “All prices per month, plus VAT.”</source><target>Móstrase sobre os prezos en todos os deseños, p. ex. «Todos os prezos ao mes, máis IVE.»</target></trans-unit>
+            <trans-unit id="table.taxMode" approved="yes"><source>Entered amounts are</source><target>Os importes introducidos son</target></trans-unit>
+            <trans-unit id="table.taxMode.hint" approved="yes"><source>Defines how the entered amounts are read. Conversion only runs from net to gross, never the other way round.</source><target>Define como se len os importes introducidos. A conversión só se fai de neto a bruto, nunca ao revés.</target></trans-unit>
+            <trans-unit id="table.taxMode.net" approved="yes"><source>Net prices</source><target>Prezos netos</target></trans-unit>
+            <trans-unit id="table.taxMode.gross" approved="yes"><source>Gross prices</source><target>Prezos brutos</target></trans-unit>
+            <trans-unit id="table.taxRate" approved="yes"><source>Tax rate in percent</source><target>Tipo de IVE en porcentaxe</target></trans-unit>
+            <trans-unit id="table.taxRate.hint" approved="yes"><source>Basis for the gross display. 0 skips the conversion.</source><target>Base para a visualización en bruto. 0 omite a conversión.</target></trans-unit>
+            <trans-unit id="table.taxSwitchable" approved="yes"><source>Visitors may switch between net and gross</source><target>Os visitantes poden alternar entre neto e bruto</target></trans-unit>
+            <trans-unit id="table.taxSwitchable.hint" approved="yes"><source>Unchecked, the page only shows the option selected above.</source><target>Se non está marcado, a páxina só mostra a opción seleccionada enriba.</target></trans-unit>
+            <trans-unit id="table.currencySwitchable" approved="yes"><source>Currency switchable</source><target>Moeda conmutable</target></trans-unit>
+            <trans-unit id="table.currencySwitchable.hint" approved="yes"><source>The switch only appears if more than one currency is entered for the plans.</source><target>O selector só aparece se se introduce máis dunha moeda nos plans.</target></trans-unit>
+            <trans-unit id="table.periodSwitchable" approved="yes"><source>Billing period switchable</source><target>Período de facturación conmutable</target></trans-unit>
+            <trans-unit id="table.periodSwitchable.hint" approved="yes"><source>The switch only appears if more than one period is entered for the plans.</source><target>O selector só aparece se se introduce máis dun período nos plans.</target></trans-unit>
+            <trans-unit id="table.currencyPosition" approved="yes"><source>Currency symbol</source><target>Símbolo da moeda</target></trans-unit>
+            <trans-unit id="table.currencyPosition.hint" approved="yes"><source>English usually puts it before the amount (“€ 99”), German and most continental European languages after it (“99 €”).</source><target>O inglés adoita poñelo antes do importe («€ 99»), o alemán e a maioría das linguas da Europa continental despois («99 €»).</target></trans-unit>
+            <trans-unit id="table.currencyPosition.before" approved="yes"><source>before the amount (€ 99)</source><target>antes do importe (€ 99)</target></trans-unit>
+            <trans-unit id="table.currencyPosition.after" approved="yes"><source>after the amount (99 €)</source><target>despois do importe (99 €)</target></trans-unit>
+            <trans-unit id="table.selectLabel" approved="yes"><source>Button label</source><target>Etiqueta do botón</target></trans-unit>
+            <trans-unit id="table.selectLabel.hint" approved="yes"><source>Applies to all plans without a label of their own. Empty means “Select”.</source><target>Aplícase a todos os plans sen etiqueta propia. Baleiro significa «Seleccionar».</target></trans-unit>
+            <trans-unit id="table.selectLabel.placeholder" approved="yes"><source>Select</source><target>Seleccionar</target></trans-unit>
+            <trans-unit id="table.plans" approved="yes"><source>Plans</source><target>Plans</target></trans-unit>
+            <trans-unit id="table.groups" approved="yes"><source>Feature groups</source><target>Grupos de características</target></trans-unit>
+            <trans-unit id="table.groups.hint" approved="yes"><source>Features belong to the table, not to a single plan — that is the only way the comparison table compares like with like.</source><target>As características pertencen á táboa, non a un único plan — é o único xeito de que a táboa comparativa compare cousas semellantes.</target></trans-unit>
+            <trans-unit id="plan.title" approved="yes"><source>Name</source><target>Nome</target></trans-unit>
+            <trans-unit id="plan.subtitle" approved="yes"><source>Subtitle</source><target>Subtítulo</target></trans-unit>
+            <trans-unit id="plan.subtitle.hint" approved="yes"><source>One line below the name, e.g. “6 job ads for 30 days each”.</source><target>Unha liña debaixo do nome, p. ex. «6 anuncios de emprego por 30 días cada un».</target></trans-unit>
+            <trans-unit id="plan.eyebrow" approved="yes"><source>Eyebrow</source><target>Antetítulo</target></trans-unit>
+            <trans-unit id="plan.eyebrow.hint" approved="yes"><source>Small line above the name, e.g. “48 resources included”.</source><target>Liña pequena enriba do nome, p. ex. «48 recursos incluídos».</target></trans-unit>
+            <trans-unit id="plan.description" approved="yes"><source>Description</source><target>Descrición</target></trans-unit>
+            <trans-unit id="plan.favourite" approved="yes"><source>Highlight</source><target>Destacado</target></trans-unit>
+            <trans-unit id="plan.favourite.hint" approved="yes"><source>The plan gets a border and shadow in the accent colour, and a tinted column in the comparison table.</source><target>O plan recibe un bordo e sombra na cor de acento, e unha columna resaltada na táboa comparativa.</target></trans-unit>
+            <trans-unit id="plan.badge" approved="yes"><source>Badge text</source><target>Texto da insignia</target></trans-unit>
+            <trans-unit id="plan.badge.hint" approved="yes"><source>Empty omits the badge. Common are “Popular” or “Recommended”.</source><target>Se está baleiro omítese a insignia. Habitualmente son «Popular» ou «Recomendado».</target></trans-unit>
+            <trans-unit id="plan.badge.placeholder" approved="yes"><source>Popular</source><target>Popular</target></trans-unit>
+            <trans-unit id="plan.selectLink" approved="yes"><source>Select button target</source><target>Destino do botón Seleccionar</target></trans-unit>
+            <trans-unit id="plan.selectLink.hint" approved="yes"><source>Without a link no button is rendered — neither an empty one nor a placeholder.</source><target>Sen ligazón non se mostra ningún botón — nin baleiro nin cun marcador de posición.</target></trans-unit>
+            <trans-unit id="plan.selectLabel" approved="yes"><source>Own label</source><target>Etiqueta propia</target></trans-unit>
+            <trans-unit id="plan.selectLabel.hint" approved="yes"><source>Overrides the label from the pricing table, for this plan only.</source><target>Substitúe a etiqueta da táboa de prezos, só para este plan.</target></trans-unit>
+            <trans-unit id="plan.priceNote" approved="yes"><source>Note below the price</source><target>Nota debaixo do prezo</target></trans-unit>
+            <trans-unit id="plan.priceNote.hint" approved="yes"><source>E.g. “billed annually” or “excl. VAT”.</source><target>P. ex. «facturado anualmente» ou «sen IVE».</target></trans-unit>
+            <trans-unit id="plan.prices" approved="yes"><source>Prices</source><target>Prezos</target></trans-unit>
+            <trans-unit id="plan.attributeValues" approved="yes"><source>Feature values</source><target>Valores das características</target></trans-unit>
+            <trans-unit id="plan.attributeValues.hint" approved="yes"><source>Features without a value count as not included and show a dash. Not every cell has to be filled.</source><target>As características sen valor considéranse non incluídas e mostran un guión. Non é necesario encher todas as celas.</target></trans-unit>
+            <trans-unit id="price.currency" approved="yes"><source>Currency</source><target>Moeda</target></trans-unit>
+            <trans-unit id="price.period" approved="yes"><source>Period</source><target>Período</target></trans-unit>
+            <trans-unit id="price.period.month" approved="yes"><source>per month</source><target>ao mes</target></trans-unit>
+            <trans-unit id="price.period.year" approved="yes"><source>per year</source><target>ao ano</target></trans-unit>
+            <trans-unit id="price.period.once" approved="yes"><source>one-time</source><target>pago único</target></trans-unit>
+            <trans-unit id="price.period.custom" approved="yes"><source>custom</source><target>personalizado</target></trans-unit>
+            <trans-unit id="price.unitLabel" approved="yes"><source>Own unit</source><target>Unidade propia</target></trans-unit>
+            <trans-unit id="price.unitLabel.hint" approved="yes"><source>E.g. “per ad” or “per calendar”.</source><target>P. ex. «por anuncio» ou «por calendario».</target></trans-unit>
+            <trans-unit id="price.amount" approved="yes"><source>Amount</source><target>Importe</target></trans-unit>
+            <trans-unit id="price.onRequest" approved="yes"><source>Price on request</source><target>Prezo a consultar</target></trans-unit>
+            <trans-unit id="price.onRequestLabel" approved="yes"><source>Text instead of the amount</source><target>Texto no canto do importe</target></trans-unit>
+            <trans-unit id="price.onRequestLabel.hint" approved="yes"><source>Empty means “Price on request”.</source><target>Baleiro significa «Prezo a consultar».</target></trans-unit>
+            <trans-unit id="group.title" approved="yes"><source>Title</source><target>Título</target></trans-unit>
+            <trans-unit id="group.layout" approved="yes"><source>Layout</source><target>Deseño</target></trans-unit>
+            <trans-unit id="group.layout.hint" approved="yes"><source>A checklist for yes/no features, value pairs for details such as fees or quotas.</source><target>Unha lista de verificación para características de si/non, pares de valores para detalles como taxas ou cotas.</target></trans-unit>
+            <trans-unit id="group.layout.list" approved="yes"><source>Checklist</source><target>Lista de verificación</target></trans-unit>
+            <trans-unit id="group.layout.pairs" approved="yes"><source>Value pairs</source><target>Pares de valores</target></trans-unit>
+            <trans-unit id="group.inCard" approved="yes"><source>Show on cards</source><target>Mostrar nas tarxetas</target></trans-unit>
+            <trans-unit id="group.inCard.hint" approved="yes"><source>Some groups belong in the comparison table only and would overload the card.</source><target>Algúns grupos pertencen só á táboa comparativa e sobrecargarían a tarxeta.</target></trans-unit>
+            <trans-unit id="group.inMatrix" approved="yes"><source>Show in comparison table</source><target>Mostrar na táboa comparativa</target></trans-unit>
+            <trans-unit id="group.inMatrix.hint" approved="yes"><source>Unchecked, the group is left out of the comparison table.</source><target>Se non está marcado, o grupo omítese na táboa comparativa.</target></trans-unit>
+            <trans-unit id="group.attributes" approved="yes"><source>Features</source><target>Características</target></trans-unit>
+            <trans-unit id="attribute.title" approved="yes"><source>Title</source><target>Título</target></trans-unit>
+            <trans-unit id="attribute.valueType" approved="yes"><source>Value type</source><target>Tipo de valor</target></trans-unit>
+            <trans-unit id="attribute.valueType.hint" approved="yes"><source>Determines how the cell looks in the comparison table.</source><target>Determina o aspecto da cela na táboa comparativa.</target></trans-unit>
+            <trans-unit id="attribute.valueType.check" approved="yes"><source>Check or dash</source><target>Marca ou guión</target></trans-unit>
+            <trans-unit id="attribute.valueType.number" approved="yes"><source>Number</source><target>Número</target></trans-unit>
+            <trans-unit id="attribute.valueType.text" approved="yes"><source>Text</source><target>Texto</target></trans-unit>
+            <trans-unit id="attribute.valueType.percent" approved="yes"><source>Percent</source><target>Porcentaxe</target></trans-unit>
+            <trans-unit id="attribute.unit" approved="yes"><source>Unit</source><target>Unidade</target></trans-unit>
+            <trans-unit id="attribute.unit.hint" approved="yes"><source>Shown after the value, e.g. “GB” or “users”.</source><target>Móstrase despois do valor, p. ex. «GB» ou «usuarios».</target></trans-unit>
+            <trans-unit id="attribute.footnote" approved="yes"><source>Footnote</source><target>Nota ao pé</target></trans-unit>
+            <trans-unit id="attribute.footnote.hint" approved="yes"><source>Shown in small print after the title in the comparison table.</source><target>Móstrase en letra pequena despois do título na táboa comparativa.</target></trans-unit>
+            <trans-unit id="value.attribute" approved="yes"><source>Feature</source><target>Característica</target></trans-unit>
+            <trans-unit id="value.included" approved="yes"><source>Included</source><target>Incluído</target></trans-unit>
+            <trans-unit id="value.included.hint" approved="yes"><source>Applies to features of the type “Check or dash”.</source><target>Aplícase ás características do tipo «Marca ou guión».</target></trans-unit>
+            <trans-unit id="value.value" approved="yes"><source>Value</source><target>Valor</target></trans-unit>
+            <trans-unit id="value.value.hint" approved="yes"><source>For number, text and percent. E.g. “unlimited”, “up to 48” or “2.1”.</source><target>Para número, texto e porcentaxe. P. ex. «ilimitado», «ata 48» ou «2.1».</target></trans-unit>
+            <trans-unit id="flexform.sheet" approved="yes"><source>Pricing table</source><target>Táboa de prezos</target></trans-unit>
+            <trans-unit id="flexform.table" approved="yes"><source>Pricing table</source><target>Táboa de prezos</target></trans-unit>
+            <trans-unit id="flexform.table.hint" approved="yes"><source>The record holding plans and features. The same table can appear on several pages in different layouts.</source><target>O rexistro que contén plans e características. A mesma táboa pode aparecer en varias páxinas con deseños distintos.</target></trans-unit>
+            <trans-unit id="flexform.layout" approved="yes"><source>Layout</source><target>Deseño</target></trans-unit>
+            <trans-unit id="flexform.layout.hint" approved="yes"><source>Plan cards for a few plans, compact rows from about five, the comparison table for many features.</source><target>Tarxetas de plan para poucos plans, filas compactas a partir de cinco, a táboa comparativa para moitas características.</target></trans-unit>
+            <trans-unit id="flexform.layout.cards" approved="yes"><source>Plan cards</source><target>Tarxetas de plan</target></trans-unit>
+            <trans-unit id="flexform.layout.matrix" approved="yes"><source>Comparison table</source><target>Táboa comparativa</target></trans-unit>
+            <trans-unit id="flexform.layout.groups" approved="yes"><source>Cards with feature groups</source><target>Tarxetas con grupos de características</target></trans-unit>
+            <trans-unit id="flexform.layout.rows" approved="yes"><source>Compact rows</source><target>Filas compactas</target></trans-unit>
+            <trans-unit id="flexform.layout.accordion" approved="yes"><source>Cards with expandable details</source><target>Tarxetas con detalles despregables</target></trans-unit>
+            <trans-unit id="flexform.showMatrix" approved="yes"><source>Also show comparison table</source><target>Mostrar tamén a táboa comparativa</target></trans-unit>
+            <trans-unit id="flexform.showMatrix.hint" approved="yes"><source>The comparison table then appears below the chosen layout.</source><target>A táboa comparativa aparece entón debaixo do deseño escollido.</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix" approved="yes"><source>Comparison table collapsed</source><target>Táboa comparativa contraída</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix.hint" approved="yes"><source>The comparison table only opens on click — keeps the page calm with many features.</source><target>A táboa comparativa só se abre ao premer — mantén a páxina tranquila con moitas características.</target></trans-unit>
+        </body>
+    </file>
+</xliff>

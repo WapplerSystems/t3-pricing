@@ -9,7 +9,8 @@ defined('TYPO3') or die();
     'Table',
     'LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:plugin.table',
     'EXT:pricing/Resources/Public/Icons/table.svg',
-    'plugins'
+    'plugins',
+    'LLL:EXT:pricing/Resources/Private/Language/locallang_db.xlf:plugin.table.description'
 );
 
 $GLOBALS['TCA']['tt_content']['types']['pricing_table']['showitem'] = '

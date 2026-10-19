@@ -1,8 +1,15 @@
 {
     "name": "wapplersystems/t3-pricing",
     "type": "typo3-cms-extension",
-    "description": "Preistabellen für TYPO3 — Tarifkarten, Vergleichsmatrix und Kompaktzeilen aus einem Datenmodell. Beliebige Attribute in Gruppen, Preise je Währung, netto oder brutto, Favorit und optionaler Auswählen-Link.",
-    "keywords": ["TYPO3", "pricing", "price table", "comparison matrix", "plans"],
+    "description": "Pricing tables for TYPO3 — plan cards, comparison table and compact rows from one data model. Any features in groups, prices per currency, net or gross, highlighted plan and optional select link.",
+    "keywords": [
+        "TYPO3",
+        "pricing",
+        "price table",
+        "comparison matrix",
+        "plans"
+    ],
+    "homepage": "https://github.com/WapplerSystems/t3-pricing",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
@@ -11,12 +18,20 @@
             "role": "Developer"
         }
     ],
+    "support": {
+        "issues": "https://github.com/WapplerSystems/t3-pricing/issues",
+        "source": "https://github.com/WapplerSystems/t3-pricing",
+        "docs": "https://docs.typo3.org/p/wapplersystems/t3-pricing/main/en-us/"
+    },
     "require": {
         "php": "^8.2",
         "typo3/cms-core": "^14.0",
         "typo3/cms-extbase": "^14.0",
         "typo3/cms-fluid": "^14.0",
         "typo3/cms-frontend": "^14.0"
+    },
+    "suggest": {
+        "ext-intl": "Locale-aware number formats per site language"
     },
     "autoload": {
         "psr-4": {

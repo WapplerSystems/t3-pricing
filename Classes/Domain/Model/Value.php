@@ -7,10 +7,10 @@ namespace WapplerSystems\Pricing\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Der Wert eines Merkmals fuer einen Tarif.
+ * The value of a feature for a plan.
  *
- * Fehlt der Datensatz, gilt das Merkmal als nicht enthalten - die Matrix
- * zeigt dort einen Strich. Es muss also nicht jede Zelle gepflegt werden.
+ * Without a record the feature counts as not included - the comparison table
+ * shows a dash. So not every cell has to be filled.
  */
 class Value extends AbstractEntity
 {

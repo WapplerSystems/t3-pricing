@@ -1,5 +1,5 @@
 #
-# Preistabelle: die Klammer um Tarife und Attribute
+# Pricing table: the bracket around plans and features
 #
 CREATE TABLE tx_pricing_domain_model_table (
     title varchar(255) DEFAULT '' NOT NULL,
@@ -10,12 +10,13 @@ CREATE TABLE tx_pricing_domain_model_table (
     currency_switchable smallint(5) unsigned DEFAULT '0' NOT NULL,
     period_switchable smallint(5) unsigned DEFAULT '0' NOT NULL,
     select_label varchar(120) DEFAULT '' NOT NULL,
+    currency_position varchar(10) DEFAULT 'before' NOT NULL,
     plans int(11) unsigned DEFAULT '0' NOT NULL,
     groups int(11) unsigned DEFAULT '0' NOT NULL
 );
 
 #
-# Tarif
+# Plan
 #
 CREATE TABLE tx_pricing_domain_model_plan (
     pricing_table int(11) unsigned DEFAULT '0' NOT NULL,
@@ -35,7 +36,7 @@ CREATE TABLE tx_pricing_domain_model_plan (
 );
 
 #
-# Preis: je Tarif, Waehrung und Zeitraum genau einer
+# Price: exactly one per plan, currency and period
 #
 CREATE TABLE tx_pricing_domain_model_price (
     plan int(11) unsigned DEFAULT '0' NOT NULL,
@@ -50,7 +51,7 @@ CREATE TABLE tx_pricing_domain_model_price (
 );
 
 #
-# Attributgruppe
+# Feature group
 #
 CREATE TABLE tx_pricing_domain_model_group (
     pricing_table int(11) unsigned DEFAULT '0' NOT NULL,
@@ -64,7 +65,7 @@ CREATE TABLE tx_pricing_domain_model_group (
 );
 
 #
-# Attribut
+# Feature
 #
 CREATE TABLE tx_pricing_domain_model_attribute (
     attribute_group int(11) unsigned DEFAULT '0' NOT NULL,
@@ -77,7 +78,7 @@ CREATE TABLE tx_pricing_domain_model_attribute (
 );
 
 #
-# Wert: je Tarif und Attribut genau einer
+# Value: exactly one per plan and feature
 #
 CREATE TABLE tx_pricing_domain_model_value (
     plan int(11) unsigned DEFAULT '0' NOT NULL,

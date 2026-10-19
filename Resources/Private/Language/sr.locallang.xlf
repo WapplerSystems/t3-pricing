@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="sr" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="noTable" approved="yes"><source>No pricing table selected.</source><target>Није изабрана ценовна табела.</target></trans-unit>
+            <trans-unit id="currency" approved="yes"><source>Currency</source><target>Валута</target></trans-unit>
+            <trans-unit id="period" approved="yes"><source>Billing</source><target>Обрачун</target></trans-unit>
+            <trans-unit id="period.month" approved="yes"><source>monthly</source><target>месечно</target></trans-unit>
+            <trans-unit id="period.year" approved="yes"><source>yearly</source><target>годишње</target></trans-unit>
+            <trans-unit id="period.once" approved="yes"><source>one-time</source><target>једнократно</target></trans-unit>
+            <trans-unit id="period.custom" approved="yes"><source>other</source><target>друго</target></trans-unit>
+            <trans-unit id="unit.month" approved="yes"><source>per month</source><target>месечно</target></trans-unit>
+            <trans-unit id="unit.year" approved="yes"><source>per year</source><target>годишње</target></trans-unit>
+            <trans-unit id="unit.once" approved="yes"><source>one-time</source><target>једнократно</target></trans-unit>
+            <trans-unit id="prices" approved="yes"><source>Prices</source><target>Цене</target></trans-unit>
+            <trans-unit id="net" approved="yes"><source>excl. VAT</source><target>без ПДВ</target></trans-unit>
+            <trans-unit id="gross" approved="yes"><source>incl. VAT</source><target>са ПДВ</target></trans-unit>
+            <trans-unit id="select" approved="yes"><source>Select</source><target>Изаберите</target></trans-unit>
+            <trans-unit id="onRequest" approved="yes"><source>Price on request</source><target>Цена на упит</target></trans-unit>
+            <trans-unit id="compareDetails" approved="yes"><source>Compare details</source><target>Упоредите детаље</target></trans-unit>
+            <trans-unit id="comparisonTable" approved="yes"><source>Comparison table</source><target>Упоредна табела</target></trans-unit>
+            <trans-unit id="moreFeatures" approved="yes"><source>More features</source><target>Више карактеристика</target></trans-unit>
+            <trans-unit id="feature" approved="yes"><source>Feature</source><target>Карактеристика</target></trans-unit>
+            <trans-unit id="included" approved="yes"><source>included</source><target>укључено</target></trans-unit>
+            <trans-unit id="notIncluded" approved="yes"><source>not included</source><target>није укључено</target></trans-unit>
+        </body>
+    </file>
+</xliff>

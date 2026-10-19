@@ -1,0 +1,50 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+Compact rows: one row per plan. The middle shows at most three key figures -
+values that are not a plain yes/no and carry text. A counter does the limit,
+because the figures can be spread over several groups. The comparison is
+written as "3 > {counter}" on purpose, so that no raw less-than sign ends up
+in an attribute value.
+</f:comment>
+
+<div class="ws-pricing__rows">
+    <f:for each="{plans}" as="plan">
+        <div class="ws-pricing__row{f:if(condition: plan.record.favourite, then: ' ws-pricing__row--featured')}">
+
+            <div class="ws-pricing__head">
+                <f:if condition="{plan.record.favourite} && {plan.record.badge}">
+                    <span class="ws-pricing__badge">{plan.record.badge}</span>
+                </f:if>
+                <h3 class="ws-pricing__name">{plan.record.title}</h3>
+                <f:if condition="{plan.record.subtitle}">
+                    <p class="ws-pricing__subtitle">{plan.record.subtitle}</p>
+                </f:if>
+            </div>
+
+            <div class="ws-pricing__figures">
+                <f:variable name="counter" value="0"/>
+                <f:for each="{plan.groups}" as="g">
+                    <f:for each="{g.rows}" as="row">
+                        <f:if condition="{row.attribute.valueType} != 'check' && {row.text} && 3 > {counter}">
+                            <div class="ws-pricing__figure">
+                                <span class="ws-pricing__figure-label">{row.attribute.title}</span>
+                                <span class="ws-pricing__figure-value">{row.text}<f:if condition="{row.attribute.unit}"> {row.attribute.unit}</f:if></span>
+                            </div>
+                            <f:variable name="counter" value="{counter + 1}"/>
+                        </f:if>
+                    </f:for>
+                </f:for>
+            </div>
+
+            <f:render partial="Plan/Price" arguments="{plan: plan}"/>
+
+            <div class="ws-pricing__footer">
+                <f:render partial="Plan/Button" arguments="{plan: plan}"/>
+            </div>
+
+        </div>
+    </f:for>
+</div>
+
+</html>

@@ -8,16 +8,16 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
- * Eine Attributgruppe, etwa "Umfang" oder "Kartengebuehren".
+ * A feature group, e.g. "Usage" or "Card fees".
  *
- * inCard und inMatrix entscheiden getrennt, wo die Gruppe auftaucht: manche
- * Gruppen gehoeren auf die Karte, andere nur in die Matrix.
+ * inCard and inMatrix decide separately where the group appears: some groups
+ * belong on the card, others in the comparison table only.
  */
 class Group extends AbstractEntity
 {
     protected string $title = '';
 
-    /** 'list' = Liste mit Haken, 'pairs' = Wertepaare nebeneinander */
+    /** 'list' = checklist, 'pairs' = label/value pairs */
     protected string $layout = 'list';
     protected bool $inCard = true;
     protected bool $inMatrix = true;

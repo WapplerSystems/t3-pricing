@@ -7,10 +7,10 @@ namespace WapplerSystems\Pricing\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Ein Preis: je Tarif, Waehrung und Zeitraum genau einer.
+ * A price: exactly one per plan, currency and period.
  *
- * Preise werden je Waehrung gepflegt und nicht umgerechnet. Kurse veralten,
- * und Listenpreise sind ohnehin gerundete Verhandlungsgroessen.
+ * Prices are entered per currency, not converted. Exchange rates go stale, and
+ * list prices are rounded marketing figures anyway.
  */
 class Price extends AbstractEntity
 {

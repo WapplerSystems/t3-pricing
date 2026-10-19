@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="eu" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="noTable" approved="yes"><source>No pricing table selected.</source><target>Ez da prezio-taularik hautatu.</target></trans-unit>
+            <trans-unit id="currency" approved="yes"><source>Currency</source><target>Moneta</target></trans-unit>
+            <trans-unit id="period" approved="yes"><source>Billing</source><target>Fakturazioa</target></trans-unit>
+            <trans-unit id="period.month" approved="yes"><source>monthly</source><target>hilekoa</target></trans-unit>
+            <trans-unit id="period.year" approved="yes"><source>yearly</source><target>urtekoa</target></trans-unit>
+            <trans-unit id="period.once" approved="yes"><source>one-time</source><target>behin</target></trans-unit>
+            <trans-unit id="period.custom" approved="yes"><source>other</source><target>Bestelakoa</target></trans-unit>
+            <trans-unit id="unit.month" approved="yes"><source>per month</source><target>hilean</target></trans-unit>
+            <trans-unit id="unit.year" approved="yes"><source>per year</source><target>urtean</target></trans-unit>
+            <trans-unit id="unit.once" approved="yes"><source>one-time</source><target>behin</target></trans-unit>
+            <trans-unit id="prices" approved="yes"><source>Prices</source><target>Prezioak</target></trans-unit>
+            <trans-unit id="net" approved="yes"><source>excl. VAT</source><target>BEZ gabe</target></trans-unit>
+            <trans-unit id="gross" approved="yes"><source>incl. VAT</source><target>BEZ barne</target></trans-unit>
+            <trans-unit id="select" approved="yes"><source>Select</source><target>Aukeratu</target></trans-unit>
+            <trans-unit id="onRequest" approved="yes"><source>Price on request</source><target>Prezioa eskatu</target></trans-unit>
+            <trans-unit id="compareDetails" approved="yes"><source>Compare details</source><target>Konparatu xehetasunak</target></trans-unit>
+            <trans-unit id="comparisonTable" approved="yes"><source>Comparison table</source><target>Konparazio-taula</target></trans-unit>
+            <trans-unit id="moreFeatures" approved="yes"><source>More features</source><target>Ezaugarri gehiago</target></trans-unit>
+            <trans-unit id="feature" approved="yes"><source>Feature</source><target>Ezaugarria</target></trans-unit>
+            <trans-unit id="included" approved="yes"><source>included</source><target>Barne</target></trans-unit>
+            <trans-unit id="notIncluded" approved="yes"><source>not included</source><target>Ez barne</target></trans-unit>
+        </body>
+    </file>
+</xliff>

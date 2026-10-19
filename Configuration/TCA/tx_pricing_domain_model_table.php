@@ -99,6 +99,19 @@ return [
                 'default' => 1,
             ],
         ],
+        'currency_position' => [
+            'label' => $ll . 'table.currencyPosition',
+            'description' => $ll . 'table.currencyPosition.hint',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['label' => $ll . 'table.currencyPosition.before', 'value' => 'before'],
+                    ['label' => $ll . 'table.currencyPosition.after', 'value' => 'after'],
+                ],
+                'default' => 'before',
+            ],
+        ],
         'select_label' => [
             'label' => $ll . 'table.selectLabel',
             'description' => $ll . 'table.selectLabel.hint',
@@ -106,7 +119,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
-                'placeholder' => 'Auswählen',
+                'placeholder' => $ll . 'table.selectLabel.placeholder',
             ],
         ],
 
@@ -155,7 +168,7 @@ return [
                 --div--;' . $ll . 'tab.attributes,
                     groups,
                 --div--;' . $ll . 'tab.prices,
-                    tax_mode, tax_rate, tax_switchable, currency_switchable, period_switchable, select_label,
+                    tax_mode, tax_rate, tax_switchable, currency_switchable, period_switchable, currency_position, select_label,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
                     sys_language_uid, l10n_parent, l10n_diffsource,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,

@@ -1,41 +1,49 @@
 /* ---------------------------------------------------------------------------
- * Preistabellen
+ * Pricing tables
  *
- * Die Farben und Radien stehen als Variablen auf .ws-preise. Ein Sitepackage
- * ueberschreibt sie dort und faerbt damit alle Darstellungen auf einmal - es
- * muss keine einzige Regel dupliziert werden.
+ * Colours, radii and spacing are custom properties on .ws-pricing. A site
+ * package overrides them there and restyles every layout at once - no rule
+ * has to be duplicated.
  * ------------------------------------------------------------------------- */
 
-.ws-preise {
-    --ws-preise-akzent: #b45309;
-    --ws-preise-akzent-kontrast: #ffffff;
-    --ws-preise-akzent-zart: #fdf6ec;
-    --ws-preise-schrift: #1c1b19;
-    --ws-preise-schrift-leise: #6b6862;
-    --ws-preise-schrift-still: #8c8880;
-    --ws-preise-linie: #e5e1d8;
-    --ws-preise-linie-zart: #f4f1ea;
-    --ws-preise-flaeche: #ffffff;
-    --ws-preise-grund: #faf8f4;
-    --ws-preise-radius: 18px;
-    --ws-preise-radius-klein: 11px;
-    --ws-preise-abstand: 1.5rem;
+.ws-pricing {
+    --ws-pricing-accent: #b45309;
+    --ws-pricing-accent-contrast: #ffffff;
+    --ws-pricing-accent-soft: #fdf6ec;
+    --ws-pricing-text: #1c1b19;
+    --ws-pricing-text-muted: #6b6862;
+    --ws-pricing-text-subtle: #8c8880;
+    --ws-pricing-text-faint: #a8a49b;
+    --ws-pricing-line: #e5e1d8;
+    --ws-pricing-line-soft: #f4f1ea;
+    --ws-pricing-surface: #ffffff;
+    --ws-pricing-surface-alt: #faf8f4;
+    /* Secondary tones are variables too: a site package must be able to change
+       every colour without rebuilding selectors of the extension. */
+    --ws-pricing-box: #f7f5f0;             /* box of value pairs */
+    --ws-pricing-switch-bg: #f0ede6;       /* background of the switches */
+    --ws-pricing-button-border: #d9d4c8;
+    --ws-pricing-head-bg: #fffdf9;         /* matrix head, featured row */
+    --ws-pricing-zebra: #fefdfb;
+    --ws-pricing-dash: #c9c4b9;
+    --ws-pricing-radius: 18px;
+    --ws-pricing-radius-small: 11px;
+    --ws-pricing-gap: 1.5rem;
 
-    color: var(--ws-preise-schrift);
+    color: var(--ws-pricing-text);
 
-    /* Fragepunkt fuer die Behaelterabfragen weiter unten. Die Darstellungen
-       muessen sich nach der Breite ihrer Inhaltsspalte richten, nicht nach der
-       des Fensters - auf einer Seite mit Seitenmenue ist das ein Unterschied
-       von mehreren hundert Pixeln. */
+    /* Query container for the container queries below. The layouts have to
+       follow the width of their content column, not of the window - on a page
+       with a side menu that differs by several hundred pixels. */
     container-type: inline-size;
-    container-name: wspreise;
+    container-name: ws-pricing;
 }
 
-.ws-preise *,
-.ws-preise *::before,
-.ws-preise *::after { box-sizing: border-box; }
+.ws-pricing *,
+.ws-pricing *::before,
+.ws-pricing *::after { box-sizing: border-box; }
 
-.ws-preise__nur-vorlesen {
+.ws-pricing__sr-only {
     position: absolute;
     width: 1px; height: 1px;
     margin: -1px; padding: 0;
@@ -44,50 +52,50 @@
     white-space: nowrap;
 }
 
-/* --- Einleitung ---------------------------------------------------------- */
+/* --- Intro --------------------------------------------------------------- */
 
-.ws-preise__einleitung {
+.ws-pricing__intro {
     max-width: 62ch;
     margin: 0 0 1.25rem;
     font-size: .9375rem;
     line-height: 1.55;
-    color: var(--ws-preise-schrift-leise);
+    color: var(--ws-pricing-text-muted);
 }
 
-.ws-preise__einleitung > :first-child { margin-top: 0; }
-.ws-preise__einleitung > :last-child { margin-bottom: 0; }
+.ws-pricing__intro > :first-child { margin-top: 0; }
+.ws-pricing__intro > :last-child { margin-bottom: 0; }
 
-/* --- Schalterleiste ------------------------------------------------------ */
+/* --- Switches ------------------------------------------------------------ */
 
-.ws-preise__schalter {
+.ws-pricing__switches {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 1.75rem;
-    margin-bottom: var(--ws-preise-abstand);
+    margin-bottom: var(--ws-pricing-gap);
 }
 
-.ws-preise__schaltergruppe {
+.ws-pricing__switch-group {
     display: flex;
     align-items: center;
     gap: .75rem;
 }
 
-.ws-preise__schalterlabel {
+.ws-pricing__switch-label {
     font-size: .8125rem;
     font-weight: 600;
-    color: var(--ws-preise-schrift-leise);
+    color: var(--ws-pricing-text-muted);
 }
 
-.ws-preise__segmente {
+.ws-pricing__segments {
     display: flex;
     padding: 3px;
-    border: 1px solid var(--ws-preise-linie);
+    border: 1px solid var(--ws-pricing-line);
     border-radius: 10px;
-    background: #f0ede6;
+    background: var(--ws-pricing-switch-bg);
 }
 
-.ws-preise__segment {
+.ws-pricing__segment {
     height: 34px;
     padding: 0 1rem;
     border: 0;
@@ -96,41 +104,45 @@
     font: inherit;
     font-size: .8125rem;
     font-weight: 500;
-    color: var(--ws-preise-schrift-still);
+    color: var(--ws-pricing-text-subtle);
     cursor: pointer;
     transition: background .18s ease, color .18s ease;
 }
 
-.ws-preise__segment.is-aktiv {
-    background: var(--ws-preise-flaeche);
+.ws-pricing__segment.is-active {
+    background: var(--ws-pricing-surface);
     box-shadow: 0 1px 2px rgba(28, 27, 25, .1);
     font-weight: 600;
-    color: var(--ws-preise-schrift);
+    color: var(--ws-pricing-text);
 }
 
-/* --- Preisangabe --------------------------------------------------------- */
+/* --- Price --------------------------------------------------------------- */
 
-.ws-preise__preisblock {
+.ws-pricing__price-block {
     display: flex;
     flex-direction: column;
     gap: .2rem;
 }
 
-.ws-preise__preis { display: none; }
-.ws-preise__preis.is-aktiv {
+.ws-pricing__price { display: none; }
+.ws-pricing__price.is-active {
     display: flex;
     align-items: baseline;
     gap: .4rem;
     flex-wrap: wrap;
 }
 
-.ws-preise__zeichen {
+.ws-pricing__symbol {
     font-size: 1.0625rem;
     font-weight: 600;
-    color: var(--ws-preise-schrift-leise);
+    color: var(--ws-pricing-text-muted);
 }
 
-.ws-preise__betrag {
+/* After the amount: closer than the flex gap, otherwise the symbol reads like
+   a separate word between amount and unit. */
+.ws-pricing__symbol--after { margin-left: -.2rem; }
+
+.ws-pricing__amount {
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1;
@@ -138,34 +150,34 @@
     font-variant-numeric: tabular-nums;
 }
 
-.ws-preise__einheit {
+.ws-pricing__unit {
     font-size: .9375rem;
-    color: var(--ws-preise-schrift-leise);
+    color: var(--ws-pricing-text-muted);
 }
 
-.ws-preise__anfrage {
+.ws-pricing__on-request {
     font-size: 1.0625rem;
     font-weight: 600;
     line-height: 1.3;
 }
 
-.ws-preise__preisnotiz {
+.ws-pricing__price-note {
     font-size: .75rem;
-    color: var(--ws-preise-schrift-still);
+    color: var(--ws-pricing-text-subtle);
 }
 
-/* --- Knopf --------------------------------------------------------------- */
+/* --- Button -------------------------------------------------------------- */
 
-.ws-preise__knopf {
+.ws-pricing__button {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 48px;
     padding: 0 1.4rem;
-    border: 1.5px solid #d9d4c8;
-    border-radius: var(--ws-preise-radius-klein);
-    background: var(--ws-preise-flaeche);
-    color: var(--ws-preise-schrift);
+    border: 1.5px solid var(--ws-pricing-button-border);
+    border-radius: var(--ws-pricing-radius-small);
+    background: var(--ws-pricing-surface);
+    color: var(--ws-pricing-text);
     font-size: .9375rem;
     font-weight: 600;
     text-align: center;
@@ -173,75 +185,113 @@
     transition: border-color .18s ease, background .18s ease;
 }
 
-.ws-preise__knopf:hover,
-.ws-preise__knopf:focus-visible {
-    border-color: var(--ws-preise-akzent);
-    color: var(--ws-preise-schrift);
+.ws-pricing__button:hover,
+.ws-pricing__button:focus-visible {
+    border-color: var(--ws-pricing-accent);
+    color: var(--ws-pricing-text);
     text-decoration: none;
 }
 
-.ws-preise__knopf--stark {
-    border-color: var(--ws-preise-akzent);
-    background: var(--ws-preise-akzent);
-    color: var(--ws-preise-akzent-kontrast);
+.ws-pricing__button--primary {
+    border-color: var(--ws-pricing-accent);
+    background: var(--ws-pricing-accent);
+    color: var(--ws-pricing-accent-contrast);
 }
 
-.ws-preise__knopf--stark:hover,
-.ws-preise__knopf--stark:focus-visible {
-    background: var(--ws-preise-schrift);
-    border-color: var(--ws-preise-schrift);
-    color: var(--ws-preise-akzent-kontrast);
+.ws-pricing__button--primary:hover,
+.ws-pricing__button--primary:focus-visible {
+    background: var(--ws-pricing-text);
+    border-color: var(--ws-pricing-text);
+    color: var(--ws-pricing-accent-contrast);
 }
 
-/* --- Karten -------------------------------------------------------------- */
+/* --- Cards --------------------------------------------------------------- */
 
-.ws-preise__karten {
+.ws-pricing__cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
-    gap: var(--ws-preise-abstand);
+    gap: var(--ws-pricing-gap);
     align-items: stretch;
 }
 
-/* Frueher stand hier ab 62em eine feste Spaltenzahl aus --ws-preise-spalten.
-   Das ging schief, sobald der Inhaltsbereich schmaler ist als das Fenster:
-   vier Tarife in einer 600px-Spalte wurden 150px breit. Entscheidend ist die
-   Breite des Behaelters, nicht die des Fensters - also zaehlt allein die
-   Mindestbreite oben, und die Spaltenzahl ergibt sich daraus.
+/* There used to be a fixed column count from 62em on. That broke as soon as
+   the content area was narrower than the window: four plans in a 600px column
+   became 150px wide. What matters is the width of the container, not of the
+   window - so only the minimum width above counts, and the number of columns
+   follows from it.
 
-   Eine Ausnahme braucht es trotzdem: bei vier Tarifen laesst auto-fit in einer
-   mitteldbreiten Spalte drei Karten nebeneinander und eine allein darunter.
-   Zwei mal zwei liest sich besser als drei plus eins. Gefragt wird der
-   Behaelter, nicht das Fenster. */
-@container wspreise (max-width: 64rem) {
-    .ws-preise__karten--vier { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+   One exception is still needed: with four plans, auto-fit leaves three cards
+   side by side and one alone below in a medium-wide column. Two by two reads
+   better than three plus one. Again the container is asked, not the window. */
+@container ws-pricing (max-width: 64rem) {
+    .ws-pricing__cards--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@container wspreise (max-width: 32rem) {
-    .ws-preise__karten--vier { grid-template-columns: minmax(0, 1fr); }
+@container ws-pricing (max-width: 32rem) {
+    .ws-pricing__cards--four { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Five plans: in one row as long as every card keeps its minimum width
+   (5 x 15rem + 4 gaps). Below that three on top and two centred underneath
+   instead of four plus one - hence flex instead of grid, only flex can centre
+   the last row. Below 48rem two per row, below 32rem one. */
+@container ws-pricing (max-width: 81rem) {
+    .ws-pricing__cards--five {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .ws-pricing__cards--five > .ws-pricing__card {
+        flex: 0 0 calc((100% - 2 * var(--ws-pricing-gap)) / 3);
+    }
+}
+
+@container ws-pricing (max-width: 48rem) {
+    .ws-pricing__cards--five > .ws-pricing__card {
+        flex-basis: calc((100% - var(--ws-pricing-gap)) / 2);
+    }
+}
+
+@container ws-pricing (max-width: 32rem) {
+    .ws-pricing__cards--five > .ws-pricing__card { flex-basis: 100%; }
 }
 
 
-.ws-preise__karte {
+.ws-pricing__card {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 1.125rem;
     padding: 1.75rem;
-    border: 1px solid var(--ws-preise-linie);
-    border-radius: var(--ws-preise-radius);
-    background: var(--ws-preise-flaeche);
+    border: 1px solid var(--ws-pricing-line);
+    border-radius: var(--ws-pricing-radius);
+    background: var(--ws-pricing-surface);
+
+    /* A query container of its own: five plans in one content column make
+       every card about 240px narrow. What wraps then depends on the card. */
+    container-type: inline-size;
+    container-name: ws-pricing-card;
 }
 
-.ws-preise__karte--favorit {
-    border: 1.5px solid var(--ws-preise-akzent);
-    box-shadow: 0 24px 50px -34px color-mix(in srgb, var(--ws-preise-akzent) 60%, transparent);
+/* Narrow card: value pairs stack instead of sitting side by side in one row
+   and stacked in the next - depending on whether the value happens to fit.
+   The amount gets smaller so that "1,499 per month" stays on one line. */
+@container ws-pricing-card (max-width: 17rem) {
+    .ws-pricing__card .ws-pricing__pair { flex-direction: column; align-items: flex-start; gap: 0; }
+    .ws-pricing__card .ws-pricing__pair-label { flex: none; }
+    .ws-pricing__card .ws-pricing__amount { font-size: 2rem; }
 }
 
-/* Die Plakette traegt gepflegten Text beliebiger Laenge. In einer schmalen
-   Matrixspalte bricht "Fuer Agenturen" auf zwei Zeilen - mit fester Hoehe
-   liefe die zweite Zeile ueber die Ueberschrift darunter. Also Mindesthoehe
-   statt Hoehe, und ein Radius, der auch zweizeilig eine Pille bleibt. */
-.ws-preise__plakette {
+.ws-pricing__card--featured {
+    border: 1.5px solid var(--ws-pricing-accent);
+    box-shadow: 0 24px 50px -34px color-mix(in srgb, var(--ws-pricing-accent) 60%, transparent);
+}
+
+/* The badge carries editor text of any length. In a narrow matrix column
+   "For agencies" wraps onto two lines - with a fixed height the second line
+   would run over the heading below. Hence a minimum height instead of a
+   height, and a radius that stays a pill on two lines as well. */
+.ws-pricing__badge {
     position: absolute;
     top: -13px;
     left: 1.75rem;
@@ -251,8 +301,8 @@
     align-items: center;
     justify-content: center;
     border-radius: 999px;
-    background: var(--ws-preise-akzent);
-    color: var(--ws-preise-akzent-kontrast);
+    background: var(--ws-pricing-accent);
+    color: var(--ws-pricing-accent-contrast);
     font-size: .6875rem;
     font-weight: 700;
     line-height: 1.15;
@@ -261,64 +311,68 @@
     text-transform: uppercase;
 }
 
-.ws-preise__kopf { display: flex; flex-direction: column; gap: .25rem; }
+.ws-pricing__head { display: flex; flex-direction: column; gap: .25rem; }
 
-.ws-preise__kicker {
+.ws-pricing__eyebrow {
     font-size: .6875rem;
     font-weight: 700;
     letter-spacing: .12em;
     text-transform: uppercase;
-    color: var(--ws-preise-akzent);
+    color: var(--ws-pricing-accent);
 }
 
-.ws-preise__name {
+.ws-pricing__name {
     margin: 0;
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: -.01em;
 }
 
-.ws-preise__unter {
+.ws-pricing__subtitle {
     margin: 0;
     font-size: .875rem;
-    color: var(--ws-preise-schrift-leise);
+    color: var(--ws-pricing-text-muted);
 }
 
-.ws-preise__text {
+.ws-pricing__text {
     font-size: .875rem;
     line-height: 1.55;
-    color: var(--ws-preise-schrift-leise);
+    color: var(--ws-pricing-text-muted);
+    /* Without hyphenation long compound words break in the middle in narrow
+       cards. Needs a lang attribute on the document. */
+    hyphens: auto;
+    overflow-wrap: break-word;
 }
 
-.ws-preise__text > p:last-child { margin-bottom: 0; }
+.ws-pricing__text > p:last-child { margin-bottom: 0; }
 
-.ws-preise__merkmale {
+.ws-pricing__features {
     display: flex;
     flex-direction: column;
     gap: 1.125rem;
 }
 
-.ws-preise__fuss {
+.ws-pricing__footer {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     margin-top: auto;
     padding-top: 1.125rem;
-    border-top: 1px solid var(--ws-preise-linie-zart);
+    border-top: 1px solid var(--ws-pricing-line-soft);
 }
 
-/* --- Merkmalsgruppen ----------------------------------------------------- */
+/* --- Feature groups ------------------------------------------------------ */
 
-.ws-preise__gruppentitel {
+.ws-pricing__group-title {
     margin-bottom: .6rem;
     font-size: .6875rem;
     font-weight: 700;
     letter-spacing: .1em;
     text-transform: uppercase;
-    color: var(--ws-preise-schrift-still);
+    color: var(--ws-pricing-text-subtle);
 }
 
-.ws-preise__liste {
+.ws-pricing__list {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -327,7 +381,7 @@
     gap: .625rem;
 }
 
-.ws-preise__listeneintrag {
+.ws-pricing__list-item {
     display: flex;
     align-items: flex-start;
     gap: .625rem;
@@ -335,22 +389,22 @@
     line-height: 1.45;
 }
 
-.ws-preise__haken {
+.ws-pricing__check {
     flex: none;
     margin-top: 3px;
-    color: var(--ws-preise-akzent);
+    color: var(--ws-pricing-accent);
 }
 
-.ws-preise__gruppe--pairs {
+.ws-pricing__group--pairs {
     padding: 1rem 1.125rem;
     border-radius: 12px;
-    background: #f7f5f0;
+    background: var(--ws-pricing-box);
 }
 
-/* Wertepaare: Bezeichnung links, Wert rechts. Wird es eng, rutscht der Wert
-   in die naechste Zeile, statt aus der Karte zu laufen - lange Werte wie
-   "1 Projekt / 1 Live-Domain" gibt es in echten Tabellen staendig. */
-.ws-preise__paar {
+/* Value pairs: label left, value right. When space runs out the value moves to
+   the next line instead of running out of the card - long values such as
+   "1 project / 1 live domain" are common in real tables. */
+.ws-pricing__pair {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -360,13 +414,13 @@
     font-size: .8125rem;
 }
 
-.ws-preise__paar-name {
+.ws-pricing__pair-label {
     flex: 1 1 auto;
     min-width: 0;
-    color: var(--ws-preise-schrift-leise);
+    color: var(--ws-pricing-text-muted);
 }
 
-.ws-preise__paar-wert {
+.ws-pricing__pair-value {
     flex: 0 1 auto;
     min-width: 0;
     font-weight: 600;
@@ -374,156 +428,160 @@
     overflow-wrap: anywhere;
 }
 
-.ws-preise__karte--favorit .ws-preise__gruppe--pairs { background: var(--ws-preise-akzent-zart); }
+.ws-pricing__card--featured .ws-pricing__group--pairs { background: var(--ws-pricing-accent-soft); }
 
-/* --- Vergleichsmatrix ---------------------------------------------------- */
+/* --- Comparison table ---------------------------------------------------- */
 
-.ws-preise__matrix {
+.ws-pricing__matrix {
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
-    border: 1px solid var(--ws-preise-linie);
-    border-radius: var(--ws-preise-radius);
-    background: var(--ws-preise-flaeche);
-    overflow: hidden;
+    border: 1px solid var(--ws-pricing-line);
+    border-radius: var(--ws-pricing-radius);
+    background: var(--ws-pricing-surface);
+    /* clip instead of hidden: hidden turns the table into a scroll container,
+       and the sticky feature column (see narrow screens) then sticks to the
+       table instead of the scroll wrapper - it scrolls away. */
+    overflow: clip;
 }
 
-.ws-preise__matrix th,
-.ws-preise__matrix td {
+.ws-pricing__matrix th,
+.ws-pricing__matrix td {
     padding: .8rem 1rem;
     text-align: center;
     vertical-align: middle;
-    border-bottom: 1px solid var(--ws-preise-linie-zart);
+    border-bottom: 1px solid var(--ws-pricing-line-soft);
     font-size: .875rem;
     font-weight: 400;
 }
 
-.ws-preise__matrix thead th {
+.ws-pricing__matrix thead th {
     vertical-align: bottom;
-    border-bottom: 1px solid var(--ws-preise-linie);
-    background: #fffdf9;
+    border-bottom: 1px solid var(--ws-pricing-line);
+    background: var(--ws-pricing-head-bg);
 }
 
-/* Die Zeilenkoepfe stehen links. Der Schluessel liegt hoeher als die
-   Grundregel fuer th und td weiter oben, sonst gewinnt deren Zentrierung. */
-.ws-preise__matrix .ws-preise__matrixecke,
-.ws-preise__matrix .ws-preise__matrixname {
+/* Row headers are left-aligned. The selector is more specific than the base
+   rule for th and td above, otherwise its centring would win. */
+.ws-pricing__matrix .ws-pricing__matrix-corner,
+.ws-pricing__matrix .ws-pricing__matrix-label {
     text-align: left;
     font-weight: 400;
-    color: var(--ws-preise-schrift);
+    color: var(--ws-pricing-text);
 }
 
-.ws-preise__matrixnotiz {
-    display: block;
-    font-size: .8125rem;
-    font-weight: 400;
-    line-height: 1.45;
-    color: var(--ws-preise-schrift-leise);
-}
-
-/* Der Kopf einer Tarifspalte ist eine Tabellenzelle - sie darf nicht selbst
-   zum Flex-Behaelter werden, sonst faellt die Zeilenaufteilung auseinander
-   und die Spalten stapeln sich untereinander. Die Kinder stapeln als Bloecke
-   ohnehin. */
-.ws-preise__matrixkopf > * { display: block; }
-.ws-preise__matrixkopf > .ws-preise__name { margin-bottom: .45rem; }
-.ws-preise__matrixkopf > .ws-preise__plakette {
+/* The head of a plan column is a table cell - it must not become a flex
+   container itself, otherwise the row layout falls apart and the columns
+   stack. Its children stack as blocks anyway. */
+.ws-pricing__matrix-head > * { display: block; }
+/* Top-aligned: if unit or price note wraps in one column, the plan names
+   would otherwise sit at different heights. */
+.ws-pricing__matrix .ws-pricing__matrix-head { vertical-align: top; }
+.ws-pricing__matrix-head > .ws-pricing__name { margin-bottom: .45rem; }
+.ws-pricing__matrix-head > .ws-pricing__badge {
     position: static;
     width: fit-content;
     margin: 0 auto .5rem;
 }
-.ws-preise__matrixkopf .ws-preise__preisblock { align-items: center; margin-bottom: .6rem; }
-.ws-preise__matrixkopf .ws-preise__preis.is-aktiv { justify-content: center; }
-.ws-preise__matrixkopf .ws-preise__betrag { font-size: 1.625rem; }
-/* Die Regel "> * { display: block }" oben trifft auch den Knopf und nimmt ihm
-   das flex, das die Beschriftung senkrecht mittig setzt. */
-.ws-preise__matrixkopf .ws-preise__knopf { display: flex; height: 38px; font-size: .8125rem; }
+.ws-pricing__matrix-head .ws-pricing__price-block { align-items: center; margin-bottom: .6rem; }
+.ws-pricing__matrix-head .ws-pricing__price.is-active { justify-content: center; }
+.ws-pricing__matrix-head .ws-pricing__amount { font-size: 1.625rem; }
+/* The rule "> * { display: block }" above also hits the button and takes away
+   the flex that centres its label vertically. */
+.ws-pricing__matrix-head .ws-pricing__button { display: flex; height: 38px; font-size: .8125rem; }
 
-.ws-preise__matrixgruppe th {
+.ws-pricing__matrix-group th {
     text-align: left;
     padding: .9rem 1rem .75rem;
-    background: var(--ws-preise-grund);
-    border-top: 1px solid var(--ws-preise-linie);
-    border-bottom: 1px solid var(--ws-preise-linie);
+    background: var(--ws-pricing-surface-alt);
+    border-top: 1px solid var(--ws-pricing-line);
+    border-bottom: 1px solid var(--ws-pricing-line);
     font-size: .6875rem;
     font-weight: 700;
     letter-spacing: .12em;
     text-transform: uppercase;
-    color: var(--ws-preise-schrift-leise);
+    color: var(--ws-pricing-text-muted);
 }
 
-.ws-preise__matrixzeile:nth-of-type(even) { background: #fefdfb; }
-.ws-preise__matrix .is-favorit { background: var(--ws-preise-akzent-zart); }
-.ws-preise__matrix thead .is-favorit { box-shadow: inset 0 3px 0 var(--ws-preise-akzent); }
+.ws-pricing__matrix-row:nth-of-type(even) { background: var(--ws-pricing-zebra); }
+.ws-pricing__matrix .is-featured { background: var(--ws-pricing-accent-soft); }
+.ws-pricing__matrix thead .is-featured { box-shadow: inset 0 3px 0 var(--ws-pricing-accent); }
 
-/* Die Merkmalsspalte traegt den Text, die Tarifspalten teilen sich den Rest. */
-.ws-preise__matrix .ws-preise__matrixecke,
-.ws-preise__matrix .ws-preise__matrixname { width: 34%; }
+/* The feature column carries the text, the plan columns share the rest. */
+.ws-pricing__matrix .ws-pricing__matrix-corner,
+.ws-pricing__matrix .ws-pricing__matrix-label { width: 34%; }
 
-.ws-preise__strich { color: #c9c4b9; }
-.ws-preise__matrixwert { font-weight: 600; }
-.ws-preise__fussnote {
+.ws-pricing__dash { color: var(--ws-pricing-dash); }
+.ws-pricing__matrix-value { font-weight: 600; }
+.ws-pricing__footnote {
     margin-left: .3rem;
     font-size: .6875rem;
-    color: var(--ws-preise-schrift-still);
+    color: var(--ws-pricing-text-subtle);
 }
 
-.ws-preise__matrixhuelle {
+.ws-pricing__matrix-scroll {
+    /* relative: the screen-reader texts in the cells are positioned
+       absolutely. Without a positioned ancestor inside the wrapper they refer
+       to the page, escape the scroll area and make the whole page scroll
+       sideways on phones. */
+    position: relative;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    border-radius: var(--ws-preise-radius);
+    border-radius: var(--ws-pricing-radius);
 }
 
-.ws-preise__matrixhuelle:focus-visible {
-    outline: 2px solid var(--ws-preise-akzent);
+.ws-pricing__matrix-scroll:focus-visible {
+    outline: 2px solid var(--ws-pricing-accent);
     outline-offset: 2px;
 }
 
-/* --- Kompaktzeilen ------------------------------------------------------- */
+/* --- Compact rows -------------------------------------------------------- */
 
-.ws-preise__zeilen {
+.ws-pricing__rows {
     display: flex;
     flex-direction: column;
     gap: .625rem;
 }
 
-.ws-preise__zeile {
+.ws-pricing__row {
     position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 1.5rem;
     padding: 1.25rem 1.5rem;
-    border: 1px solid var(--ws-preise-linie);
+    border: 1px solid var(--ws-pricing-line);
     border-radius: 14px;
-    background: var(--ws-preise-flaeche);
+    background: var(--ws-pricing-surface);
 }
 
-.ws-preise__zeile--favorit {
-    border: 1.5px solid var(--ws-preise-akzent);
-    background: #fffdf9;
+.ws-pricing__row--featured {
+    border: 1.5px solid var(--ws-pricing-accent);
+    background: var(--ws-pricing-head-bg);
 }
 
-.ws-preise__zeile .ws-preise__kopf { flex: 1 1 13rem; }
-/* Der Preisblock darf schrumpfen. Sonst frisst ein langer Zusatz wie
-   "Keine Umsatzsteuer, da kein Entgelt." die Breite der Kennzahlen daneben,
-   und deren Bezeichnungen brechen mitten im Wort. */
-.ws-preise__zeile .ws-preise__preisblock {
+.ws-pricing__row .ws-pricing__head { flex: 1 1 13rem; }
+/* The price block may shrink. Otherwise a long note such as "No VAT, as no
+   fee is charged." eats the width of the key figures next to it, and their
+   labels break in the middle of a word. */
+.ws-pricing__row .ws-pricing__price-block {
     flex: 0 1 auto;
     max-width: 11.5rem;
     margin-left: auto;
     text-align: right;
     align-items: flex-end;
 }
-.ws-preise__zeile .ws-preise__betrag { font-size: 1.75rem; }
-.ws-preise__zeile .ws-preise__knopf { flex: none; height: 40px; }
-.ws-preise__zeile .ws-preise__plakette { position: static; margin-bottom: .35rem; align-self: flex-start; }
+.ws-pricing__row .ws-pricing__amount { font-size: 1.75rem; }
+.ws-pricing__row .ws-pricing__button { flex: none; height: 40px; }
+/* On cards the footer has a divider to the content above. In a row it sits to
+   the right of the content - there the line hung loose above the button. */
+.ws-pricing__row .ws-pricing__footer { margin-top: 0; padding-top: 0; border-top: 0; }
+.ws-pricing__row .ws-pricing__badge { position: static; margin-bottom: .35rem; align-self: flex-start; }
 
-/* Die Kennzahlen stehen in einem gemeinsamen Raster statt in drei eigenen
-   Saeulen: Bezeichnungen in Zeile eins, Werte in Zeile zwei. Sonst schiebt
-   eine zweizeilige Bezeichnung ihren Wert nach unten und die Zeile franst
-   aus. Die Kennzahl selbst traegt deshalb keine eigene Box (display: contents). */
-.ws-preise__kennzahlen {
+/* The key figures share one grid instead of three separate columns: labels in
+   row one, values in row two. Otherwise a two-line label pushes its value
+   down and the row frays. The figure itself has no box (display: contents). */
+.ws-pricing__figures {
     flex: 2 1 20rem;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -532,25 +590,25 @@
     gap: .2rem 1.25rem;
 }
 
-.ws-preise__kennzahl { display: contents; }
+.ws-pricing__figure { display: contents; }
 
-.ws-preise__kennzahl-name {
+.ws-pricing__figure-label {
     grid-row: 1;
     min-width: 0;
     font-size: .6875rem;
     font-weight: 700;
     line-height: 1.3;
-    /* Enger gesperrt als die uebrigen Mikro-Ueberschriften und mit Trennung:
-       Woerter wie "Kundenprojekten" passen sonst in keine Drittelspalte und
-       wuerden hart umbrochen - mit einem einzelnen Buchstaben in Zeile drei. */
+    /* Tighter tracking than the other micro headings, and hyphenation: long
+       words would otherwise fit no third of the row and break hard - with a
+       single letter on line three. */
     letter-spacing: .06em;
     text-transform: uppercase;
     hyphens: auto;
     overflow-wrap: break-word;
-    color: #a8a49b;
+    color: var(--ws-pricing-text-faint);
 }
 
-.ws-preise__kennzahl-wert {
+.ws-pricing__figure-value {
     grid-row: 2;
     min-width: 0;
     align-self: start;
@@ -561,18 +619,18 @@
     overflow-wrap: anywhere;
 }
 
-/* --- Aufklapper ---------------------------------------------------------- */
+/* --- Expandable details -------------------------------------------------- */
 
-.ws-preise__aufklapper {
-    border-top: 1px solid var(--ws-preise-linie-zart);
+.ws-pricing__details {
+    border-top: 1px solid var(--ws-pricing-line-soft);
 }
 
-.ws-preise__karte > .ws-preise__aufklapper {
+.ws-pricing__card > .ws-pricing__details {
     margin: 0 -1.75rem -1.75rem;
     padding: 0 1.75rem;
 }
 
-.ws-preise__aufklapper-kopf {
+.ws-pricing__details-summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -584,74 +642,99 @@
     list-style: none;
 }
 
-.ws-preise__aufklapper-kopf::-webkit-details-marker { display: none; }
+.ws-pricing__details-summary::-webkit-details-marker { display: none; }
 
-.ws-preise__pfeil {
+.ws-pricing__chevron {
     flex: none;
-    color: var(--ws-preise-schrift-leise);
+    color: var(--ws-pricing-text-muted);
     transition: transform .2s ease;
 }
 
-.ws-preise__aufklapper[open] > .ws-preise__aufklapper-kopf .ws-preise__pfeil { transform: rotate(180deg); }
-.ws-preise__aufklapper[open] > .ws-preise__aufklapper-kopf { color: var(--ws-preise-akzent); }
+.ws-pricing__details[open] > .ws-pricing__details-summary .ws-pricing__chevron { transform: rotate(180deg); }
+.ws-pricing__details[open] > .ws-pricing__details-summary { color: var(--ws-pricing-accent); }
 
-.ws-preise__aufklapper-inhalt { padding: .25rem 0 1.5rem; }
+.ws-pricing__details-body { padding: .25rem 0 1.5rem; }
 
-.ws-preise__aufklapper--matrix {
-    margin-top: var(--ws-preise-abstand);
-    border: 1px solid var(--ws-preise-linie);
+/* Equal card heights while everything is closed. Once a plan opens, the grid
+   would stretch every other card to its height - with large empty areas above
+   their prices. Then every card keeps its own height. */
+.ws-pricing__cards--accordion:has(.ws-pricing__details[open]) { align-items: start; }
+
+.ws-pricing__details--matrix {
+    margin-top: var(--ws-pricing-gap);
+    border: 1px solid var(--ws-pricing-line);
     border-radius: 14px;
-    background: var(--ws-preise-flaeche);
+    background: var(--ws-pricing-surface);
 }
 
-.ws-preise__aufklapper--matrix > .ws-preise__aufklapper-kopf { padding: 1.125rem 1.5rem; }
-.ws-preise__aufklapper--matrix .ws-preise__aufklapper-inhalt { padding: 0 1.5rem 1.5rem; }
-.ws-preise__matrix-anhang { margin-top: var(--ws-preise-abstand); }
+.ws-pricing__details--matrix > .ws-pricing__details-summary { padding: 1.125rem 1.5rem; }
+.ws-pricing__details--matrix .ws-pricing__details-body { padding: 0 1.5rem 1.5rem; }
+.ws-pricing__matrix-attached { margin-top: var(--ws-pricing-gap); }
 
-/* --- Schmale Breiten ----------------------------------------------------- */
+/* --- Narrow screens ------------------------------------------------------ */
 
 @media (max-width: 47.99em) {
-    .ws-preise__schalter { gap: 1rem; }
-    /* Schmal stehen die Kennzahlen wieder als eigene Bloecke: bei zwei
-       Spalten und drei Kennzahlen gaebe das feste Zeilenraster oben eine
-       ungewollte dritte Spalte. */
-    .ws-preise__kennzahlen {
+    .ws-pricing__switches { gap: 1rem; }
+    /* On narrow screens the key figures are separate blocks again: with two
+       columns and three figures the fixed row grid above would create an
+       unwanted third column. */
+    .ws-pricing__figures {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: none;
         gap: .75rem 1.25rem;
     }
 
-    .ws-preise__kennzahl { display: flex; flex-direction: column; gap: .15rem; }
-    .ws-preise__kennzahl-name,
-    .ws-preise__kennzahl-wert { grid-row: auto; }
-    .ws-preise__zeile .ws-preise__preisblock { margin-left: 0; text-align: left; align-items: flex-start; }
-    .ws-preise__zeile .ws-preise__knopf { width: 100%; }
+    .ws-pricing__figure { display: flex; flex-direction: column; gap: .15rem; }
+    .ws-pricing__figure-label,
+    .ws-pricing__figure-value { grid-row: auto; }
+    .ws-pricing__row .ws-pricing__price-block { margin-left: 0; text-align: left; align-items: flex-start; }
+    .ws-pricing__row .ws-pricing__button { width: 100%; }
 
-    /* Die Matrix bleibt eine Tabelle und wird seitlich geschoben. Geschoben
-       wird die Huelle, nicht die Tabelle selbst - eine Tabelle auf
-       display:block verliert ihre Spaltenaufteilung. */
-    .ws-preise__matrix {
+    /* The matrix stays a table and scrolls sideways. The wrapper scrolls, not
+       the table itself - a table set to display:block loses its columns. */
+    .ws-pricing__matrix {
         table-layout: auto;
         width: auto;
         min-width: 100%;
     }
 
-    .ws-preise__matrix th,
-    .ws-preise__matrix td { white-space: nowrap; }
+    .ws-pricing__matrix th,
+    .ws-pricing__matrix td { white-space: nowrap; }
 
-    .ws-preise__matrix .ws-preise__matrixecke,
-    .ws-preise__matrix .ws-preise__matrixname {
+    /* A long price note in the column head ("More packages of twelve
+       resources for 99 euros a month") would stretch every column beyond
+       300px without wrapping - five plans made a 1,700px table. It wraps, the
+       column follows name and amount. */
+    .ws-pricing__matrix .ws-pricing__matrix-head {
+        width: 9rem;
+        min-width: 9rem;
+    }
+
+    .ws-pricing__matrix .ws-pricing__matrix-head .ws-pricing__price-note { white-space: normal; }
+    .ws-pricing__matrix .ws-pricing__matrix-head .ws-pricing__price.is-active { flex-wrap: nowrap; }
+
+    .ws-pricing__matrix .ws-pricing__matrix-corner,
+    .ws-pricing__matrix .ws-pricing__matrix-label {
         position: sticky;
         left: 0;
-        z-index: 1;
+        /* Above the plan head cells: some of their children are positioned
+           and would otherwise paint through the sticky corner. */
+        z-index: 3;
         width: auto;
         min-width: 10rem;
         max-width: 12rem;
-        background: var(--ws-preise-flaeche);
+        background: var(--ws-pricing-surface);
         white-space: normal;
-        box-shadow: 1px 0 0 var(--ws-preise-linie-zart);
+        box-shadow: 1px 0 0 var(--ws-pricing-line-soft);
     }
 
-    .ws-preise__matrix .ws-preise__matrixzeile:nth-of-type(even) .ws-preise__matrixname { background: #fefdfb; }
-    .ws-preise__matrixgruppe th { position: static; }
+    .ws-pricing__matrix .ws-pricing__matrix-row:nth-of-type(even) .ws-pricing__matrix-label { background: var(--ws-pricing-zebra); }
+    .ws-pricing__matrix-group th { position: static; }
+
+    /* The group row spans all columns and scrolls away when swiping - title
+       included. The title itself therefore stays on the left. */
+    .ws-pricing__matrix-group-title {
+        position: sticky;
+        left: 1rem;
+    }
 }

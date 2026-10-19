@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+Four plans would otherwise wrap as three plus one, five as four plus one.
+The modifier classes switch the CSS to two by two or three plus two as soon
+as the container is too narrow for all of them in one row.
+</f:comment>
+<f:variable name="count" value="{plans -> f:count()}"/>
+<div class="ws-pricing__cards{f:if(condition: '{count} == 4', then: ' ws-pricing__cards--four')}{f:if(condition: '{count} == 5', then: ' ws-pricing__cards--five')}">
+    <f:for each="{plans}" as="plan">
+        <div class="ws-pricing__card{f:if(condition: plan.record.favourite, then: ' ws-pricing__card--featured')}">
+
+            <f:if condition="{plan.record.favourite} && {plan.record.badge}">
+                <span class="ws-pricing__badge">{plan.record.badge}</span>
+            </f:if>
+
+            <div class="ws-pricing__head">
+                <f:if condition="{plan.record.eyebrow}">
+                    <span class="ws-pricing__eyebrow">{plan.record.eyebrow}</span>
+                </f:if>
+                <h3 class="ws-pricing__name">{plan.record.title}</h3>
+                <f:if condition="{plan.record.subtitle}">
+                    <p class="ws-pricing__subtitle">{plan.record.subtitle}</p>
+                </f:if>
+            </div>
+
+            <f:if condition="{plan.record.description}">
+                <div class="ws-pricing__text"><f:format.html>{plan.record.description}</f:format.html></div>
+            </f:if>
+
+            <div class="ws-pricing__features">
+                <f:render partial="Plan/Features" arguments="{plan: plan, showGroupTitles: 0}"/>
+            </div>
+
+            <div class="ws-pricing__footer">
+                <f:render partial="Plan/Price" arguments="{plan: plan}"/>
+                <f:render partial="Plan/Button" arguments="{plan: plan}"/>
+            </div>
+
+        </div>
+    </f:for>
+</div>
+
+</html>

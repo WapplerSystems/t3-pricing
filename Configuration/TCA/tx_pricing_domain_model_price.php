@@ -15,6 +15,10 @@ return [
         'delete' => 'deleted',
         'sortby' => 'sorting',
         'versioningWS' => true,
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
+        'translationSource' => 'l10n_source',
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
@@ -23,6 +27,9 @@ return [
             'ignorePageTypeRestriction' => true,
         ],
     ],
+    /* Translatable, so that a translated plan keeps its prices: Extbase looks up
+       the children of a translated record by that record's own uid. Amount,
+       currency and period stay tied to the default language. */
     'columns' => [
         'plan' => [
             'config' => [
@@ -32,12 +39,13 @@ return [
 
         'currency' => [
             'label' => $ll . 'price.currency',
+            'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
                     ['label' => 'EUR €', 'value' => 'EUR'],
-                    ['label' => 'CHF ₣', 'value' => 'CHF'],
+                    ['label' => 'CHF', 'value' => 'CHF'],
                     ['label' => 'USD $', 'value' => 'USD'],
                     ['label' => 'GBP £', 'value' => 'GBP'],
                 ],
@@ -46,6 +54,7 @@ return [
         ],
         'period' => [
             'label' => $ll . 'price.period',
+            'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -71,6 +80,7 @@ return [
 
         'amount' => [
             'label' => $ll . 'price.amount',
+            'l10n_mode' => 'exclude',
             'displayCond' => 'FIELD:on_request:=:0',
             'config' => [
                 'type' => 'number',
@@ -82,6 +92,7 @@ return [
 
         'on_request' => [
             'label' => $ll . 'price.onRequest',
+            'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -96,7 +107,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
-                'placeholder' => 'Preis auf Anfrage',
+                'placeholder' => $ll . 'price.onRequest',
             ],
         ],
     ],
@@ -105,6 +116,7 @@ return [
             'showitem' => '
                 --div--;' . $ll . 'tab.general,
                     currency, period, unit_label, amount, on_request, on_request_label, hidden,
+                    sys_language_uid, l10n_parent, l10n_diffsource,
             ',
         ],
     ],

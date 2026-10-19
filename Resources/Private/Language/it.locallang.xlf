@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="it" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="noTable" approved="yes"><source>No pricing table selected.</source><target>Nessuna tabella prezzi selezionata.</target></trans-unit>
+            <trans-unit id="currency" approved="yes"><source>Currency</source><target>Valuta</target></trans-unit>
+            <trans-unit id="period" approved="yes"><source>Billing</source><target>Fatturazione</target></trans-unit>
+            <trans-unit id="period.month" approved="yes"><source>monthly</source><target>mensile</target></trans-unit>
+            <trans-unit id="period.year" approved="yes"><source>yearly</source><target>annuale</target></trans-unit>
+            <trans-unit id="period.once" approved="yes"><source>one-time</source><target>una tantum</target></trans-unit>
+            <trans-unit id="period.custom" approved="yes"><source>other</source><target>Altro</target></trans-unit>
+            <trans-unit id="unit.month" approved="yes"><source>per month</source><target>al mese</target></trans-unit>
+            <trans-unit id="unit.year" approved="yes"><source>per year</source><target>all'anno</target></trans-unit>
+            <trans-unit id="unit.once" approved="yes"><source>one-time</source><target>una tantum</target></trans-unit>
+            <trans-unit id="prices" approved="yes"><source>Prices</source><target>Prezzi</target></trans-unit>
+            <trans-unit id="net" approved="yes"><source>excl. VAT</source><target>IVA esclusa</target></trans-unit>
+            <trans-unit id="gross" approved="yes"><source>incl. VAT</source><target>IVA inclusa</target></trans-unit>
+            <trans-unit id="select" approved="yes"><source>Select</source><target>Seleziona</target></trans-unit>
+            <trans-unit id="onRequest" approved="yes"><source>Price on request</source><target>Prezzo su richiesta</target></trans-unit>
+            <trans-unit id="compareDetails" approved="yes"><source>Compare details</source><target>Confronta i dettagli</target></trans-unit>
+            <trans-unit id="comparisonTable" approved="yes"><source>Comparison table</source><target>Tabella comparativa</target></trans-unit>
+            <trans-unit id="moreFeatures" approved="yes"><source>More features</source><target>Altre funzionalità</target></trans-unit>
+            <trans-unit id="feature" approved="yes"><source>Feature</source><target>Funzionalità</target></trans-unit>
+            <trans-unit id="included" approved="yes"><source>included</source><target>incluso</target></trans-unit>
+            <trans-unit id="notIncluded" approved="yes"><source>not included</source><target>non incluso</target></trans-unit>
+        </body>
+    </file>
+</xliff>

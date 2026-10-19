@@ -8,11 +8,10 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
- * Ein Tarif.
+ * A plan.
  *
- * Ohne gepflegten Link gibt es keinen Knopf - das ist Absicht und wird in
- * den Templates ueber hasSelectLink() abgefragt, nicht ueber einen leeren
- * String im Fluid.
+ * Without a link there is no button - on purpose. The template checks the
+ * resolved URL, so a link to a hidden or deleted page renders no button either.
  */
 class Plan extends AbstractEntity
 {

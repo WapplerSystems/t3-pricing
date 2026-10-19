@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+    Without a link nothing is rendered on purpose - no empty button, no
+    placeholder.
+
+    The finished URL is checked, not the field. f:link.typolink renders its
+    content even when it cannot build a link - if the link pointed to a hidden
+    or deleted page, the label stood as bare text in the card.
+    f:uri.typolink returns an empty string in that case, and the condition
+    catches it.
+</f:comment>
+<f:variable name="target"><f:uri.typolink parameter="{plan.record.selectLink}" /></f:variable>
+<f:if condition="{target}">
+    <a href="{target}" class="ws-pricing__button{f:if(condition: plan.record.favourite, then: ' ws-pricing__button--primary')}">{plan.selectLabel}</a>
+</f:if>
+
+</html>

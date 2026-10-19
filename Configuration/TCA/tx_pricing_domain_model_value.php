@@ -13,6 +13,10 @@ return [
         'delete' => 'deleted',
         'sortby' => 'sorting',
         'versioningWS' => true,
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
+        'translationSource' => 'l10n_source',
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
@@ -21,6 +25,8 @@ return [
             'ignorePageTypeRestriction' => true,
         ],
     ],
+    /* Translatable like the prices: the text ("unlimited") is translated,
+       feature and check come from the default language. */
     'columns' => [
         'plan' => [
             'config' => [
@@ -30,6 +36,7 @@ return [
 
         'attribute' => [
             'label' => $ll . 'value.attribute',
+            'l10n_mode' => 'exclude',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -42,6 +49,7 @@ return [
 
         'included' => [
             'label' => $ll . 'value.included',
+            'l10n_mode' => 'exclude',
             'description' => $ll . 'value.included.hint',
             'config' => [
                 'type' => 'check',
@@ -64,6 +72,7 @@ return [
             'showitem' => '
                 --div--;' . $ll . 'tab.general,
                     attribute, included, value, hidden,
+                    sys_language_uid, l10n_parent, l10n_diffsource,
             ',
         ],
     ],

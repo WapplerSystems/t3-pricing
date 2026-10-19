@@ -8,12 +8,11 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * Fuellt die Merkmalsauswahl eines Wertes.
+ * Fills the feature selector of a value.
  *
- * Ein Wert haengt am Tarif, der Tarif an der Preistabelle, die Merkmale an
- * deren Gruppen. Diese Kette kann TCA nicht selbst laufen, deshalb wird sie
- * hier von Hand gezogen: nur Merkmale derselben Preistabelle stehen zur
- * Auswahl, und zwar nach Gruppe gruppiert.
+ * A value belongs to a plan, the plan to a pricing table, the features to its
+ * groups. TCA cannot follow that chain by itself, so it is resolved here: only
+ * features of the same pricing table are offered, grouped by feature group.
  */
 final class AttributeItems
 {
@@ -21,8 +20,8 @@ final class AttributeItems
     {
         $config['items'] = [['label' => '', 'value' => 0]];
 
-        $tabelle = $this->findeTabelle($config['row'] ?? []);
-        if ($tabelle === null) {
+        $tableUid = $this->findTable($config['row'] ?? []);
+        if ($tableUid === null) {
             return;
         }
 
@@ -30,12 +29,12 @@ final class AttributeItems
         $q = $pool->getQueryBuilderForTable('tx_pricing_domain_model_attribute');
         $q->getRestrictions()->removeAll();
 
-        $zeilen = $q
-            ->select('a.uid', 'a.title', 'g.title AS gruppe')
+        $rows = $q
+            ->select('a.uid', 'a.title', 'g.title AS group_title')
             ->from('tx_pricing_domain_model_attribute', 'a')
             ->join('a', 'tx_pricing_domain_model_group', 'g', 'g.uid = a.attribute_group')
             ->where(
-                $q->expr()->eq('g.pricing_table', $q->createNamedParameter($tabelle, \Doctrine\DBAL\ParameterType::INTEGER)),
+                $q->expr()->eq('g.pricing_table', $q->createNamedParameter($tableUid, \Doctrine\DBAL\ParameterType::INTEGER)),
                 $q->expr()->eq('a.deleted', 0),
                 $q->expr()->eq('g.deleted', 0)
             )
@@ -44,22 +43,22 @@ final class AttributeItems
             ->executeQuery()
             ->fetchAllAssociative();
 
-        $letzteGruppe = null;
-        foreach ($zeilen as $zeile) {
-            if ($zeile['gruppe'] !== $letzteGruppe) {
-                $config['items'][] = ['label' => $zeile['gruppe'], 'value' => '--div--'];
-                $letzteGruppe = $zeile['gruppe'];
+        $lastGroup = null;
+        foreach ($rows as $row) {
+            if ($row['group_title'] !== $lastGroup) {
+                $config['items'][] = ['label' => $row['group_title'], 'value' => '--div--'];
+                $lastGroup = $row['group_title'];
             }
-            $config['items'][] = ['label' => $zeile['title'], 'value' => (int)$zeile['uid']];
+            $config['items'][] = ['label' => $row['title'], 'value' => (int)$row['uid']];
         }
     }
 
     /**
-     * Die Preistabelle zum Wert finden - ueber den Tarif, der ihn haelt.
-     * Bei einem neuen, noch nicht gespeicherten Wert steht die uid des
-     * Tarifs im Feld plan bereits drin, weil Inline sie vorbelegt.
+     * Find the pricing table of a value - via the plan holding it. For a new,
+     * unsaved value the plan uid is already in the field plan, because inline
+     * relations prefill it.
      */
-    private function findeTabelle(array $row): ?int
+    private function findTable(array $row): ?int
     {
         $plan = $row['plan'] ?? null;
         if (is_array($plan)) {
@@ -74,13 +73,13 @@ final class AttributeItems
             ->getQueryBuilderForTable('tx_pricing_domain_model_plan');
         $q->getRestrictions()->removeAll();
 
-        $tabelle = $q
+        $tableUid = $q
             ->select('pricing_table')
             ->from('tx_pricing_domain_model_plan')
             ->where($q->expr()->eq('uid', $q->createNamedParameter($plan, \Doctrine\DBAL\ParameterType::INTEGER)))
             ->executeQuery()
             ->fetchOne();
 
-        return $tabelle ? (int)$tabelle : null;
+        return $tableUid ? (int)$tableUid : null;
     }
 }

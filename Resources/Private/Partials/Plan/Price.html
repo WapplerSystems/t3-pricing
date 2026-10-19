@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+All combinations of currency, period and tax mode are rendered; CSS shows the
+one marked is-active, the switches move the class.
+</f:comment>
+<div class="ws-pricing__price-block">
+    <f:for each="{plan.prices}" as="price">
+        <span class="ws-pricing__price{f:if(condition: price.active, then: ' is-active')}"
+              data-currency="{price.currency}" data-period="{price.period}" data-tax="{price.taxMode}">
+            <f:if condition="{price.onRequest}">
+                <f:then>
+                    <span class="ws-pricing__on-request">{price.onRequestLabel}</span>
+                </f:then>
+                <f:else>
+                    <f:if condition="{price.symbolAfter}">
+                        <f:then>
+                            <span class="ws-pricing__amount">{price.amount}</span><span class="ws-pricing__symbol ws-pricing__symbol--after">{price.symbol}</span><span class="ws-pricing__unit">{price.unit}</span>
+                        </f:then>
+                        <f:else>
+                            <span class="ws-pricing__symbol">{price.symbol}</span><span class="ws-pricing__amount">{price.amount}</span><span class="ws-pricing__unit">{price.unit}</span>
+                        </f:else>
+                    </f:if>
+                </f:else>
+            </f:if>
+        </span>
+    </f:for>
+    <f:if condition="{plan.record.priceNote}">
+        <span class="ws-pricing__price-note">{plan.record.priceNote}</span>
+    </f:if>
+</div>
+
+</html>

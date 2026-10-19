@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="uk" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="tx_pricing_domain_model_table" approved="yes"><source>Pricing table</source><target>Таблиця цін</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_plan" approved="yes"><source>Plan</source><target>Тариф</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_price" approved="yes"><source>Price</source><target>Ціна</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_group" approved="yes"><source>Feature group</source><target>Група функцій</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_attribute" approved="yes"><source>Feature</source><target>Функція</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_value" approved="yes"><source>Value</source><target>Значення</target></trans-unit>
+            <trans-unit id="plugin.table" approved="yes"><source>Pricing table</source><target>Таблиця цін</target></trans-unit>
+            <trans-unit id="plugin.table.description" approved="yes"><source>Plan cards, comparison table or compact rows from one pricing table record.</source><target>Картки тарифів, порівняльна таблиця або компактні рядки з одного запису таблиці цін.</target></trans-unit>
+            <trans-unit id="tab.general" approved="yes"><source>General</source><target>Загальне</target></trans-unit>
+            <trans-unit id="tab.plans" approved="yes"><source>Plans</source><target>Тарифи</target></trans-unit>
+            <trans-unit id="tab.attributes" approved="yes"><source>Features</source><target>Функції</target></trans-unit>
+            <trans-unit id="tab.prices" approved="yes"><source>Prices</source><target>Ціни</target></trans-unit>
+            <trans-unit id="tab.highlight" approved="yes"><source>Highlight</source><target>Виділення</target></trans-unit>
+            <trans-unit id="table.title" approved="yes"><source>Title</source><target>Назва</target></trans-unit>
+            <trans-unit id="table.description" approved="yes"><source>Introductory note</source><target>Вступний текст</target></trans-unit>
+            <trans-unit id="table.description.hint" approved="yes"><source>Shown above the prices in every layout, e.g. “All prices per month, plus VAT.”</source><target>Відображається над цінами в кожному макеті, напр. «Всі ціни за місяць, плюс ПДВ.»</target></trans-unit>
+            <trans-unit id="table.taxMode" approved="yes"><source>Entered amounts are</source><target>Введені суми є</target></trans-unit>
+            <trans-unit id="table.taxMode.hint" approved="yes"><source>Defines how the entered amounts are read. Conversion only runs from net to gross, never the other way round.</source><target>Визначає, як інтерпретуються введені суми. Перерахунок виконується лише з ціни без ПДВ у ціну з ПДВ, ніколи навпаки.</target></trans-unit>
+            <trans-unit id="table.taxMode.net" approved="yes"><source>Net prices</source><target>Ціни без ПДВ</target></trans-unit>
+            <trans-unit id="table.taxMode.gross" approved="yes"><source>Gross prices</source><target>Ціни з ПДВ</target></trans-unit>
+            <trans-unit id="table.taxRate" approved="yes"><source>Tax rate in percent</source><target>Податкова ставка у відсотках</target></trans-unit>
+            <trans-unit id="table.taxRate.hint" approved="yes"><source>Basis for the gross display. 0 skips the conversion.</source><target>Основа для відображення цін з ПДВ. 0 пропускає перерахунок.</target></trans-unit>
+            <trans-unit id="table.taxSwitchable" approved="yes"><source>Visitors may switch between net and gross</source><target>Відвідувачі можуть перемикатися між цінами без ПДВ і з ПДВ</target></trans-unit>
+            <trans-unit id="table.taxSwitchable.hint" approved="yes"><source>Unchecked, the page only shows the option selected above.</source><target>Якщо прапорець не встановлено, сторінка показує лише варіант, вибраний вище.</target></trans-unit>
+            <trans-unit id="table.currencySwitchable" approved="yes"><source>Currency switchable</source><target>Перемикання валюти</target></trans-unit>
+            <trans-unit id="table.currencySwitchable.hint" approved="yes"><source>The switch only appears if more than one currency is entered for the plans.</source><target>Перемикач з'являється лише якщо для тарифів введено більше однієї валюти.</target></trans-unit>
+            <trans-unit id="table.periodSwitchable" approved="yes"><source>Billing period switchable</source><target>Перемикання періоду оплати</target></trans-unit>
+            <trans-unit id="table.periodSwitchable.hint" approved="yes"><source>The switch only appears if more than one period is entered for the plans.</source><target>Перемикач з'являється лише якщо для тарифів введено більше одного періоду.</target></trans-unit>
+            <trans-unit id="table.currencyPosition" approved="yes"><source>Currency symbol</source><target>Символ валюти</target></trans-unit>
+            <trans-unit id="table.currencyPosition.hint" approved="yes"><source>English usually puts it before the amount (“€ 99”), German and most continental European languages after it (“99 €”).</source><target>В англійській мові символ зазвичай ставиться перед сумою («€ 99»), у німецькій та більшості континентальних європейських мов після неї («99 €»).</target></trans-unit>
+            <trans-unit id="table.currencyPosition.before" approved="yes"><source>before the amount (€ 99)</source><target>перед сумою (€ 99)</target></trans-unit>
+            <trans-unit id="table.currencyPosition.after" approved="yes"><source>after the amount (99 €)</source><target>після суми (99 €)</target></trans-unit>
+            <trans-unit id="table.selectLabel" approved="yes"><source>Button label</source><target>Текст кнопки</target></trans-unit>
+            <trans-unit id="table.selectLabel.hint" approved="yes"><source>Applies to all plans without a label of their own. Empty means “Select”.</source><target>Застосовується до всіх тарифів без власного напису. Порожнє значення означає «Вибрати».</target></trans-unit>
+            <trans-unit id="table.selectLabel.placeholder" approved="yes"><source>Select</source><target>Вибрати</target></trans-unit>
+            <trans-unit id="table.plans" approved="yes"><source>Plans</source><target>Тарифи</target></trans-unit>
+            <trans-unit id="table.groups" approved="yes"><source>Feature groups</source><target>Групи функцій</target></trans-unit>
+            <trans-unit id="table.groups.hint" approved="yes"><source>Features belong to the table, not to a single plan — that is the only way the comparison table compares like with like.</source><target>Функції належать таблиці, а не окремому тарифу — лише так порівняльна таблиця порівнює подібне з подібним.</target></trans-unit>
+            <trans-unit id="plan.title" approved="yes"><source>Name</source><target>Назва</target></trans-unit>
+            <trans-unit id="plan.subtitle" approved="yes"><source>Subtitle</source><target>Підзаголовок</target></trans-unit>
+            <trans-unit id="plan.subtitle.hint" approved="yes"><source>One line below the name, e.g. “6 job ads for 30 days each”.</source><target>Один рядок під назвою, напр. «6 оголошень про роботу на 30 днів кожне».</target></trans-unit>
+            <trans-unit id="plan.eyebrow" approved="yes"><source>Eyebrow</source><target>Надзаголовок</target></trans-unit>
+            <trans-unit id="plan.eyebrow.hint" approved="yes"><source>Small line above the name, e.g. “48 resources included”.</source><target>Малий рядок над назвою, напр. «Включено 48 ресурсів».</target></trans-unit>
+            <trans-unit id="plan.description" approved="yes"><source>Description</source><target>Опис</target></trans-unit>
+            <trans-unit id="plan.favourite" approved="yes"><source>Highlight</source><target>Виділення</target></trans-unit>
+            <trans-unit id="plan.favourite.hint" approved="yes"><source>The plan gets a border and shadow in the accent colour, and a tinted column in the comparison table.</source><target>Тариф отримує рамку та тінь акцентного кольору, а також тонований стовпець у порівняльній таблиці.</target></trans-unit>
+            <trans-unit id="plan.badge" approved="yes"><source>Badge text</source><target>Текст бейджа</target></trans-unit>
+            <trans-unit id="plan.badge.hint" approved="yes"><source>Empty omits the badge. Common are “Popular” or “Recommended”.</source><target>Порожнє значення пропускає бейдж. Поширені: «Популярний» або «Рекомендований».</target></trans-unit>
+            <trans-unit id="plan.badge.placeholder" approved="yes"><source>Popular</source><target>Популярний</target></trans-unit>
+            <trans-unit id="plan.selectLink" approved="yes"><source>Select button target</source><target>Посилання кнопки вибору</target></trans-unit>
+            <trans-unit id="plan.selectLink.hint" approved="yes"><source>Without a link no button is rendered — neither an empty one nor a placeholder.</source><target>Без посилання кнопка не відображається — ні порожня, ні з заповнювачем.</target></trans-unit>
+            <trans-unit id="plan.selectLabel" approved="yes"><source>Own label</source><target>Власний напис</target></trans-unit>
+            <trans-unit id="plan.selectLabel.hint" approved="yes"><source>Overrides the label from the pricing table, for this plan only.</source><target>Перевизначає напис з таблиці цін тільки для цього тарифу.</target></trans-unit>
+            <trans-unit id="plan.priceNote" approved="yes"><source>Note below the price</source><target>Примітка під ціною</target></trans-unit>
+            <trans-unit id="plan.priceNote.hint" approved="yes"><source>E.g. “billed annually” or “excl. VAT”.</source><target>Напр. «оплата щорічно» або «без ПДВ».</target></trans-unit>
+            <trans-unit id="plan.prices" approved="yes"><source>Prices</source><target>Ціни</target></trans-unit>
+            <trans-unit id="plan.attributeValues" approved="yes"><source>Feature values</source><target>Значення функцій</target></trans-unit>
+            <trans-unit id="plan.attributeValues.hint" approved="yes"><source>Features without a value count as not included and show a dash. Not every cell has to be filled.</source><target>Функції без значення вважаються невключеними та відображаються як прочерк. Не кожну комірку потрібно заповнювати.</target></trans-unit>
+            <trans-unit id="price.currency" approved="yes"><source>Currency</source><target>Валюта</target></trans-unit>
+            <trans-unit id="price.period" approved="yes"><source>Period</source><target>Період</target></trans-unit>
+            <trans-unit id="price.period.month" approved="yes"><source>per month</source><target>за місяць</target></trans-unit>
+            <trans-unit id="price.period.year" approved="yes"><source>per year</source><target>за рік</target></trans-unit>
+            <trans-unit id="price.period.once" approved="yes"><source>one-time</source><target>разово</target></trans-unit>
+            <trans-unit id="price.period.custom" approved="yes"><source>custom</source><target>інше</target></trans-unit>
+            <trans-unit id="price.unitLabel" approved="yes"><source>Own unit</source><target>Власна одиниця</target></trans-unit>
+            <trans-unit id="price.unitLabel.hint" approved="yes"><source>E.g. “per ad” or “per calendar”.</source><target>Напр. «за оголошення» або «за календар».</target></trans-unit>
+            <trans-unit id="price.amount" approved="yes"><source>Amount</source><target>Сума</target></trans-unit>
+            <trans-unit id="price.onRequest" approved="yes"><source>Price on request</source><target>Ціна за запитом</target></trans-unit>
+            <trans-unit id="price.onRequestLabel" approved="yes"><source>Text instead of the amount</source><target>Текст замість суми</target></trans-unit>
+            <trans-unit id="price.onRequestLabel.hint" approved="yes"><source>Empty means “Price on request”.</source><target>Порожнє значення означає «Ціна за запитом».</target></trans-unit>
+            <trans-unit id="group.title" approved="yes"><source>Title</source><target>Назва</target></trans-unit>
+            <trans-unit id="group.layout" approved="yes"><source>Layout</source><target>Макет</target></trans-unit>
+            <trans-unit id="group.layout.hint" approved="yes"><source>A checklist for yes/no features, value pairs for details such as fees or quotas.</source><target>Чекліст для функцій так/ні, пари значень для деталей, таких як комісії чи квоти.</target></trans-unit>
+            <trans-unit id="group.layout.list" approved="yes"><source>Checklist</source><target>Чекліст</target></trans-unit>
+            <trans-unit id="group.layout.pairs" approved="yes"><source>Value pairs</source><target>Пари значень</target></trans-unit>
+            <trans-unit id="group.inCard" approved="yes"><source>Show on cards</source><target>Показувати на картках</target></trans-unit>
+            <trans-unit id="group.inCard.hint" approved="yes"><source>Some groups belong in the comparison table only and would overload the card.</source><target>Деякі групи належать лише таблиці порівняння і перевантажили б картку.</target></trans-unit>
+            <trans-unit id="group.inMatrix" approved="yes"><source>Show in comparison table</source><target>Показувати в таблиці порівняння</target></trans-unit>
+            <trans-unit id="group.inMatrix.hint" approved="yes"><source>Unchecked, the group is left out of the comparison table.</source><target>Якщо прапорець не встановлено, група не відображається в таблиці порівняння.</target></trans-unit>
+            <trans-unit id="group.attributes" approved="yes"><source>Features</source><target>Функції</target></trans-unit>
+            <trans-unit id="attribute.title" approved="yes"><source>Title</source><target>Назва</target></trans-unit>
+            <trans-unit id="attribute.valueType" approved="yes"><source>Value type</source><target>Тип значення</target></trans-unit>
+            <trans-unit id="attribute.valueType.hint" approved="yes"><source>Determines how the cell looks in the comparison table.</source><target>Визначає, як виглядає комірка у таблиці порівняння.</target></trans-unit>
+            <trans-unit id="attribute.valueType.check" approved="yes"><source>Check or dash</source><target>Галочка або прочерк</target></trans-unit>
+            <trans-unit id="attribute.valueType.number" approved="yes"><source>Number</source><target>Число</target></trans-unit>
+            <trans-unit id="attribute.valueType.text" approved="yes"><source>Text</source><target>Текст</target></trans-unit>
+            <trans-unit id="attribute.valueType.percent" approved="yes"><source>Percent</source><target>Відсоток</target></trans-unit>
+            <trans-unit id="attribute.unit" approved="yes"><source>Unit</source><target>Одиниця виміру</target></trans-unit>
+            <trans-unit id="attribute.unit.hint" approved="yes"><source>Shown after the value, e.g. “GB” or “users”.</source><target>Відображається після значення, напр. «ГБ» або «користувачі».</target></trans-unit>
+            <trans-unit id="attribute.footnote" approved="yes"><source>Footnote</source><target>Виноска</target></trans-unit>
+            <trans-unit id="attribute.footnote.hint" approved="yes"><source>Shown in small print after the title in the comparison table.</source><target>Відображається дрібним шрифтом після назви у таблиці порівняння.</target></trans-unit>
+            <trans-unit id="value.attribute" approved="yes"><source>Feature</source><target>Функція</target></trans-unit>
+            <trans-unit id="value.included" approved="yes"><source>Included</source><target>Включено</target></trans-unit>
+            <trans-unit id="value.included.hint" approved="yes"><source>Applies to features of the type “Check or dash”.</source><target>Застосовується до функцій типу «Галочка або прочерк».</target></trans-unit>
+            <trans-unit id="value.value" approved="yes"><source>Value</source><target>Значення</target></trans-unit>
+            <trans-unit id="value.value.hint" approved="yes"><source>For number, text and percent. E.g. “unlimited”, “up to 48” or “2.1”.</source><target>Для числа, тексту та відсотка. Напр. «без обмежень», «до 48» або «2.1».</target></trans-unit>
+            <trans-unit id="flexform.sheet" approved="yes"><source>Pricing table</source><target>Таблиця цін</target></trans-unit>
+            <trans-unit id="flexform.table" approved="yes"><source>Pricing table</source><target>Таблиця цін</target></trans-unit>
+            <trans-unit id="flexform.table.hint" approved="yes"><source>The record holding plans and features. The same table can appear on several pages in different layouts.</source><target>Запис, що містить тарифи та функції. Та сама таблиця може відображатися на кількох сторінках у різних макетах.</target></trans-unit>
+            <trans-unit id="flexform.layout" approved="yes"><source>Layout</source><target>Макет</target></trans-unit>
+            <trans-unit id="flexform.layout.hint" approved="yes"><source>Plan cards for a few plans, compact rows from about five, the comparison table for many features.</source><target>Картки тарифів для кількох тарифів, компактні рядки приблизно від п'яти, таблиця порівняння для багатьох функцій.</target></trans-unit>
+            <trans-unit id="flexform.layout.cards" approved="yes"><source>Plan cards</source><target>Картки тарифів</target></trans-unit>
+            <trans-unit id="flexform.layout.matrix" approved="yes"><source>Comparison table</source><target>Порівняльна таблиця</target></trans-unit>
+            <trans-unit id="flexform.layout.groups" approved="yes"><source>Cards with feature groups</source><target>Картки з групами функцій</target></trans-unit>
+            <trans-unit id="flexform.layout.rows" approved="yes"><source>Compact rows</source><target>Компактні рядки</target></trans-unit>
+            <trans-unit id="flexform.layout.accordion" approved="yes"><source>Cards with expandable details</source><target>Картки з розгортуваними деталями</target></trans-unit>
+            <trans-unit id="flexform.showMatrix" approved="yes"><source>Also show comparison table</source><target>Також відображати таблицю порівняння</target></trans-unit>
+            <trans-unit id="flexform.showMatrix.hint" approved="yes"><source>The comparison table then appears below the chosen layout.</source><target>Порівняльна таблиця тоді відображається під вибраним макетом.</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix" approved="yes"><source>Comparison table collapsed</source><target>Порівняльна таблиця згорнута</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix.hint" approved="yes"><source>The comparison table only opens on click — keeps the page calm with many features.</source><target>Порівняльна таблиця відкривається лише за кліком — сторінка залишається спокійною при великій кількості функцій.</target></trans-unit>
+        </body>
+    </file>
+</xliff>

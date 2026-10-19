@@ -7,7 +7,7 @@ namespace WapplerSystems\Pricing\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Ein Merkmal, nach dem alle Tarife gefragt werden.
+ * A feature every plan is asked about.
  */
 class Attribute extends AbstractEntity
 {

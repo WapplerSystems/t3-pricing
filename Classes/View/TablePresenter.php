@@ -4,226 +4,264 @@ declare(strict_types=1);
 
 namespace WapplerSystems\Pricing\View;
 
+use TYPO3\CMS\Core\Localization\LanguageService;
+use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
+use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use WapplerSystems\Pricing\Domain\Model\Plan;
 use WapplerSystems\Pricing\Domain\Model\Table;
 
 /**
- * Bereitet eine Preistabelle fuer die Ausgabe auf.
+ * Prepares a pricing table for rendering.
  *
- * Die Schalter fuer Waehrung, Zeitraum und Steuer laufen im Browser, ohne
- * Nachladen: es werden alle Kombinationen ausgegeben und bis auf die aktive
- * per CSS verborgen. Dadurch bleibt die Seite in vollem Umfang cachebar, und
- * ohne JavaScript steht die Vorgabekombination da.
+ * The switches for currency, period and tax run in the browser without a
+ * reload: every combination is rendered and all but the active one are hidden
+ * by CSS. The page therefore stays fully cacheable, and without JavaScript the
+ * default combination is shown.
  */
 final class TablePresenter
 {
-    private const ZEICHEN = ['EUR' => '€', 'CHF' => 'CHF', 'USD' => '$', 'GBP' => '£'];
+    private const SYMBOLS = ['EUR' => '€', 'CHF' => 'CHF', 'USD' => '$', 'GBP' => '£'];
+    private const LLL = 'LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:';
 
-    public function bereite(Table $tabelle): array
+    private ?LanguageService $languageService = null;
+    private string $locale = 'en';
+
+    public function __construct(
+        private readonly LanguageServiceFactory $languageServiceFactory,
+    ) {}
+
+    /**
+     * The site language determines labels and number format. Without one
+     * (e.g. from a CLI call) the English base labels apply.
+     */
+    public function prepare(Table $table, ?SiteLanguage $siteLanguage = null): array
     {
-        $waehrungen = [];
-        $zeitraeume = [];
+        $this->languageService = $siteLanguage !== null
+            ? $this->languageServiceFactory->createFromSiteLanguage($siteLanguage)
+            : $this->languageServiceFactory->create('default');
+        $this->locale = $siteLanguage !== null ? (string)$siteLanguage->getLocale() : 'en';
 
-        foreach ($tabelle->getPlans() as $tarif) {
-            foreach ($tarif->getPrices() as $preis) {
-                $waehrungen[$preis->getCurrency()] = true;
-                $zeitraeume[$preis->getPeriod()] = true;
+        $currencies = [];
+        $periods = [];
+
+        foreach ($table->getPlans() as $plan) {
+            foreach ($plan->getPrices() as $price) {
+                $currencies[$price->getCurrency()] = true;
+                $periods[$price->getPeriod()] = true;
             }
         }
-        $waehrungen = array_keys($waehrungen);
-        $zeitraeume = array_keys($zeitraeume);
-        $zeitraumtexte = $this->zeitraumtexte($tabelle, $zeitraeume);
+        $currencies = array_keys($currencies);
+        $periods = array_keys($periods);
 
-        $steuerarten = $tabelle->isTaxSwitchable() ? ['net', 'gross'] : [$tabelle->getTaxMode()];
+        $taxModes = $table->isTaxSwitchable() ? ['net', 'gross'] : [$table->getTaxMode()];
 
-        $gruppen = [];
-        foreach ($tabelle->getGroups() as $gruppe) {
-            $attribute = [];
-            foreach ($gruppe->getAttributes() as $attribut) {
-                $attribute[] = $attribut;
+        $groups = [];
+        foreach ($table->getGroups() as $group) {
+            $attributes = [];
+            foreach ($group->getAttributes() as $attribute) {
+                $attributes[] = $attribute;
             }
-            if ($attribute === []) {
+            if ($attributes === []) {
                 continue;
             }
-            $gruppen[] = ['gruppe' => $gruppe, 'attribute' => $attribute];
+            $groups[] = ['record' => $group, 'attributes' => $attributes];
         }
 
-        $vorgabe = [
-            'waehrung' => $waehrungen[0] ?? 'EUR',
-            'zeitraum' => $zeitraeume[0] ?? 'month',
-            'steuer' => $steuerarten[0],
+        $default = [
+            'currency' => $currencies[0] ?? 'EUR',
+            'period' => $periods[0] ?? 'month',
+            'taxMode' => $taxModes[0],
         ];
 
-        $tarife = [];
-        foreach ($tabelle->getPlans() as $tarif) {
-            $tarife[] = [
-                'plan' => $tarif,
-                'preise' => $this->preise($tarif, $tabelle, $steuerarten, $vorgabe),
-                'gruppen' => $this->gruppenMitWerten($tarif, $gruppen),
-                'auswahltext' => $tarif->getSelectLabel() ?: ($tabelle->getSelectLabel() ?: 'Auswählen'),
+        $plans = [];
+        foreach ($table->getPlans() as $plan) {
+            $plans[] = [
+                'record' => $plan,
+                'prices' => $this->prices($plan, $table, $taxModes, $default),
+                'groups' => $this->groupsWithValues($plan, $groups),
+                'selectLabel' => $plan->getSelectLabel() ?: ($table->getSelectLabel() ?: $this->label('select')),
             ];
         }
 
         return [
-            'tabelle' => $tabelle,
-            'tarife' => $tarife,
-            'gruppen' => $gruppen,
-            'waehrungen' => $waehrungen,
-            'waehrung' => $waehrungen[0] ?? 'EUR',
-            'zeitraeume' => $zeitraeume,
-            'zeitraumtexte' => $zeitraumtexte,
-            'zeitraum' => $zeitraeume[0] ?? 'month',
-            'steuerarten' => $steuerarten,
-            'steuer' => $steuerarten[0],
-            'zeigeWaehrungsschalter' => $tabelle->isCurrencySwitchable() && count($waehrungen) > 1,
-            'zeigeZeitraumschalter' => $tabelle->isPeriodSwitchable() && count($zeitraeume) > 1,
-            'zeigeSteuerschalter' => $tabelle->isTaxSwitchable(),
+            'table' => $table,
+            'plans' => $plans,
+            'groups' => $groups,
+            'currencies' => $currencies,
+            'currency' => $default['currency'],
+            'periods' => $periods,
+            'periodLabels' => $this->periodLabels($table, $periods),
+            'period' => $default['period'],
+            'taxModes' => $taxModes,
+            'taxMode' => $default['taxMode'],
+            'showCurrencySwitch' => $table->isCurrencySwitchable() && count($currencies) > 1,
+            'showPeriodSwitch' => $table->isPeriodSwitchable() && count($periods) > 1,
+            'showTaxSwitch' => $table->isTaxSwitchable(),
         ];
     }
 
     /**
-     * Je Preis eine Angabe pro Steuerart. Der Bruttowert entsteht aus dem
-     * gepflegten Nettobetrag und dem Steuersatz der Tabelle.
+     * One entry per price and tax mode. The gross value is derived from the
+     * entered net amount and the tax rate of the table.
      */
-    private function preise(Plan $tarif, Table $tabelle, array $steuerarten, array $vorgabe): array
+    private function prices(Plan $plan, Table $table, array $taxModes, array $default): array
     {
-        $angaben = [];
+        $entries = [];
 
-        foreach ($tarif->getPrices() as $preis) {
-            foreach ($steuerarten as $steuer) {
-                $betrag = $preis->getAmount();
-                if ($steuer === 'gross' && $tabelle->getTaxMode() === 'net') {
-                    $betrag = $betrag * (1 + $tabelle->getTaxRate() / 100);
+        foreach ($plan->getPrices() as $price) {
+            foreach ($taxModes as $taxMode) {
+                $amount = $price->getAmount();
+                if ($taxMode === 'gross' && $table->getTaxMode() === 'net') {
+                    $amount = $amount * (1 + $table->getTaxRate() / 100);
                 }
 
-                $angaben[] = [
-                    'waehrung' => $preis->getCurrency(),
-                    'zeichen' => self::ZEICHEN[$preis->getCurrency()] ?? $preis->getCurrency(),
-                    'zeitraum' => $preis->getPeriod(),
-                    'steuer' => $steuer,
-                    'betrag' => $this->formatiere($betrag, $steuer === 'gross'),
-                    'einheit' => $this->einheit($preis->getPeriod(), $preis->getUnitLabel()),
-                    'aufAnfrage' => $preis->isOnRequest(),
-                    'anfragetext' => $preis->getOnRequestLabel() ?: 'Preis auf Anfrage',
-                    'aktiv' => false,
+                $entries[] = [
+                    'currency' => $price->getCurrency(),
+                    'symbol' => self::SYMBOLS[$price->getCurrency()] ?? $price->getCurrency(),
+                    'symbolAfter' => $table->getCurrencyPosition() === 'after',
+                    'period' => $price->getPeriod(),
+                    'taxMode' => $taxMode,
+                    'amount' => $this->formatAmount($amount, $taxMode === 'gross'),
+                    'unit' => $this->unit($price->getPeriod(), $price->getUnitLabel()),
+                    'onRequest' => $price->isOnRequest(),
+                    'onRequestLabel' => $price->getOnRequestLabel() ?: $this->label('onRequest'),
+                    'active' => false,
                 ];
             }
         }
 
-        return $this->aktivenPreisMarkieren($angaben, $vorgabe);
+        return $this->markActivePrice($entries, $default);
     }
 
     /**
-     * Welche Angabe steht beim ersten Blick da.
+     * Which entry is visible at first sight.
      *
-     * Nicht jeder Tarif hat jede Kombination - ein Einzelinserat kennt kein
-     * Jahresabo. Statt eine leere Stelle zu lassen, wird der Reihe nach
-     * gelockert: genaue Kombination, dann gleiche Waehrung, dann die erste
-     * Angabe ueberhaupt. Dasselbe tut das Skript beim Umschalten.
+     * Not every plan has every combination - a single job ad has no yearly
+     * subscription. Instead of leaving an empty spot, the match is relaxed step
+     * by step: exact combination, then same currency, then the first entry at
+     * all. The script does the same when switching.
      */
-    private function aktivenPreisMarkieren(array $angaben, array $vorgabe): array
+    private function markActivePrice(array $entries, array $default): array
     {
-        $versuche = [
-            static fn(array $a): bool => $a['waehrung'] === $vorgabe['waehrung']
-                && $a['zeitraum'] === $vorgabe['zeitraum']
-                && $a['steuer'] === $vorgabe['steuer'],
-            static fn(array $a): bool => $a['waehrung'] === $vorgabe['waehrung']
-                && $a['steuer'] === $vorgabe['steuer'],
-            static fn(array $a): bool => $a['steuer'] === $vorgabe['steuer'],
-            static fn(array $a): bool => true,
+        $attempts = [
+            static fn(array $e): bool => $e['currency'] === $default['currency']
+                && $e['period'] === $default['period']
+                && $e['taxMode'] === $default['taxMode'],
+            static fn(array $e): bool => $e['currency'] === $default['currency']
+                && $e['taxMode'] === $default['taxMode'],
+            static fn(array $e): bool => $e['taxMode'] === $default['taxMode'],
+            static fn(array $e): bool => true,
         ];
 
-        foreach ($versuche as $passt) {
-            foreach ($angaben as $i => $angabe) {
-                if ($passt($angabe)) {
-                    $angaben[$i]['aktiv'] = true;
-                    return $angaben;
+        foreach ($attempts as $matches) {
+            foreach ($entries as $i => $entry) {
+                if ($matches($entry)) {
+                    $entries[$i]['active'] = true;
+                    return $entries;
                 }
             }
         }
 
-        return $angaben;
+        return $entries;
     }
 
     /**
-     * Beschriftung der Zeitraumschalter. Bei 'custom' sagt erst die eigene
-     * Einheit, worum es geht - 'sonstige' hilft niemandem weiter.
+     * Labels of the period switch. For 'custom' only the own unit says what it
+     * is about - 'other' helps nobody.
      */
-    private function zeitraumtexte(Table $tabelle, array $zeitraeume): array
+    private function periodLabels(Table $table, array $periods): array
     {
-        $texte = [];
-        foreach ($zeitraeume as $zeitraum) {
-            $texte[$zeitraum] = match ($zeitraum) {
-                'month' => 'monatlich',
-                'year' => 'jährlich',
-                'once' => 'einmalig',
+        $labels = [];
+        foreach ($periods as $period) {
+            $labels[$period] = match ($period) {
+                'month', 'year', 'once' => $this->label('period.' . $period),
                 default => '',
             };
         }
 
-        if (isset($texte['custom']) && $texte['custom'] === '') {
-            foreach ($tabelle->getPlans() as $tarif) {
-                foreach ($tarif->getPrices() as $preis) {
-                    if ($preis->getPeriod() === 'custom' && $preis->getUnitLabel() !== '') {
-                        $texte['custom'] = $preis->getUnitLabel();
+        if (isset($labels['custom']) && $labels['custom'] === '') {
+            foreach ($table->getPlans() as $plan) {
+                foreach ($plan->getPrices() as $price) {
+                    if ($price->getPeriod() === 'custom' && $price->getUnitLabel() !== '') {
+                        $labels['custom'] = $price->getUnitLabel();
                         break 2;
                     }
                 }
             }
         }
 
-        return $texte;
-    }
-
-    private function formatiere(float $betrag, bool $nachkomma): string
-    {
-        $stellen = $nachkomma && fmod($betrag, 1.0) !== 0.0 ? 2 : 0;
-        return number_format($betrag, $stellen, ',', '.');
-    }
-
-    private function einheit(string $zeitraum, string $eigene): string
-    {
-        return match ($zeitraum) {
-            'month' => 'je Monat',
-            'year' => 'je Jahr',
-            'once' => 'einmalig',
-            default => $eigene,
-        };
+        return $labels;
     }
 
     /**
-     * Die Werte eines Tarifs, nach Gruppen sortiert wie die Tabelle sie
-     * vorgibt. Fehlt ein Wert, steht null - das Template zeigt dann einen
-     * Strich, ohne dass jede Zelle gepflegt sein muss.
+     * Thousands and decimal separators follow the locale of the site language:
+     * "1.499,50" in German, "1,499.50" in English, "1 499,50" in French.
+     * Without the intl extension the German format is kept, which the
+     * extension has rendered from the start.
      */
-    private function gruppenMitWerten(Plan $tarif, array $gruppen): array
+    private function formatAmount(float $amount, bool $withDecimals): string
     {
-        $nachAttribut = [];
-        foreach ($tarif->getAttributeValues() as $wert) {
-            $attribut = $wert->getAttribute();
-            if ($attribut !== null) {
-                $nachAttribut[$attribut->getUid()] = $wert;
+        $decimals = $withDecimals && fmod($amount, 1.0) !== 0.0 ? 2 : 0;
+
+        if (class_exists(\NumberFormatter::class)) {
+            $formatter = new \NumberFormatter($this->locale, \NumberFormatter::DECIMAL);
+            $formatter->setAttribute(\NumberFormatter::MIN_FRACTION_DIGITS, $decimals);
+            $formatter->setAttribute(\NumberFormatter::MAX_FRACTION_DIGITS, $decimals);
+            $formatted = $formatter->format($amount);
+            if ($formatted !== false) {
+                return $formatted;
             }
         }
 
-        $ergebnis = [];
-        foreach ($gruppen as $eintrag) {
-            $zeilen = [];
-            foreach ($eintrag['attribute'] as $attribut) {
-                $wert = $nachAttribut[$attribut->getUid()] ?? null;
-                $zeilen[] = [
-                    'attribut' => $attribut,
-                    'wert' => $wert,
-                    'enthalten' => $wert !== null && $wert->isIncluded(),
-                    'text' => $wert !== null ? $wert->getValue() : '',
+        return number_format($amount, $decimals, ',', '.');
+    }
+
+    private function unit(string $period, string $ownUnit): string
+    {
+        return match ($period) {
+            'month', 'year', 'once' => $this->label('unit.' . $period),
+            default => $ownUnit,
+        };
+    }
+
+    private function label(string $key): string
+    {
+        return $this->languageService?->sL(self::LLL . $key) ?: $key;
+    }
+
+    /**
+     * The values of a plan, ordered by groups as the table defines them. A
+     * missing value is null - the template then shows a dash, so not every
+     * cell has to be filled.
+     */
+    private function groupsWithValues(Plan $plan, array $groups): array
+    {
+        $byAttribute = [];
+        foreach ($plan->getAttributeValues() as $value) {
+            $attribute = $value->getAttribute();
+            if ($attribute !== null) {
+                $byAttribute[$attribute->getUid()] = $value;
+            }
+        }
+
+        $result = [];
+        foreach ($groups as $group) {
+            $rows = [];
+            foreach ($group['attributes'] as $attribute) {
+                $value = $byAttribute[$attribute->getUid()] ?? null;
+                $rows[] = [
+                    'attribute' => $attribute,
+                    'value' => $value,
+                    'included' => $value !== null && $value->isIncluded(),
+                    'text' => $value !== null ? $value->getValue() : '',
                 ];
             }
-            $ergebnis[] = [
-                'gruppe' => $eintrag['gruppe'],
-                'zeilen' => $zeilen,
+            $result[] = [
+                'record' => $group['record'],
+                'rows' => $rows,
             ];
         }
 
-        return $ergebnis;
+        return $result;
     }
 }

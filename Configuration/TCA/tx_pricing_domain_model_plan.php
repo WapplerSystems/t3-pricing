@@ -87,7 +87,7 @@ return [
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim',
-                'placeholder' => 'Beliebt',
+                'placeholder' => $ll . 'plan.badge.placeholder',
             ],
         ],
 

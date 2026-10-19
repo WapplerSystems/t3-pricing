@@ -8,24 +8,26 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
- * Eine Preistabelle: die Klammer um Tarife und Attribute.
+ * A pricing table: the bracket around plans and features.
  *
- * Die Attribute gehoeren der Tabelle, nicht dem einzelnen Tarif - nur so
- * laesst sich eine Vergleichsmatrix bilden, in der jede Zeile fuer alle
- * Tarife dieselbe Frage stellt.
+ * Features belong to the table, not to a single plan - only then can a
+ * comparison table ask every plan the same question in each row.
  */
 class Table extends AbstractEntity
 {
     protected string $title = '';
     protected string $description = '';
 
-    /** 'net' = Betraege sind Nettopreise, 'gross' = bereits inklusive Steuer */
+    /** 'net' = amounts are net prices, 'gross' = tax already included */
     protected string $taxMode = 'net';
     protected float $taxRate = 0.0;
     protected bool $taxSwitchable = false;
     protected bool $currencySwitchable = true;
     protected bool $periodSwitchable = true;
     protected string $selectLabel = '';
+
+    /** 'before' = "€ 99", 'after' = "99 €" */
+    protected string $currencyPosition = 'before';
 
     /** @var ObjectStorage<Plan> */
     protected ObjectStorage $plans;
@@ -53,6 +55,7 @@ class Table extends AbstractEntity
     public function isCurrencySwitchable(): bool { return $this->currencySwitchable; }
     public function isPeriodSwitchable(): bool { return $this->periodSwitchable; }
     public function getSelectLabel(): string { return $this->selectLabel; }
+    public function getCurrencyPosition(): string { return $this->currencyPosition === 'after' ? 'after' : 'before'; }
 
     /** @return ObjectStorage<Plan> */
     public function getPlans(): ObjectStorage { return $this->plans; }

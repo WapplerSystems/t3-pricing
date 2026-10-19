@@ -1,95 +1,67 @@
-# Preistabellen für TYPO3
+# Pricing tables for TYPO3
 
-Tarifkarten, Vergleichsmatrix und Kompaktzeilen aus einem einzigen Datenmodell.
-Beliebige Merkmale in Gruppen, Preise je Währung, netto oder brutto, ein Favorit
-und ein optionaler Auswählen-Link.
+Plan cards, a comparison table and compact rows — all from one record. Editors
+maintain plans, prices and features once; the content element decides how they
+are shown. Visitors switch currency, billing period and net/gross prices right
+in the browser, without a page reload and without breaking the page cache.
 
-TYPO3 v14, PHP 8.2.
+![Plan cards with currency, billing and VAT switches](Documentation/Images/Cards.png)
+
+## Features
+
+- **Five layouts, one data model** — plan cards, comparison table, cards with
+  feature groups, compact rows, cards with expandable details. The comparison
+  table can be attached below any layout, open or collapsed.
+- **Switches without reload** — currency, billing period, net/gross. Each
+  switch only appears when there is something to choose.
+- **Prices per currency**, not converted. Net is converted to gross with the
+  tax rate of the table.
+- **Highlighted plan** with accent border, tinted column and optional badge.
+- **No dead buttons** — a plan without a link gets no button.
+- **Currency symbol before or after the amount**, number format per site
+  language.
+- **Responsive by container width** — four plans wrap two by two, five three
+  plus two.
+- **Accessible** — real table markup with scopes, screen-reader texts, buttons
+  with `aria-pressed`, sticky feature column on phones.
+- **Easy to brand** — all colours, radii and spacing are CSS custom properties.
+- **Translated** into 37 European languages; all records are translatable.
+
+| Comparison table | Compact rows |
+|---|---|
+| ![Comparison table](Documentation/Images/Matrix.png) | ![Compact rows](Documentation/Images/Rows.png) |
+
+## Installation
 
 ```
 composer require wapplersystems/t3-pricing
+vendor/bin/typo3 extension:setup -e pricing
 ```
 
-Danach das Site Set `wapplersystems/pricing` in `config/sites/<site>/config.yaml`
-unter `dependencies` aufnehmen — es bringt die Template-Pfade, das Stylesheet und
-das Skript mit.
+Then add the site set `wapplersystems/pricing` to your site's dependencies.
+It brings the template paths, the stylesheet and the script.
 
-## Fünf Darstellungen, ein Datensatz
-
-| Darstellung | wofür |
-|---|---|
-| **Tarifkarten** | Der Regelfall: zwei bis vier Tarife nebeneinander, je eine Merkmalsliste. |
-| **Vergleichsmatrix** | Viele Tarife, viele Merkmale. Merkmale in Gruppen, Werte als Haken, Zahl oder Text. |
-| **Karten mit Merkmalsgruppen** | Wenn ein Tarif mehr trägt als eine Liste — mehrere benannte Gruppen je Karte. |
-| **Kompaktzeilen** | Ab etwa fünf Tarifen, wo Karten zu schmal würden. Eine Zeile je Tarif mit drei Kennzahlen. |
-| **Karten mit Aufklappern** | Kaufentscheidung oben, Einzelheiten auf Verlangen. |
-
-Die Matrix lässt sich jeder anderen Darstellung anhängen, wahlweise eingeklappt.
-
-## Das Datenmodell
-
-```
-Preistabelle
-├── Tarif ─── Preis      (je Währung und Zeitraum einer)
-│         └── Wert       (je Merkmal einer)
-└── Merkmalsgruppe
-          └── Merkmal
-```
-
-Zwei Entscheidungen, die alles Weitere tragen:
-
-**Die Merkmale gehören der Tabelle, nicht dem Tarif.** Nur so stellt jede Zeile
-der Matrix allen Tarifen dieselbe Frage. Ein Tarif, für den kein Wert gepflegt
-ist, zeigt einen Strich — es muss also nicht jede Zelle gefüllt werden.
-
-**Preise werden je Währung gepflegt, nicht umgerechnet.** Wechselkurse veralten,
-und Listenpreise sind gerundete Verhandlungsgrößen. Umgerechnet wird nur von
-netto nach brutto, über den Steuersatz der Tabelle.
-
-## Schalter
-
-Währung, Abrechnungszeitraum und netto/brutto. Jeder einzeln abschaltbar, und
-jeder erscheint nur, wenn es etwas zu wählen gibt — bei einer einzigen gepflegten
-Währung bleibt der Währungsschalter weg.
-
-Die Schalter laufen im Browser, ohne Nachladen: es stehen alle Kombinationen im
-Markup, sichtbar ist die aktive. Die Seite bleibt damit vollständig cachebar, und
-ohne JavaScript steht die im Backend gewählte Kombination da.
-
-Hat ein Tarif die gewählte Kombination nicht — ein Einzelinserat kennt kein
-Jahresabo —, wird der Reihe nach gelockert: genaue Kombination, dann gleiche
-Währung, dann die erste Angabe. Es bleibt nie eine leere Stelle.
-
-## Favorit und Auswählen-Link
-
-Ein Tarif lässt sich hervorheben; er bekommt Rahmen und Schatten in der
-Akzentfarbe, in der Matrix eine eingefärbte Spalte, und optional eine Plakette
-mit frei wählbarem Text.
-
-**Ist kein Link gepflegt, wird kein Knopf ausgegeben** — kein leerer, kein
-Platzhalter. Die Beschriftung kommt aus der Preistabelle und lässt sich je Tarif
-überschreiben.
-
-## Farben anpassen
-
-Alle Farben und Radien stehen als Variablen auf `.ws-preise`. Ein Sitepackage
-überschreibt sie dort und färbt damit alle Darstellungen auf einmal:
+## Brand colours
 
 ```css
-.ws-preise {
-    --ws-preise-akzent: #f29100;
-    --ws-preise-akzent-zart: #fdf6ec;
-    --ws-preise-radius: 12px;
+body .ws-pricing {
+    --ws-pricing-accent: #0f5e6e;
+    --ws-pricing-accent-soft: #e7f0f1;
+    --ws-pricing-radius: 10px;
 }
 ```
 
-## Barrierefreiheit
+## Documentation
 
-Die Matrix ist eine echte Tabelle mit `scope`-Angaben, Haken und Striche tragen
-einen Text für Screenreader, die Schalter sind `<button>` mit `aria-pressed`, und
-auf schmalen Bildschirmen wird die Tabelle in einer eigenen Hülle geschoben, mit
-feststehender Merkmalsspalte.
+Full documentation for editors and integrators: see
+[`Documentation/`](Documentation/Index.rst), rendered on
+[docs.typo3.org](https://docs.typo3.org/p/wapplersystems/t3-pricing/main/en-us/).
 
-## Lizenz
+## Requirements
 
-GPL-2.0-or-later
+TYPO3 14, PHP 8.2+. The PHP extension `intl` is recommended for locale-aware
+number formats.
+
+## License
+
+GPL-2.0-or-later, see [LICENSE](LICENSE).

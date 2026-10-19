@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="sr" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="tx_pricing_domain_model_table" approved="yes"><source>Pricing table</source><target>Ценовна табела</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_plan" approved="yes"><source>Plan</source><target>План</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_price" approved="yes"><source>Price</source><target>Цена</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_group" approved="yes"><source>Feature group</source><target>Група карактеристика</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_attribute" approved="yes"><source>Feature</source><target>Карактеристика</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_value" approved="yes"><source>Value</source><target>Вредност</target></trans-unit>
+            <trans-unit id="plugin.table" approved="yes"><source>Pricing table</source><target>Ценовна табела</target></trans-unit>
+            <trans-unit id="plugin.table.description" approved="yes"><source>Plan cards, comparison table or compact rows from one pricing table record.</source><target>Картице планова, упоредна табела или компактни редови из једног записа ценовне табеле.</target></trans-unit>
+            <trans-unit id="tab.general" approved="yes"><source>General</source><target>Опште</target></trans-unit>
+            <trans-unit id="tab.plans" approved="yes"><source>Plans</source><target>Планови</target></trans-unit>
+            <trans-unit id="tab.attributes" approved="yes"><source>Features</source><target>Карактеристике</target></trans-unit>
+            <trans-unit id="tab.prices" approved="yes"><source>Prices</source><target>Цене</target></trans-unit>
+            <trans-unit id="tab.highlight" approved="yes"><source>Highlight</source><target>Истицање</target></trans-unit>
+            <trans-unit id="table.title" approved="yes"><source>Title</source><target>Наслов</target></trans-unit>
+            <trans-unit id="table.description" approved="yes"><source>Introductory note</source><target>Уводна напомена</target></trans-unit>
+            <trans-unit id="table.description.hint" approved="yes"><source>Shown above the prices in every layout, e.g. “All prices per month, plus VAT.”</source><target>Приказује се изнад цена у сваком распореду, нпр. „Све цене месечно, са ПДВ-ом.“</target></trans-unit>
+            <trans-unit id="table.taxMode" approved="yes"><source>Entered amounts are</source><target>Унети износи су</target></trans-unit>
+            <trans-unit id="table.taxMode.hint" approved="yes"><source>Defines how the entered amounts are read. Conversion only runs from net to gross, never the other way round.</source><target>Одређује како се тумаче унети износи. Конверзија се врши само из нето у бруто, никада обрнуто.</target></trans-unit>
+            <trans-unit id="table.taxMode.net" approved="yes"><source>Net prices</source><target>Нето цене</target></trans-unit>
+            <trans-unit id="table.taxMode.gross" approved="yes"><source>Gross prices</source><target>Бруто цене</target></trans-unit>
+            <trans-unit id="table.taxRate" approved="yes"><source>Tax rate in percent</source><target>Пореска стопа у процентима</target></trans-unit>
+            <trans-unit id="table.taxRate.hint" approved="yes"><source>Basis for the gross display. 0 skips the conversion.</source><target>Основа за бруто приказ. 0 прескаче конверзију.</target></trans-unit>
+            <trans-unit id="table.taxSwitchable" approved="yes"><source>Visitors may switch between net and gross</source><target>Посетиоци могу да пребацују између нето и бруто</target></trans-unit>
+            <trans-unit id="table.taxSwitchable.hint" approved="yes"><source>Unchecked, the page only shows the option selected above.</source><target>Ако није означено, страница приказује само горе изабрану опцију.</target></trans-unit>
+            <trans-unit id="table.currencySwitchable" approved="yes"><source>Currency switchable</source><target>Промена валуте</target></trans-unit>
+            <trans-unit id="table.currencySwitchable.hint" approved="yes"><source>The switch only appears if more than one currency is entered for the plans.</source><target>Прекидач се приказује само ако је за планове унето више од једне валуте.</target></trans-unit>
+            <trans-unit id="table.periodSwitchable" approved="yes"><source>Billing period switchable</source><target>Промена обрачунског периода</target></trans-unit>
+            <trans-unit id="table.periodSwitchable.hint" approved="yes"><source>The switch only appears if more than one period is entered for the plans.</source><target>Прекидач се приказује само ако је за планове унето више периода.</target></trans-unit>
+            <trans-unit id="table.currencyPosition" approved="yes"><source>Currency symbol</source><target>Симбол валуте</target></trans-unit>
+            <trans-unit id="table.currencyPosition.hint" approved="yes"><source>English usually puts it before the amount (“€ 99”), German and most continental European languages after it (“99 €”).</source><target>Енглески га обично ставља испред износа („€ 99“), немачки и већина континенталних европских језика иза износа („99 €“).</target></trans-unit>
+            <trans-unit id="table.currencyPosition.before" approved="yes"><source>before the amount (€ 99)</source><target>испред износа (€ 99)</target></trans-unit>
+            <trans-unit id="table.currencyPosition.after" approved="yes"><source>after the amount (99 €)</source><target>иза износа (99 €)</target></trans-unit>
+            <trans-unit id="table.selectLabel" approved="yes"><source>Button label</source><target>Ознака дугмета</target></trans-unit>
+            <trans-unit id="table.selectLabel.hint" approved="yes"><source>Applies to all plans without a label of their own. Empty means “Select”.</source><target>Примењује се на све планове без сопствене ознаке. Празно значи „Изаберите“.</target></trans-unit>
+            <trans-unit id="table.selectLabel.placeholder" approved="yes"><source>Select</source><target>Изаберите</target></trans-unit>
+            <trans-unit id="table.plans" approved="yes"><source>Plans</source><target>Планови</target></trans-unit>
+            <trans-unit id="table.groups" approved="yes"><source>Feature groups</source><target>Групе карактеристика</target></trans-unit>
+            <trans-unit id="table.groups.hint" approved="yes"><source>Features belong to the table, not to a single plan — that is the only way the comparison table compares like with like.</source><target>Карактеристике припадају табели, а не појединачном плану — то је једини начин да упоредна табела упоређује исте ставке.</target></trans-unit>
+            <trans-unit id="plan.title" approved="yes"><source>Name</source><target>Назив</target></trans-unit>
+            <trans-unit id="plan.subtitle" approved="yes"><source>Subtitle</source><target>Поднаслов</target></trans-unit>
+            <trans-unit id="plan.subtitle.hint" approved="yes"><source>One line below the name, e.g. “6 job ads for 30 days each”.</source><target>Један ред испод назива, нпр. „6 огласа за посао по 30 дана“.</target></trans-unit>
+            <trans-unit id="plan.eyebrow" approved="yes"><source>Eyebrow</source><target>Наднаслов</target></trans-unit>
+            <trans-unit id="plan.eyebrow.hint" approved="yes"><source>Small line above the name, e.g. “48 resources included”.</source><target>Мала линија изнад назива, нпр. „48 ресурса укључено“.</target></trans-unit>
+            <trans-unit id="plan.description" approved="yes"><source>Description</source><target>Опис</target></trans-unit>
+            <trans-unit id="plan.favourite" approved="yes"><source>Highlight</source><target>Истицање</target></trans-unit>
+            <trans-unit id="plan.favourite.hint" approved="yes"><source>The plan gets a border and shadow in the accent colour, and a tinted column in the comparison table.</source><target>План добија ивицу и сенку у акцентној боји, и обојену колону у упоредној табели.</target></trans-unit>
+            <trans-unit id="plan.badge" approved="yes"><source>Badge text</source><target>Текст значке</target></trans-unit>
+            <trans-unit id="plan.badge.hint" approved="yes"><source>Empty omits the badge. Common are “Popular” or “Recommended”.</source><target>Празно изоставља значку. Уобичајено је „Популарно“ или „Препоручено“.</target></trans-unit>
+            <trans-unit id="plan.badge.placeholder" approved="yes"><source>Popular</source><target>Популаран</target></trans-unit>
+            <trans-unit id="plan.selectLink" approved="yes"><source>Select button target</source><target>Циљ дугмета за избор</target></trans-unit>
+            <trans-unit id="plan.selectLink.hint" approved="yes"><source>Without a link no button is rendered — neither an empty one nor a placeholder.</source><target>Без линка дугме се не приказује — ни празно ни резервисано место.</target></trans-unit>
+            <trans-unit id="plan.selectLabel" approved="yes"><source>Own label</source><target>Сопствена ознака</target></trans-unit>
+            <trans-unit id="plan.selectLabel.hint" approved="yes"><source>Overrides the label from the pricing table, for this plan only.</source><target>Замењује ознаку из ценовне табеле, само за овај план.</target></trans-unit>
+            <trans-unit id="plan.priceNote" approved="yes"><source>Note below the price</source><target>Напомена испод цене</target></trans-unit>
+            <trans-unit id="plan.priceNote.hint" approved="yes"><source>E.g. “billed annually” or “excl. VAT”.</source><target>Нпр. „наплаћује се годишње“ или „без ПДВ“.</target></trans-unit>
+            <trans-unit id="plan.prices" approved="yes"><source>Prices</source><target>Цене</target></trans-unit>
+            <trans-unit id="plan.attributeValues" approved="yes"><source>Feature values</source><target>Вредности карактеристика</target></trans-unit>
+            <trans-unit id="plan.attributeValues.hint" approved="yes"><source>Features without a value count as not included and show a dash. Not every cell has to be filled.</source><target>Карактеристике без вредности сматрају се неуљученим и приказују цртицу. Не мора свака ћелија бити попуњена.</target></trans-unit>
+            <trans-unit id="price.currency" approved="yes"><source>Currency</source><target>Валута</target></trans-unit>
+            <trans-unit id="price.period" approved="yes"><source>Period</source><target>Период</target></trans-unit>
+            <trans-unit id="price.period.month" approved="yes"><source>per month</source><target>месечно</target></trans-unit>
+            <trans-unit id="price.period.year" approved="yes"><source>per year</source><target>годишње</target></trans-unit>
+            <trans-unit id="price.period.once" approved="yes"><source>one-time</source><target>једнократно</target></trans-unit>
+            <trans-unit id="price.period.custom" approved="yes"><source>custom</source><target>прилагођено</target></trans-unit>
+            <trans-unit id="price.unitLabel" approved="yes"><source>Own unit</source><target>Сопствена јединица</target></trans-unit>
+            <trans-unit id="price.unitLabel.hint" approved="yes"><source>E.g. “per ad” or “per calendar”.</source><target>Нпр. „по огласу“ или „по календару“.</target></trans-unit>
+            <trans-unit id="price.amount" approved="yes"><source>Amount</source><target>Износ</target></trans-unit>
+            <trans-unit id="price.onRequest" approved="yes"><source>Price on request</source><target>Цена на упит</target></trans-unit>
+            <trans-unit id="price.onRequestLabel" approved="yes"><source>Text instead of the amount</source><target>Текст уместо износа</target></trans-unit>
+            <trans-unit id="price.onRequestLabel.hint" approved="yes"><source>Empty means “Price on request”.</source><target>Празно значи „Цена на упит“.</target></trans-unit>
+            <trans-unit id="group.title" approved="yes"><source>Title</source><target>Наслов</target></trans-unit>
+            <trans-unit id="group.layout" approved="yes"><source>Layout</source><target>Распоред</target></trans-unit>
+            <trans-unit id="group.layout.hint" approved="yes"><source>A checklist for yes/no features, value pairs for details such as fees or quotas.</source><target>Контролна листа за да/не карактеристике, парови вредности за детаље попут накнада или квота.</target></trans-unit>
+            <trans-unit id="group.layout.list" approved="yes"><source>Checklist</source><target>Контролна листа</target></trans-unit>
+            <trans-unit id="group.layout.pairs" approved="yes"><source>Value pairs</source><target>Парови вредности</target></trans-unit>
+            <trans-unit id="group.inCard" approved="yes"><source>Show on cards</source><target>Прикажи на картицама</target></trans-unit>
+            <trans-unit id="group.inCard.hint" approved="yes"><source>Some groups belong in the comparison table only and would overload the card.</source><target>Неке групе припадају само упоредној табели и оптеретиле би картицу.</target></trans-unit>
+            <trans-unit id="group.inMatrix" approved="yes"><source>Show in comparison table</source><target>Прикажи у упоредној табели</target></trans-unit>
+            <trans-unit id="group.inMatrix.hint" approved="yes"><source>Unchecked, the group is left out of the comparison table.</source><target>Ако није означено, група се изоставља из упоредне табеле.</target></trans-unit>
+            <trans-unit id="group.attributes" approved="yes"><source>Features</source><target>Карактеристике</target></trans-unit>
+            <trans-unit id="attribute.title" approved="yes"><source>Title</source><target>Наслов</target></trans-unit>
+            <trans-unit id="attribute.valueType" approved="yes"><source>Value type</source><target>Тип вредности</target></trans-unit>
+            <trans-unit id="attribute.valueType.hint" approved="yes"><source>Determines how the cell looks in the comparison table.</source><target>Одређује како ћелија изгледа у упоредној табели.</target></trans-unit>
+            <trans-unit id="attribute.valueType.check" approved="yes"><source>Check or dash</source><target>Квачица или цртица</target></trans-unit>
+            <trans-unit id="attribute.valueType.number" approved="yes"><source>Number</source><target>Број</target></trans-unit>
+            <trans-unit id="attribute.valueType.text" approved="yes"><source>Text</source><target>Текст</target></trans-unit>
+            <trans-unit id="attribute.valueType.percent" approved="yes"><source>Percent</source><target>Проценат</target></trans-unit>
+            <trans-unit id="attribute.unit" approved="yes"><source>Unit</source><target>Јединица</target></trans-unit>
+            <trans-unit id="attribute.unit.hint" approved="yes"><source>Shown after the value, e.g. “GB” or “users”.</source><target>Приказује се иза вредности, нпр. „GB“ или „корисници“.</target></trans-unit>
+            <trans-unit id="attribute.footnote" approved="yes"><source>Footnote</source><target>Фуснота</target></trans-unit>
+            <trans-unit id="attribute.footnote.hint" approved="yes"><source>Shown in small print after the title in the comparison table.</source><target>Приказује се ситним словима иза наслова у упоредној табели.</target></trans-unit>
+            <trans-unit id="value.attribute" approved="yes"><source>Feature</source><target>Карактеристика</target></trans-unit>
+            <trans-unit id="value.included" approved="yes"><source>Included</source><target>Укључено</target></trans-unit>
+            <trans-unit id="value.included.hint" approved="yes"><source>Applies to features of the type “Check or dash”.</source><target>Односи се на карактеристике типа „Квачица или цртица“.</target></trans-unit>
+            <trans-unit id="value.value" approved="yes"><source>Value</source><target>Вредност</target></trans-unit>
+            <trans-unit id="value.value.hint" approved="yes"><source>For number, text and percent. E.g. “unlimited”, “up to 48” or “2.1”.</source><target>За број, текст и проценат. Нпр. „неограничено“, „до 48“ или „2.1“.</target></trans-unit>
+            <trans-unit id="flexform.sheet" approved="yes"><source>Pricing table</source><target>Ценовна табела</target></trans-unit>
+            <trans-unit id="flexform.table" approved="yes"><source>Pricing table</source><target>Ценовна табела</target></trans-unit>
+            <trans-unit id="flexform.table.hint" approved="yes"><source>The record holding plans and features. The same table can appear on several pages in different layouts.</source><target>Запис који садржи планове и карактеристике. Иста табела може се појавити на неколико страница у различитим распоредима.</target></trans-unit>
+            <trans-unit id="flexform.layout" approved="yes"><source>Layout</source><target>Распоред</target></trans-unit>
+            <trans-unit id="flexform.layout.hint" approved="yes"><source>Plan cards for a few plans, compact rows from about five, the comparison table for many features.</source><target>Картице планова за неколико планова, компактни редови од око пет, упоредна табела за многе карактеристике.</target></trans-unit>
+            <trans-unit id="flexform.layout.cards" approved="yes"><source>Plan cards</source><target>Картице планова</target></trans-unit>
+            <trans-unit id="flexform.layout.matrix" approved="yes"><source>Comparison table</source><target>Упоредна табела</target></trans-unit>
+            <trans-unit id="flexform.layout.groups" approved="yes"><source>Cards with feature groups</source><target>Картице са групама карактеристика</target></trans-unit>
+            <trans-unit id="flexform.layout.rows" approved="yes"><source>Compact rows</source><target>Компактни редови</target></trans-unit>
+            <trans-unit id="flexform.layout.accordion" approved="yes"><source>Cards with expandable details</source><target>Картице са расклопивим детаљима</target></trans-unit>
+            <trans-unit id="flexform.showMatrix" approved="yes"><source>Also show comparison table</source><target>Такође прикажи упоредну табелу</target></trans-unit>
+            <trans-unit id="flexform.showMatrix.hint" approved="yes"><source>The comparison table then appears below the chosen layout.</source><target>Упоредна табела се тада приказује испод изабраног распореда.</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix" approved="yes"><source>Comparison table collapsed</source><target>Упоредна табела скупљена</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix.hint" approved="yes"><source>The comparison table only opens on click — keeps the page calm with many features.</source><target>Упоредна табела се отвара само кликом — одржава страницу мирном са много карактеристика.</target></trans-unit>
+        </body>
+    </file>
+</xliff>

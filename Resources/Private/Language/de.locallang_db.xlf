@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="tx_pricing_domain_model_table" approved="yes"><source>Pricing table</source><target>Preistabelle</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_plan" approved="yes"><source>Plan</source><target>Tarif</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_price" approved="yes"><source>Price</source><target>Preis</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_group" approved="yes"><source>Feature group</source><target>Merkmalsgruppe</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_attribute" approved="yes"><source>Feature</source><target>Merkmal</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_value" approved="yes"><source>Value</source><target>Wert</target></trans-unit>
+            <trans-unit id="plugin.table" approved="yes"><source>Pricing table</source><target>Preistabelle</target></trans-unit>
+            <trans-unit id="plugin.table.description" approved="yes"><source>Plan cards, comparison table or compact rows from one pricing table record.</source><target>Tarifkarten, Vergleichsmatrix oder Kompaktzeilen aus einem Preistabellen-Datensatz.</target></trans-unit>
+            <trans-unit id="tab.general" approved="yes"><source>General</source><target>Allgemein</target></trans-unit>
+            <trans-unit id="tab.plans" approved="yes"><source>Plans</source><target>Tarife</target></trans-unit>
+            <trans-unit id="tab.attributes" approved="yes"><source>Features</source><target>Merkmale</target></trans-unit>
+            <trans-unit id="tab.prices" approved="yes"><source>Prices</source><target>Preise</target></trans-unit>
+            <trans-unit id="tab.highlight" approved="yes"><source>Highlight</source><target>Hervorhebung</target></trans-unit>
+            <trans-unit id="table.title" approved="yes"><source>Title</source><target>Bezeichnung</target></trans-unit>
+            <trans-unit id="table.description" approved="yes"><source>Introductory note</source><target>Hinweis unter der Überschrift</target></trans-unit>
+            <trans-unit id="table.description.hint" approved="yes"><source>Shown above the prices in every layout, e.g. “All prices per month, plus VAT.”</source><target>Erscheint in jeder Darstellung über den Preisen, etwa „Alle Preise je Monat, zuzüglich Umsatzsteuer.“</target></trans-unit>
+            <trans-unit id="table.taxMode" approved="yes"><source>Entered amounts are</source><target>Gepflegte Beträge sind</target></trans-unit>
+            <trans-unit id="table.taxMode.hint" approved="yes"><source>Defines how the entered amounts are read. Conversion only runs from net to gross, never the other way round.</source><target>Entscheidet, wie die eingetragenen Beträge zu lesen sind. Umgerechnet wird nur von netto nach brutto, nie umgekehrt.</target></trans-unit>
+            <trans-unit id="table.taxMode.net" approved="yes"><source>Net prices</source><target>Nettopreise</target></trans-unit>
+            <trans-unit id="table.taxMode.gross" approved="yes"><source>Gross prices</source><target>Bruttopreise</target></trans-unit>
+            <trans-unit id="table.taxRate" approved="yes"><source>Tax rate in percent</source><target>Steuersatz in Prozent</target></trans-unit>
+            <trans-unit id="table.taxRate.hint" approved="yes"><source>Basis for the gross display. 0 skips the conversion.</source><target>Grundlage für die Bruttoanzeige. 0 lässt die Umrechnung aus.</target></trans-unit>
+            <trans-unit id="table.taxSwitchable" approved="yes"><source>Visitors may switch between net and gross</source><target>Besucher dürfen zwischen netto und brutto umschalten</target></trans-unit>
+            <trans-unit id="table.taxSwitchable.hint" approved="yes"><source>Unchecked, the page only shows the option selected above.</source><target>Ohne Haken zeigt die Seite nur die oben gewählte Angabe.</target></trans-unit>
+            <trans-unit id="table.currencySwitchable" approved="yes"><source>Currency switchable</source><target>Währung umschaltbar</target></trans-unit>
+            <trans-unit id="table.currencySwitchable.hint" approved="yes"><source>The switch only appears if more than one currency is entered for the plans.</source><target>Der Schalter erscheint nur, wenn zu den Tarifen mehr als eine Währung gepflegt ist.</target></trans-unit>
+            <trans-unit id="table.periodSwitchable" approved="yes"><source>Billing period switchable</source><target>Abrechnungszeitraum umschaltbar</target></trans-unit>
+            <trans-unit id="table.periodSwitchable.hint" approved="yes"><source>The switch only appears if more than one period is entered for the plans.</source><target>Der Schalter erscheint nur, wenn zu den Tarifen mehr als ein Zeitraum gepflegt ist.</target></trans-unit>
+            <trans-unit id="table.currencyPosition" approved="yes"><source>Currency symbol</source><target>Währungszeichen</target></trans-unit>
+            <trans-unit id="table.currencyPosition.hint" approved="yes"><source>English usually puts it before the amount (“€ 99”), German and most continental European languages after it (“99 €”).</source><target>Im deutschen Sprachraum steht es hinter dem Betrag („99 €“), im englischen davor („€ 99“).</target></trans-unit>
+            <trans-unit id="table.currencyPosition.before" approved="yes"><source>before the amount (€ 99)</source><target>vor dem Betrag (€ 99)</target></trans-unit>
+            <trans-unit id="table.currencyPosition.after" approved="yes"><source>after the amount (99 €)</source><target>hinter dem Betrag (99 €)</target></trans-unit>
+            <trans-unit id="table.selectLabel" approved="yes"><source>Button label</source><target>Beschriftung der Knöpfe</target></trans-unit>
+            <trans-unit id="table.selectLabel.hint" approved="yes"><source>Applies to all plans without a label of their own. Empty means “Select”.</source><target>Gilt für alle Tarife, die keine eigene Beschriftung tragen. Leer bedeutet „Auswählen“.</target></trans-unit>
+            <trans-unit id="table.selectLabel.placeholder" approved="yes"><source>Select</source><target>Auswählen</target></trans-unit>
+            <trans-unit id="table.plans" approved="yes"><source>Plans</source><target>Tarife</target></trans-unit>
+            <trans-unit id="table.groups" approved="yes"><source>Feature groups</source><target>Merkmalsgruppen</target></trans-unit>
+            <trans-unit id="table.groups.hint" approved="yes"><source>Features belong to the table, not to a single plan — that is the only way the comparison table compares like with like.</source><target>Die Merkmale gehören der Tabelle, nicht dem einzelnen Tarif — nur so vergleicht die Matrix Gleiches mit Gleichem.</target></trans-unit>
+            <trans-unit id="plan.title" approved="yes"><source>Name</source><target>Name</target></trans-unit>
+            <trans-unit id="plan.subtitle" approved="yes"><source>Subtitle</source><target>Untertitel</target></trans-unit>
+            <trans-unit id="plan.subtitle.hint" approved="yes"><source>One line below the name, e.g. “6 job ads for 30 days each”.</source><target>Eine Zeile unter dem Namen, etwa „6 Stelleninserate à 30 Tage“.</target></trans-unit>
+            <trans-unit id="plan.eyebrow" approved="yes"><source>Eyebrow</source><target>Kicker</target></trans-unit>
+            <trans-unit id="plan.eyebrow.hint" approved="yes"><source>Small line above the name, e.g. “48 resources included”.</source><target>Kleine Zeile über dem Namen, etwa „48 Ressourcen inklusive“.</target></trans-unit>
+            <trans-unit id="plan.description" approved="yes"><source>Description</source><target>Beschreibung</target></trans-unit>
+            <trans-unit id="plan.favourite" approved="yes"><source>Highlight</source><target>Hervorheben</target></trans-unit>
+            <trans-unit id="plan.favourite.hint" approved="yes"><source>The plan gets a border and shadow in the accent colour, and a tinted column in the comparison table.</source><target>Der Tarif bekommt Rahmen und Schatten in der Akzentfarbe und in der Matrix eine eingefärbte Spalte.</target></trans-unit>
+            <trans-unit id="plan.badge" approved="yes"><source>Badge text</source><target>Plakettentext</target></trans-unit>
+            <trans-unit id="plan.badge.hint" approved="yes"><source>Empty omits the badge. Common are “Popular” or “Recommended”.</source><target>Leer lässt die Plakette weg. Üblich sind „Beliebt“ oder „Empfehlung“.</target></trans-unit>
+            <trans-unit id="plan.badge.placeholder" approved="yes"><source>Popular</source><target>Beliebt</target></trans-unit>
+            <trans-unit id="plan.selectLink" approved="yes"><source>Select button target</source><target>Ziel des Auswählen-Knopfes</target></trans-unit>
+            <trans-unit id="plan.selectLink.hint" approved="yes"><source>Without a link no button is rendered — neither an empty one nor a placeholder.</source><target>Ohne Link wird kein Knopf ausgegeben — weder ein leerer noch ein Platzhalter.</target></trans-unit>
+            <trans-unit id="plan.selectLabel" approved="yes"><source>Own label</source><target>Eigene Beschriftung</target></trans-unit>
+            <trans-unit id="plan.selectLabel.hint" approved="yes"><source>Overrides the label from the pricing table, for this plan only.</source><target>Überschreibt die Beschriftung aus der Preistabelle, nur für diesen Tarif.</target></trans-unit>
+            <trans-unit id="plan.priceNote" approved="yes"><source>Note below the price</source><target>Fußnote unter dem Preis</target></trans-unit>
+            <trans-unit id="plan.priceNote.hint" approved="yes"><source>E.g. “billed annually” or “excl. VAT”.</source><target>Etwa „bei jährlicher Zahlung“ oder „exkl. MWST“.</target></trans-unit>
+            <trans-unit id="plan.prices" approved="yes"><source>Prices</source><target>Preise</target></trans-unit>
+            <trans-unit id="plan.attributeValues" approved="yes"><source>Feature values</source><target>Merkmalswerte</target></trans-unit>
+            <trans-unit id="plan.attributeValues.hint" approved="yes"><source>Features without a value count as not included and show a dash. Not every cell has to be filled.</source><target>Nicht gepflegte Merkmale gelten als nicht enthalten und zeigen einen Strich. Es muss also nicht jede Zelle gefüllt werden.</target></trans-unit>
+            <trans-unit id="price.currency" approved="yes"><source>Currency</source><target>Währung</target></trans-unit>
+            <trans-unit id="price.period" approved="yes"><source>Period</source><target>Zeitraum</target></trans-unit>
+            <trans-unit id="price.period.month" approved="yes"><source>per month</source><target>je Monat</target></trans-unit>
+            <trans-unit id="price.period.year" approved="yes"><source>per year</source><target>je Jahr</target></trans-unit>
+            <trans-unit id="price.period.once" approved="yes"><source>one-time</source><target>einmalig</target></trans-unit>
+            <trans-unit id="price.period.custom" approved="yes"><source>custom</source><target>eigene Angabe</target></trans-unit>
+            <trans-unit id="price.unitLabel" approved="yes"><source>Own unit</source><target>Eigene Einheit</target></trans-unit>
+            <trans-unit id="price.unitLabel.hint" approved="yes"><source>E.g. “per ad” or “per calendar”.</source><target>Etwa „je Inserat“ oder „je Kalender“.</target></trans-unit>
+            <trans-unit id="price.amount" approved="yes"><source>Amount</source><target>Betrag</target></trans-unit>
+            <trans-unit id="price.onRequest" approved="yes"><source>Price on request</source><target>Preis auf Anfrage</target></trans-unit>
+            <trans-unit id="price.onRequestLabel" approved="yes"><source>Text instead of the amount</source><target>Text statt des Betrages</target></trans-unit>
+            <trans-unit id="price.onRequestLabel.hint" approved="yes"><source>Empty means “Price on request”.</source><target>Leer bedeutet „Preis auf Anfrage“.</target></trans-unit>
+            <trans-unit id="group.title" approved="yes"><source>Title</source><target>Bezeichnung</target></trans-unit>
+            <trans-unit id="group.layout" approved="yes"><source>Layout</source><target>Darstellung</target></trans-unit>
+            <trans-unit id="group.layout.hint" approved="yes"><source>A checklist for yes/no features, value pairs for details such as fees or quotas.</source><target>Eine Liste mit Haken für Ja-Nein-Merkmale, Wertepaare für Angaben wie Gebühren oder Kontingente.</target></trans-unit>
+            <trans-unit id="group.layout.list" approved="yes"><source>Checklist</source><target>Liste mit Haken</target></trans-unit>
+            <trans-unit id="group.layout.pairs" approved="yes"><source>Value pairs</source><target>Wertepaare</target></trans-unit>
+            <trans-unit id="group.inCard" approved="yes"><source>Show on cards</source><target>Auf den Karten zeigen</target></trans-unit>
+            <trans-unit id="group.inCard.hint" approved="yes"><source>Some groups belong in the comparison table only and would overload the card.</source><target>Manche Gruppen gehören nur in die Matrix und würden die Karte überladen.</target></trans-unit>
+            <trans-unit id="group.inMatrix" approved="yes"><source>Show in comparison table</source><target>In der Vergleichsmatrix zeigen</target></trans-unit>
+            <trans-unit id="group.inMatrix.hint" approved="yes"><source>Unchecked, the group is left out of the comparison table.</source><target>Ohne Haken bleibt die Gruppe aus der Matrix heraus.</target></trans-unit>
+            <trans-unit id="group.attributes" approved="yes"><source>Features</source><target>Merkmale</target></trans-unit>
+            <trans-unit id="attribute.title" approved="yes"><source>Title</source><target>Bezeichnung</target></trans-unit>
+            <trans-unit id="attribute.valueType" approved="yes"><source>Value type</source><target>Art des Wertes</target></trans-unit>
+            <trans-unit id="attribute.valueType.hint" approved="yes"><source>Determines how the cell looks in the comparison table.</source><target>Bestimmt, wie die Zelle in der Matrix aussieht.</target></trans-unit>
+            <trans-unit id="attribute.valueType.check" approved="yes"><source>Check or dash</source><target>Haken oder Strich</target></trans-unit>
+            <trans-unit id="attribute.valueType.number" approved="yes"><source>Number</source><target>Zahl</target></trans-unit>
+            <trans-unit id="attribute.valueType.text" approved="yes"><source>Text</source><target>Text</target></trans-unit>
+            <trans-unit id="attribute.valueType.percent" approved="yes"><source>Percent</source><target>Prozent</target></trans-unit>
+            <trans-unit id="attribute.unit" approved="yes"><source>Unit</source><target>Einheit</target></trans-unit>
+            <trans-unit id="attribute.unit.hint" approved="yes"><source>Shown after the value, e.g. “GB” or “users”.</source><target>Steht hinter dem Wert, etwa „GB“ oder „Nutzer“.</target></trans-unit>
+            <trans-unit id="attribute.footnote" approved="yes"><source>Footnote</source><target>Fußnote</target></trans-unit>
+            <trans-unit id="attribute.footnote.hint" approved="yes"><source>Shown in small print after the title in the comparison table.</source><target>Erscheint klein hinter der Bezeichnung in der Matrix.</target></trans-unit>
+            <trans-unit id="value.attribute" approved="yes"><source>Feature</source><target>Merkmal</target></trans-unit>
+            <trans-unit id="value.included" approved="yes"><source>Included</source><target>Enthalten</target></trans-unit>
+            <trans-unit id="value.included.hint" approved="yes"><source>Applies to features of the type “Check or dash”.</source><target>Gilt für Merkmale der Art „Haken oder Strich“.</target></trans-unit>
+            <trans-unit id="value.value" approved="yes"><source>Value</source><target>Wert</target></trans-unit>
+            <trans-unit id="value.value.hint" approved="yes"><source>For number, text and percent. E.g. “unlimited”, “up to 48” or “2.1”.</source><target>Für Zahl, Text und Prozent. Etwa „unbegrenzt“, „bis 48“ oder „2,1“.</target></trans-unit>
+            <trans-unit id="flexform.sheet" approved="yes"><source>Pricing table</source><target>Preistabelle</target></trans-unit>
+            <trans-unit id="flexform.table" approved="yes"><source>Pricing table</source><target>Preistabelle</target></trans-unit>
+            <trans-unit id="flexform.table.hint" approved="yes"><source>The record holding plans and features. The same table can appear on several pages in different layouts.</source><target>Der Datensatz mit Tarifen und Merkmalen. Dieselbe Tabelle kann auf mehreren Seiten in verschiedenen Darstellungen stehen.</target></trans-unit>
+            <trans-unit id="flexform.layout" approved="yes"><source>Layout</source><target>Darstellung</target></trans-unit>
+            <trans-unit id="flexform.layout.hint" approved="yes"><source>Plan cards for a few plans, compact rows from about five, the comparison table for many features.</source><target>Tarifkarten für wenige Tarife, Kompaktzeilen ab etwa fünf, die Matrix für viele Merkmale.</target></trans-unit>
+            <trans-unit id="flexform.layout.cards" approved="yes"><source>Plan cards</source><target>Tarifkarten</target></trans-unit>
+            <trans-unit id="flexform.layout.matrix" approved="yes"><source>Comparison table</source><target>Vergleichsmatrix</target></trans-unit>
+            <trans-unit id="flexform.layout.groups" approved="yes"><source>Cards with feature groups</source><target>Karten mit Merkmalsgruppen</target></trans-unit>
+            <trans-unit id="flexform.layout.rows" approved="yes"><source>Compact rows</source><target>Kompaktzeilen</target></trans-unit>
+            <trans-unit id="flexform.layout.accordion" approved="yes"><source>Cards with expandable details</source><target>Karten mit Aufklappern</target></trans-unit>
+            <trans-unit id="flexform.showMatrix" approved="yes"><source>Also show comparison table</source><target>Vergleichsmatrix zusätzlich zeigen</target></trans-unit>
+            <trans-unit id="flexform.showMatrix.hint" approved="yes"><source>The comparison table then appears below the chosen layout.</source><target>Die Matrix steht dann unter der gewählten Darstellung.</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix" approved="yes"><source>Comparison table collapsed</source><target>Matrix eingeklappt</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix.hint" approved="yes"><source>The comparison table only opens on click — keeps the page calm with many features.</source><target>Die Matrix öffnet sich erst auf Klick — schont die Seite bei vielen Merkmalen.</target></trans-unit>
+        </body>
+    </file>
+</xliff>

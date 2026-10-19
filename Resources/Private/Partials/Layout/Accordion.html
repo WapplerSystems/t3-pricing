@@ -1,0 +1,71 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+Cards without a feature list in the body - the features sit below in an
+expandable section. The featured card is open, so the recommended plan can be
+read in full without a click.
+</f:comment>
+
+<f:comment>
+Four plans would otherwise wrap as three plus one, five as four plus one.
+The modifier classes switch the CSS to two by two or three plus two as soon
+as the container is too narrow for all of them in one row.
+</f:comment>
+<f:variable name="count" value="{plans -> f:count()}"/>
+<div class="ws-pricing__cards ws-pricing__cards--accordion{f:if(condition: '{count} == 4', then: ' ws-pricing__cards--four')}{f:if(condition: '{count} == 5', then: ' ws-pricing__cards--five')}">
+    <f:for each="{plans}" as="plan">
+        <div class="ws-pricing__card{f:if(condition: plan.record.favourite, then: ' ws-pricing__card--featured')}">
+
+            <f:if condition="{plan.record.favourite} && {plan.record.badge}">
+                <span class="ws-pricing__badge">{plan.record.badge}</span>
+            </f:if>
+
+            <div class="ws-pricing__head">
+                <f:if condition="{plan.record.eyebrow}">
+                    <span class="ws-pricing__eyebrow">{plan.record.eyebrow}</span>
+                </f:if>
+                <h3 class="ws-pricing__name">{plan.record.title}</h3>
+                <f:if condition="{plan.record.subtitle}">
+                    <p class="ws-pricing__subtitle">{plan.record.subtitle}</p>
+                </f:if>
+            </div>
+
+            <f:if condition="{plan.record.description}">
+                <div class="ws-pricing__text"><f:format.html>{plan.record.description}</f:format.html></div>
+            </f:if>
+
+            <div class="ws-pricing__footer">
+                <f:render partial="Plan/Price" arguments="{plan: plan}"/>
+                <f:render partial="Plan/Button" arguments="{plan: plan}"/>
+            </div>
+
+            <f:if condition="{plan.record.favourite}">
+                <f:then>
+                    <details class="ws-pricing__details" open="open">
+                        <summary class="ws-pricing__details-summary">
+                            <span><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:moreFeatures"/></span>
+                            <svg class="ws-pricing__chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="ws-pricing__details-body">
+                            <f:render partial="Plan/Features" arguments="{plan: plan, showGroupTitles: 1}"/>
+                        </div>
+                    </details>
+                </f:then>
+                <f:else>
+                    <details class="ws-pricing__details">
+                        <summary class="ws-pricing__details-summary">
+                            <span><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:moreFeatures"/></span>
+                            <svg class="ws-pricing__chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="ws-pricing__details-body">
+                            <f:render partial="Plan/Features" arguments="{plan: plan, showGroupTitles: 1}"/>
+                        </div>
+                    </details>
+                </f:else>
+            </f:if>
+
+        </div>
+    </f:for>
+</div>
+
+</html>

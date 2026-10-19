@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="no" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="tx_pricing_domain_model_table" approved="yes"><source>Pricing table</source><target>Pristabell</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_plan" approved="yes"><source>Plan</source><target>Plan</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_price" approved="yes"><source>Price</source><target>Pris</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_group" approved="yes"><source>Feature group</source><target>Egenskapgruppe</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_attribute" approved="yes"><source>Feature</source><target>Egenskap</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_value" approved="yes"><source>Value</source><target>Verdi</target></trans-unit>
+            <trans-unit id="plugin.table" approved="yes"><source>Pricing table</source><target>Pristabell</target></trans-unit>
+            <trans-unit id="plugin.table.description" approved="yes"><source>Plan cards, comparison table or compact rows from one pricing table record.</source><target>Plankort, sammenligningstabell eller kompakte rader fra én pristabellpost.</target></trans-unit>
+            <trans-unit id="tab.general" approved="yes"><source>General</source><target>Generelt</target></trans-unit>
+            <trans-unit id="tab.plans" approved="yes"><source>Plans</source><target>Planer</target></trans-unit>
+            <trans-unit id="tab.attributes" approved="yes"><source>Features</source><target>Egenskaper</target></trans-unit>
+            <trans-unit id="tab.prices" approved="yes"><source>Prices</source><target>Priser</target></trans-unit>
+            <trans-unit id="tab.highlight" approved="yes"><source>Highlight</source><target>Fremheving</target></trans-unit>
+            <trans-unit id="table.title" approved="yes"><source>Title</source><target>Tittel</target></trans-unit>
+            <trans-unit id="table.description" approved="yes"><source>Introductory note</source><target>Innledende merknad</target></trans-unit>
+            <trans-unit id="table.description.hint" approved="yes"><source>Shown above the prices in every layout, e.g. “All prices per month, plus VAT.”</source><target>Vises over prisene i alle oppsett, f.eks. «Alle priser per måned, pluss mva.»</target></trans-unit>
+            <trans-unit id="table.taxMode" approved="yes"><source>Entered amounts are</source><target>Angitte beløp er</target></trans-unit>
+            <trans-unit id="table.taxMode.hint" approved="yes"><source>Defines how the entered amounts are read. Conversion only runs from net to gross, never the other way round.</source><target>Definerer hvordan de angitte beløpene tolkes. Konvertering skjer kun fra netto til brutto, aldri motsatt.</target></trans-unit>
+            <trans-unit id="table.taxMode.net" approved="yes"><source>Net prices</source><target>Nettopriser</target></trans-unit>
+            <trans-unit id="table.taxMode.gross" approved="yes"><source>Gross prices</source><target>Bruttopriser</target></trans-unit>
+            <trans-unit id="table.taxRate" approved="yes"><source>Tax rate in percent</source><target>Mva-sats i prosent</target></trans-unit>
+            <trans-unit id="table.taxRate.hint" approved="yes"><source>Basis for the gross display. 0 skips the conversion.</source><target>Grunnlag for brutto visning. 0 hopper over konverteringen.</target></trans-unit>
+            <trans-unit id="table.taxSwitchable" approved="yes"><source>Visitors may switch between net and gross</source><target>Besøkende kan bytte mellom netto og brutto</target></trans-unit>
+            <trans-unit id="table.taxSwitchable.hint" approved="yes"><source>Unchecked, the page only shows the option selected above.</source><target>Hvis ikke valgt, viser siden kun alternativet som er valgt over.</target></trans-unit>
+            <trans-unit id="table.currencySwitchable" approved="yes"><source>Currency switchable</source><target>Valuta kan byttes</target></trans-unit>
+            <trans-unit id="table.currencySwitchable.hint" approved="yes"><source>The switch only appears if more than one currency is entered for the plans.</source><target>Bryteren vises kun hvis mer enn én valuta er angitt for planene.</target></trans-unit>
+            <trans-unit id="table.periodSwitchable" approved="yes"><source>Billing period switchable</source><target>Faktureringsperiode kan byttes</target></trans-unit>
+            <trans-unit id="table.periodSwitchable.hint" approved="yes"><source>The switch only appears if more than one period is entered for the plans.</source><target>Bryteren vises kun hvis mer enn én periode er angitt for planene.</target></trans-unit>
+            <trans-unit id="table.currencyPosition" approved="yes"><source>Currency symbol</source><target>Valutasymbol</target></trans-unit>
+            <trans-unit id="table.currencyPosition.hint" approved="yes"><source>English usually puts it before the amount (“€ 99”), German and most continental European languages after it (“99 €”).</source><target>Engelsk plasserer den vanligvis foran beløpet («€ 99»), tysk og de fleste kontinentale europeiske språk etter det («99 €»).</target></trans-unit>
+            <trans-unit id="table.currencyPosition.before" approved="yes"><source>before the amount (€ 99)</source><target>foran beløpet (€ 99)</target></trans-unit>
+            <trans-unit id="table.currencyPosition.after" approved="yes"><source>after the amount (99 €)</source><target>etter beløpet (99 €)</target></trans-unit>
+            <trans-unit id="table.selectLabel" approved="yes"><source>Button label</source><target>Knappetekst</target></trans-unit>
+            <trans-unit id="table.selectLabel.hint" approved="yes"><source>Applies to all plans without a label of their own. Empty means “Select”.</source><target>Gjelder alle planer uten egen etikett. Tom betyr «Velg».</target></trans-unit>
+            <trans-unit id="table.selectLabel.placeholder" approved="yes"><source>Select</source><target>Velg</target></trans-unit>
+            <trans-unit id="table.plans" approved="yes"><source>Plans</source><target>Planer</target></trans-unit>
+            <trans-unit id="table.groups" approved="yes"><source>Feature groups</source><target>Egenskapgrupper</target></trans-unit>
+            <trans-unit id="table.groups.hint" approved="yes"><source>Features belong to the table, not to a single plan — that is the only way the comparison table compares like with like.</source><target>Egenskaper tilhører tabellen, ikke én enkelt plan — det er den eneste måten sammenligningstabellen kan sammenligne likt med likt.</target></trans-unit>
+            <trans-unit id="plan.title" approved="yes"><source>Name</source><target>Navn</target></trans-unit>
+            <trans-unit id="plan.subtitle" approved="yes"><source>Subtitle</source><target>Undertittel</target></trans-unit>
+            <trans-unit id="plan.subtitle.hint" approved="yes"><source>One line below the name, e.g. “6 job ads for 30 days each”.</source><target>Én linje under navnet, f.eks. «6 stillingsannonser i 30 dager hver».</target></trans-unit>
+            <trans-unit id="plan.eyebrow" approved="yes"><source>Eyebrow</source><target>Stikktittel</target></trans-unit>
+            <trans-unit id="plan.eyebrow.hint" approved="yes"><source>Small line above the name, e.g. “48 resources included”.</source><target>Liten linje over navnet, f.eks. «48 ressurser inkludert».</target></trans-unit>
+            <trans-unit id="plan.description" approved="yes"><source>Description</source><target>Beskrivelse</target></trans-unit>
+            <trans-unit id="plan.favourite" approved="yes"><source>Highlight</source><target>Fremheving</target></trans-unit>
+            <trans-unit id="plan.favourite.hint" approved="yes"><source>The plan gets a border and shadow in the accent colour, and a tinted column in the comparison table.</source><target>Planen får en ramme og skygge i aksentfargen, og en tonet kolonne i sammenligningstabellen.</target></trans-unit>
+            <trans-unit id="plan.badge" approved="yes"><source>Badge text</source><target>Merkelapptekst</target></trans-unit>
+            <trans-unit id="plan.badge.hint" approved="yes"><source>Empty omits the badge. Common are “Popular” or “Recommended”.</source><target>Tom utelater merkelappen. Vanlige er «Populær» eller «Anbefalt».</target></trans-unit>
+            <trans-unit id="plan.badge.placeholder" approved="yes"><source>Popular</source><target>Populær</target></trans-unit>
+            <trans-unit id="plan.selectLink" approved="yes"><source>Select button target</source><target>Mål for velgknapp</target></trans-unit>
+            <trans-unit id="plan.selectLink.hint" approved="yes"><source>Without a link no button is rendered — neither an empty one nor a placeholder.</source><target>Uten en lenke vises ingen knapp — verken en tom eller en plassholder.</target></trans-unit>
+            <trans-unit id="plan.selectLabel" approved="yes"><source>Own label</source><target>Egen etikett</target></trans-unit>
+            <trans-unit id="plan.selectLabel.hint" approved="yes"><source>Overrides the label from the pricing table, for this plan only.</source><target>Overstyrer etiketten fra pristabellen, kun for denne planen.</target></trans-unit>
+            <trans-unit id="plan.priceNote" approved="yes"><source>Note below the price</source><target>Merknad under prisen</target></trans-unit>
+            <trans-unit id="plan.priceNote.hint" approved="yes"><source>E.g. “billed annually” or “excl. VAT”.</source><target>F.eks. «faktureres årlig» eller «ekskl. mva.»</target></trans-unit>
+            <trans-unit id="plan.prices" approved="yes"><source>Prices</source><target>Priser</target></trans-unit>
+            <trans-unit id="plan.attributeValues" approved="yes"><source>Feature values</source><target>Egenskapverdier</target></trans-unit>
+            <trans-unit id="plan.attributeValues.hint" approved="yes"><source>Features without a value count as not included and show a dash. Not every cell has to be filled.</source><target>Egenskaper uten verdi regnes som ikke inkludert og viser en bindestrek. Ikke alle celler må fylles ut.</target></trans-unit>
+            <trans-unit id="price.currency" approved="yes"><source>Currency</source><target>Valuta</target></trans-unit>
+            <trans-unit id="price.period" approved="yes"><source>Period</source><target>Periode</target></trans-unit>
+            <trans-unit id="price.period.month" approved="yes"><source>per month</source><target>per måned</target></trans-unit>
+            <trans-unit id="price.period.year" approved="yes"><source>per year</source><target>per år</target></trans-unit>
+            <trans-unit id="price.period.once" approved="yes"><source>one-time</source><target>engangs</target></trans-unit>
+            <trans-unit id="price.period.custom" approved="yes"><source>custom</source><target>tilpasset</target></trans-unit>
+            <trans-unit id="price.unitLabel" approved="yes"><source>Own unit</source><target>Egen enhet</target></trans-unit>
+            <trans-unit id="price.unitLabel.hint" approved="yes"><source>E.g. “per ad” or “per calendar”.</source><target>F.eks. «per annonse» eller «per kalender».</target></trans-unit>
+            <trans-unit id="price.amount" approved="yes"><source>Amount</source><target>Beløp</target></trans-unit>
+            <trans-unit id="price.onRequest" approved="yes"><source>Price on request</source><target>Pris på forespørsel</target></trans-unit>
+            <trans-unit id="price.onRequestLabel" approved="yes"><source>Text instead of the amount</source><target>Tekst i stedet for beløpet</target></trans-unit>
+            <trans-unit id="price.onRequestLabel.hint" approved="yes"><source>Empty means “Price on request”.</source><target>Tom betyr «Pris på forespørsel».</target></trans-unit>
+            <trans-unit id="group.title" approved="yes"><source>Title</source><target>Tittel</target></trans-unit>
+            <trans-unit id="group.layout" approved="yes"><source>Layout</source><target>Oppsett</target></trans-unit>
+            <trans-unit id="group.layout.hint" approved="yes"><source>A checklist for yes/no features, value pairs for details such as fees or quotas.</source><target>En sjekkliste for ja/nei-egenskaper, verdipar for detaljer som avgifter eller kvoter.</target></trans-unit>
+            <trans-unit id="group.layout.list" approved="yes"><source>Checklist</source><target>Sjekkliste</target></trans-unit>
+            <trans-unit id="group.layout.pairs" approved="yes"><source>Value pairs</source><target>Verdipar</target></trans-unit>
+            <trans-unit id="group.inCard" approved="yes"><source>Show on cards</source><target>Vis på kort</target></trans-unit>
+            <trans-unit id="group.inCard.hint" approved="yes"><source>Some groups belong in the comparison table only and would overload the card.</source><target>Noen grupper hører kun hjemme i sammenligningstabellen og ville overbelaste kortet.</target></trans-unit>
+            <trans-unit id="group.inMatrix" approved="yes"><source>Show in comparison table</source><target>Vis i sammenligningstabell</target></trans-unit>
+            <trans-unit id="group.inMatrix.hint" approved="yes"><source>Unchecked, the group is left out of the comparison table.</source><target>Hvis ikke valgt, utelates gruppen fra sammenligningstabellen.</target></trans-unit>
+            <trans-unit id="group.attributes" approved="yes"><source>Features</source><target>Egenskaper</target></trans-unit>
+            <trans-unit id="attribute.title" approved="yes"><source>Title</source><target>Tittel</target></trans-unit>
+            <trans-unit id="attribute.valueType" approved="yes"><source>Value type</source><target>Verditype</target></trans-unit>
+            <trans-unit id="attribute.valueType.hint" approved="yes"><source>Determines how the cell looks in the comparison table.</source><target>Bestemmer hvordan cellen ser ut i sammenligningstabellen.</target></trans-unit>
+            <trans-unit id="attribute.valueType.check" approved="yes"><source>Check or dash</source><target>Hake eller bindestrek</target></trans-unit>
+            <trans-unit id="attribute.valueType.number" approved="yes"><source>Number</source><target>Tall</target></trans-unit>
+            <trans-unit id="attribute.valueType.text" approved="yes"><source>Text</source><target>Tekst</target></trans-unit>
+            <trans-unit id="attribute.valueType.percent" approved="yes"><source>Percent</source><target>Prosent</target></trans-unit>
+            <trans-unit id="attribute.unit" approved="yes"><source>Unit</source><target>Enhet</target></trans-unit>
+            <trans-unit id="attribute.unit.hint" approved="yes"><source>Shown after the value, e.g. “GB” or “users”.</source><target>Vises etter verdien, f.eks. «GB» eller «brukere».</target></trans-unit>
+            <trans-unit id="attribute.footnote" approved="yes"><source>Footnote</source><target>Fotnote</target></trans-unit>
+            <trans-unit id="attribute.footnote.hint" approved="yes"><source>Shown in small print after the title in the comparison table.</source><target>Vises med liten skrift etter tittelen i sammenligningstabellen.</target></trans-unit>
+            <trans-unit id="value.attribute" approved="yes"><source>Feature</source><target>Egenskap</target></trans-unit>
+            <trans-unit id="value.included" approved="yes"><source>Included</source><target>Inkludert</target></trans-unit>
+            <trans-unit id="value.included.hint" approved="yes"><source>Applies to features of the type “Check or dash”.</source><target>Gjelder egenskaper av typen «Hake eller bindestrek».</target></trans-unit>
+            <trans-unit id="value.value" approved="yes"><source>Value</source><target>Verdi</target></trans-unit>
+            <trans-unit id="value.value.hint" approved="yes"><source>For number, text and percent. E.g. “unlimited”, “up to 48” or “2.1”.</source><target>For tall, tekst og prosent. F.eks. «ubegrenset», «opptil 48» eller «2.1».</target></trans-unit>
+            <trans-unit id="flexform.sheet" approved="yes"><source>Pricing table</source><target>Pristabell</target></trans-unit>
+            <trans-unit id="flexform.table" approved="yes"><source>Pricing table</source><target>Pristabell</target></trans-unit>
+            <trans-unit id="flexform.table.hint" approved="yes"><source>The record holding plans and features. The same table can appear on several pages in different layouts.</source><target>Posten som inneholder planer og egenskaper. Samme tabell kan vises på flere sider i forskjellige oppsett.</target></trans-unit>
+            <trans-unit id="flexform.layout" approved="yes"><source>Layout</source><target>Oppsett</target></trans-unit>
+            <trans-unit id="flexform.layout.hint" approved="yes"><source>Plan cards for a few plans, compact rows from about five, the comparison table for many features.</source><target>Plankort for noen få planer, kompakte rader fra omtrent fem, sammenligningstabellen for mange egenskaper.</target></trans-unit>
+            <trans-unit id="flexform.layout.cards" approved="yes"><source>Plan cards</source><target>Plankort</target></trans-unit>
+            <trans-unit id="flexform.layout.matrix" approved="yes"><source>Comparison table</source><target>Sammenligningstabell</target></trans-unit>
+            <trans-unit id="flexform.layout.groups" approved="yes"><source>Cards with feature groups</source><target>Kort med egenskapsgrupper</target></trans-unit>
+            <trans-unit id="flexform.layout.rows" approved="yes"><source>Compact rows</source><target>Kompakte rader</target></trans-unit>
+            <trans-unit id="flexform.layout.accordion" approved="yes"><source>Cards with expandable details</source><target>Kort med utvidbare detaljer</target></trans-unit>
+            <trans-unit id="flexform.showMatrix" approved="yes"><source>Also show comparison table</source><target>Vis også sammenligningstabell</target></trans-unit>
+            <trans-unit id="flexform.showMatrix.hint" approved="yes"><source>The comparison table then appears below the chosen layout.</source><target>Sammenligningstabellen vises da under det valgte oppsettet.</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix" approved="yes"><source>Comparison table collapsed</source><target>Sammenligningstabell sammenslått</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix.hint" approved="yes"><source>The comparison table only opens on click — keeps the page calm with many features.</source><target>Sammenligningstabellen åpnes kun ved klikk — holder siden rolig med mange egenskaper.</target></trans-unit>
+        </body>
+    </file>
+</xliff>

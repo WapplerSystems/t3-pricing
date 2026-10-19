@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{showCurrencySwitch} || {showPeriodSwitch} || {showTaxSwitch}">
+<div class="ws-pricing__switches">
+
+    <f:if condition="{showCurrencySwitch}">
+        <div class="ws-pricing__switch-group">
+            <span class="ws-pricing__switch-label"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:currency"/></span>
+            <div class="ws-pricing__segments" role="group">
+                <f:for each="{currencies}" as="option">
+                    <button type="button" class="ws-pricing__segment{f:if(condition: '{option} == {currency}', then: ' is-active')}" data-switch="currency" data-value="{option}" aria-pressed="{f:if(condition: '{option} == {currency}', then: 'true', else: 'false')}">{option}</button>
+                </f:for>
+            </div>
+        </div>
+    </f:if>
+
+    <f:if condition="{showPeriodSwitch}">
+        <div class="ws-pricing__switch-group">
+            <span class="ws-pricing__switch-label"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:period"/></span>
+            <div class="ws-pricing__segments" role="group">
+                <f:for each="{periods}" as="option">
+                    <button type="button" class="ws-pricing__segment{f:if(condition: '{option} == {period}', then: ' is-active')}" data-switch="period" data-value="{option}" aria-pressed="{f:if(condition: '{option} == {period}', then: 'true', else: 'false')}">{periodLabels.{option}}</button>
+                </f:for>
+            </div>
+        </div>
+    </f:if>
+
+    <f:if condition="{showTaxSwitch}">
+        <div class="ws-pricing__switch-group">
+            <span class="ws-pricing__switch-label"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:prices"/></span>
+            <div class="ws-pricing__segments" role="group">
+                <button type="button" class="ws-pricing__segment{f:if(condition: '{taxMode} == \'net\'', then: ' is-active')}" data-switch="tax" data-value="net" aria-pressed="{f:if(condition: '{taxMode} == \'net\'', then: 'true', else: 'false')}"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:net"/></button>
+                <button type="button" class="ws-pricing__segment{f:if(condition: '{taxMode} == \'gross\'', then: ' is-active')}" data-switch="tax" data-value="gross" aria-pressed="{f:if(condition: '{taxMode} == \'gross\'', then: 'true', else: 'false')}"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:gross"/></button>
+            </div>
+        </div>
+    </f:if>
+
+</div>
+</f:if>
+
+</html>

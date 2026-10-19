@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="tr" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="noTable" approved="yes"><source>No pricing table selected.</source><target>Fiyat tablosu seçilmedi.</target></trans-unit>
+            <trans-unit id="currency" approved="yes"><source>Currency</source><target>Para birimi</target></trans-unit>
+            <trans-unit id="period" approved="yes"><source>Billing</source><target>Faturalandırma</target></trans-unit>
+            <trans-unit id="period.month" approved="yes"><source>monthly</source><target>aylık</target></trans-unit>
+            <trans-unit id="period.year" approved="yes"><source>yearly</source><target>yıllık</target></trans-unit>
+            <trans-unit id="period.once" approved="yes"><source>one-time</source><target>tek seferlik</target></trans-unit>
+            <trans-unit id="period.custom" approved="yes"><source>other</source><target>diğer</target></trans-unit>
+            <trans-unit id="unit.month" approved="yes"><source>per month</source><target>/ ay</target></trans-unit>
+            <trans-unit id="unit.year" approved="yes"><source>per year</source><target>/ yıl</target></trans-unit>
+            <trans-unit id="unit.once" approved="yes"><source>one-time</source><target>tek seferlik</target></trans-unit>
+            <trans-unit id="prices" approved="yes"><source>Prices</source><target>Fiyatlar</target></trans-unit>
+            <trans-unit id="net" approved="yes"><source>excl. VAT</source><target>KDV hariç</target></trans-unit>
+            <trans-unit id="gross" approved="yes"><source>incl. VAT</source><target>KDV dahil</target></trans-unit>
+            <trans-unit id="select" approved="yes"><source>Select</source><target>Seçin</target></trans-unit>
+            <trans-unit id="onRequest" approved="yes"><source>Price on request</source><target>Fiyat istek üzerine</target></trans-unit>
+            <trans-unit id="compareDetails" approved="yes"><source>Compare details</source><target>Ayrıntıları karşılaştır</target></trans-unit>
+            <trans-unit id="comparisonTable" approved="yes"><source>Comparison table</source><target>Karşılaştırma tablosu</target></trans-unit>
+            <trans-unit id="moreFeatures" approved="yes"><source>More features</source><target>Daha fazla özellik</target></trans-unit>
+            <trans-unit id="feature" approved="yes"><source>Feature</source><target>Özellik</target></trans-unit>
+            <trans-unit id="included" approved="yes"><source>included</source><target>dahil</target></trans-unit>
+            <trans-unit id="notIncluded" approved="yes"><source>not included</source><target>dahil değil</target></trans-unit>
+        </body>
+    </file>
+</xliff>

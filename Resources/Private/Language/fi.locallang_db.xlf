@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="fi" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="tx_pricing_domain_model_table" approved="yes"><source>Pricing table</source><target>Hinnoittelutaulukko</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_plan" approved="yes"><source>Plan</source><target>Suunnitelma</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_price" approved="yes"><source>Price</source><target>Hinta</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_group" approved="yes"><source>Feature group</source><target>Ominaisuusryhmä</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_attribute" approved="yes"><source>Feature</source><target>Ominaisuus</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_value" approved="yes"><source>Value</source><target>Arvo</target></trans-unit>
+            <trans-unit id="plugin.table" approved="yes"><source>Pricing table</source><target>Hinnoittelutaulukko</target></trans-unit>
+            <trans-unit id="plugin.table.description" approved="yes"><source>Plan cards, comparison table or compact rows from one pricing table record.</source><target>Suunnitelmakortit, vertailutaulukko tai kompaktit rivit yhdestä hinnoittelutaulukon tietueesta.</target></trans-unit>
+            <trans-unit id="tab.general" approved="yes"><source>General</source><target>Yleinen</target></trans-unit>
+            <trans-unit id="tab.plans" approved="yes"><source>Plans</source><target>Suunnitelmat</target></trans-unit>
+            <trans-unit id="tab.attributes" approved="yes"><source>Features</source><target>Ominaisuudet</target></trans-unit>
+            <trans-unit id="tab.prices" approved="yes"><source>Prices</source><target>Hinnat</target></trans-unit>
+            <trans-unit id="tab.highlight" approved="yes"><source>Highlight</source><target>Korostus</target></trans-unit>
+            <trans-unit id="table.title" approved="yes"><source>Title</source><target>Otsikko</target></trans-unit>
+            <trans-unit id="table.description" approved="yes"><source>Introductory note</source><target>Johdanto</target></trans-unit>
+            <trans-unit id="table.description.hint" approved="yes"><source>Shown above the prices in every layout, e.g. “All prices per month, plus VAT.”</source><target>Näytetään hintojen yläpuolella jokaisessa asettelussa, esim. ”Kaikki hinnat kuukaudessa, sis. ALV.”</target></trans-unit>
+            <trans-unit id="table.taxMode" approved="yes"><source>Entered amounts are</source><target>Syötetyt summat ovat</target></trans-unit>
+            <trans-unit id="table.taxMode.hint" approved="yes"><source>Defines how the entered amounts are read. Conversion only runs from net to gross, never the other way round.</source><target>Määrittää, miten syötetyt summat luetaan. Muunnos tehdään vain nettohinnasta bruttohintaan, ei koskaan toisinpäin.</target></trans-unit>
+            <trans-unit id="table.taxMode.net" approved="yes"><source>Net prices</source><target>Nettohinnat</target></trans-unit>
+            <trans-unit id="table.taxMode.gross" approved="yes"><source>Gross prices</source><target>Bruttohinnat</target></trans-unit>
+            <trans-unit id="table.taxRate" approved="yes"><source>Tax rate in percent</source><target>Veroprosentti</target></trans-unit>
+            <trans-unit id="table.taxRate.hint" approved="yes"><source>Basis for the gross display. 0 skips the conversion.</source><target>Bruttonäytön peruste. 0 ohittaa muunnoksen.</target></trans-unit>
+            <trans-unit id="table.taxSwitchable" approved="yes"><source>Visitors may switch between net and gross</source><target>Kävijät voivat vaihtaa netto- ja bruttohintojen välillä</target></trans-unit>
+            <trans-unit id="table.taxSwitchable.hint" approved="yes"><source>Unchecked, the page only shows the option selected above.</source><target>Jos ei valittu, sivulla näkyy vain yllä valittu vaihtoehto.</target></trans-unit>
+            <trans-unit id="table.currencySwitchable" approved="yes"><source>Currency switchable</source><target>Valuutta vaihdettavissa</target></trans-unit>
+            <trans-unit id="table.currencySwitchable.hint" approved="yes"><source>The switch only appears if more than one currency is entered for the plans.</source><target>Vaihtopainike näkyy vain, jos suunnitelmille on syötetty useampi kuin yksi valuutta.</target></trans-unit>
+            <trans-unit id="table.periodSwitchable" approved="yes"><source>Billing period switchable</source><target>Laskutuskausi vaihdettavissa</target></trans-unit>
+            <trans-unit id="table.periodSwitchable.hint" approved="yes"><source>The switch only appears if more than one period is entered for the plans.</source><target>Vaihtopainike näkyy vain, jos suunnitelmille on syötetty useampi kuin yksi kausi.</target></trans-unit>
+            <trans-unit id="table.currencyPosition" approved="yes"><source>Currency symbol</source><target>Valuuttasymboli</target></trans-unit>
+            <trans-unit id="table.currencyPosition.hint" approved="yes"><source>English usually puts it before the amount (“€ 99”), German and most continental European languages after it (“99 €”).</source><target>Englannissa symboli on yleensä ennen summaa (”€ 99”), saksassa ja useimmissa manner-Euroopan kielissä sen jälkeen (”99 €”).</target></trans-unit>
+            <trans-unit id="table.currencyPosition.before" approved="yes"><source>before the amount (€ 99)</source><target>ennen summaa (€ 99)</target></trans-unit>
+            <trans-unit id="table.currencyPosition.after" approved="yes"><source>after the amount (99 €)</source><target>summan jälkeen (99 €)</target></trans-unit>
+            <trans-unit id="table.selectLabel" approved="yes"><source>Button label</source><target>Painikkeen teksti</target></trans-unit>
+            <trans-unit id="table.selectLabel.hint" approved="yes"><source>Applies to all plans without a label of their own. Empty means “Select”.</source><target>Koskee kaikkia suunnitelmia, joilla ei ole omaa tekstiä. Tyhjä tarkoittaa ”Valitse”.</target></trans-unit>
+            <trans-unit id="table.selectLabel.placeholder" approved="yes"><source>Select</source><target>Valitse</target></trans-unit>
+            <trans-unit id="table.plans" approved="yes"><source>Plans</source><target>Suunnitelmat</target></trans-unit>
+            <trans-unit id="table.groups" approved="yes"><source>Feature groups</source><target>Ominaisuusryhmät</target></trans-unit>
+            <trans-unit id="table.groups.hint" approved="yes"><source>Features belong to the table, not to a single plan — that is the only way the comparison table compares like with like.</source><target>Ominaisuudet kuuluvat taulukkoon, eivät yksittäiselle suunnitelmalle — vain siten vertailutaulukko vertaa samanlaisia asioita keskenään.</target></trans-unit>
+            <trans-unit id="plan.title" approved="yes"><source>Name</source><target>Nimi</target></trans-unit>
+            <trans-unit id="plan.subtitle" approved="yes"><source>Subtitle</source><target>Alaotsikko</target></trans-unit>
+            <trans-unit id="plan.subtitle.hint" approved="yes"><source>One line below the name, e.g. “6 job ads for 30 days each”.</source><target>Yksi rivi nimen alla, esim. ”6 työpaikkailmoitusta 30 päivää kukin”.</target></trans-unit>
+            <trans-unit id="plan.eyebrow" approved="yes"><source>Eyebrow</source><target>Yläotsikko</target></trans-unit>
+            <trans-unit id="plan.eyebrow.hint" approved="yes"><source>Small line above the name, e.g. “48 resources included”.</source><target>Pieni rivi nimen yläpuolella, esim. ”48 resurssia sisältyy”.</target></trans-unit>
+            <trans-unit id="plan.description" approved="yes"><source>Description</source><target>Kuvaus</target></trans-unit>
+            <trans-unit id="plan.favourite" approved="yes"><source>Highlight</source><target>Korostus</target></trans-unit>
+            <trans-unit id="plan.favourite.hint" approved="yes"><source>The plan gets a border and shadow in the accent colour, and a tinted column in the comparison table.</source><target>Suunnitelma saa reunuksen ja varjon korostusvärillä sekä sävytetyn sarakkeen vertailutaulukossa.</target></trans-unit>
+            <trans-unit id="plan.badge" approved="yes"><source>Badge text</source><target>Merkkiteksti</target></trans-unit>
+            <trans-unit id="plan.badge.hint" approved="yes"><source>Empty omits the badge. Common are “Popular” or “Recommended”.</source><target>Tyhjä jättää merkin pois. Yleisiä ovat ”Suosittu” tai ”Suositeltu”.</target></trans-unit>
+            <trans-unit id="plan.badge.placeholder" approved="yes"><source>Popular</source><target>Suosittu</target></trans-unit>
+            <trans-unit id="plan.selectLink" approved="yes"><source>Select button target</source><target>Valitse-painikkeen kohde</target></trans-unit>
+            <trans-unit id="plan.selectLink.hint" approved="yes"><source>Without a link no button is rendered — neither an empty one nor a placeholder.</source><target>Ilman linkkiä painiketta ei näytetä — ei tyhjää eikä paikkamerkkiä.</target></trans-unit>
+            <trans-unit id="plan.selectLabel" approved="yes"><source>Own label</source><target>Oma teksti</target></trans-unit>
+            <trans-unit id="plan.selectLabel.hint" approved="yes"><source>Overrides the label from the pricing table, for this plan only.</source><target>Korvaa hinnoittelutaulukon tekstin vain tälle suunnitelmalle.</target></trans-unit>
+            <trans-unit id="plan.priceNote" approved="yes"><source>Note below the price</source><target>Huomautus hinnan alla</target></trans-unit>
+            <trans-unit id="plan.priceNote.hint" approved="yes"><source>E.g. “billed annually” or “excl. VAT”.</source><target>Esim. ”laskutetaan vuosittain” tai ”ilman ALV”.</target></trans-unit>
+            <trans-unit id="plan.prices" approved="yes"><source>Prices</source><target>Hinnat</target></trans-unit>
+            <trans-unit id="plan.attributeValues" approved="yes"><source>Feature values</source><target>Ominaisuusarvot</target></trans-unit>
+            <trans-unit id="plan.attributeValues.hint" approved="yes"><source>Features without a value count as not included and show a dash. Not every cell has to be filled.</source><target>Ominaisuudet ilman arvoa katsotaan ei-sisältyviksi ja näkyvät viivana. Jokaista solua ei tarvitse täyttää.</target></trans-unit>
+            <trans-unit id="price.currency" approved="yes"><source>Currency</source><target>Valuutta</target></trans-unit>
+            <trans-unit id="price.period" approved="yes"><source>Period</source><target>Kausi</target></trans-unit>
+            <trans-unit id="price.period.month" approved="yes"><source>per month</source><target>kuukaudessa</target></trans-unit>
+            <trans-unit id="price.period.year" approved="yes"><source>per year</source><target>vuodessa</target></trans-unit>
+            <trans-unit id="price.period.once" approved="yes"><source>one-time</source><target>kertamaksu</target></trans-unit>
+            <trans-unit id="price.period.custom" approved="yes"><source>custom</source><target>mukautettu</target></trans-unit>
+            <trans-unit id="price.unitLabel" approved="yes"><source>Own unit</source><target>Oma yksikkö</target></trans-unit>
+            <trans-unit id="price.unitLabel.hint" approved="yes"><source>E.g. “per ad” or “per calendar”.</source><target>Esim. ”per ilmoitus” tai ”per kalenteri”.</target></trans-unit>
+            <trans-unit id="price.amount" approved="yes"><source>Amount</source><target>Summa</target></trans-unit>
+            <trans-unit id="price.onRequest" approved="yes"><source>Price on request</source><target>Hinta pyynnöstä</target></trans-unit>
+            <trans-unit id="price.onRequestLabel" approved="yes"><source>Text instead of the amount</source><target>Teksti summan sijaan</target></trans-unit>
+            <trans-unit id="price.onRequestLabel.hint" approved="yes"><source>Empty means “Price on request”.</source><target>Tyhjä tarkoittaa ”Hinta pyynnöstä”.</target></trans-unit>
+            <trans-unit id="group.title" approved="yes"><source>Title</source><target>Otsikko</target></trans-unit>
+            <trans-unit id="group.layout" approved="yes"><source>Layout</source><target>Asettelu</target></trans-unit>
+            <trans-unit id="group.layout.hint" approved="yes"><source>A checklist for yes/no features, value pairs for details such as fees or quotas.</source><target>Tarkistuslista kyllä/ei-ominaisuuksille, arvoparit yksityiskohdille, kuten maksuille tai kiintiöille.</target></trans-unit>
+            <trans-unit id="group.layout.list" approved="yes"><source>Checklist</source><target>Tarkistuslista</target></trans-unit>
+            <trans-unit id="group.layout.pairs" approved="yes"><source>Value pairs</source><target>Arvoparit</target></trans-unit>
+            <trans-unit id="group.inCard" approved="yes"><source>Show on cards</source><target>Näytä korteissa</target></trans-unit>
+            <trans-unit id="group.inCard.hint" approved="yes"><source>Some groups belong in the comparison table only and would overload the card.</source><target>Jotkin ryhmät kuuluvat vain vertailutaulukkoon ja kuormittaisivat korttia.</target></trans-unit>
+            <trans-unit id="group.inMatrix" approved="yes"><source>Show in comparison table</source><target>Näytä vertailutaulukossa</target></trans-unit>
+            <trans-unit id="group.inMatrix.hint" approved="yes"><source>Unchecked, the group is left out of the comparison table.</source><target>Jos ei valittu, ryhmä jätetään pois vertailutaulukosta.</target></trans-unit>
+            <trans-unit id="group.attributes" approved="yes"><source>Features</source><target>Ominaisuudet</target></trans-unit>
+            <trans-unit id="attribute.title" approved="yes"><source>Title</source><target>Otsikko</target></trans-unit>
+            <trans-unit id="attribute.valueType" approved="yes"><source>Value type</source><target>Arvotyyppi</target></trans-unit>
+            <trans-unit id="attribute.valueType.hint" approved="yes"><source>Determines how the cell looks in the comparison table.</source><target>Määrittää, miltä solu näyttää vertailutaulukossa.</target></trans-unit>
+            <trans-unit id="attribute.valueType.check" approved="yes"><source>Check or dash</source><target>Rasti tai viiva</target></trans-unit>
+            <trans-unit id="attribute.valueType.number" approved="yes"><source>Number</source><target>Numero</target></trans-unit>
+            <trans-unit id="attribute.valueType.text" approved="yes"><source>Text</source><target>Teksti</target></trans-unit>
+            <trans-unit id="attribute.valueType.percent" approved="yes"><source>Percent</source><target>Prosentti</target></trans-unit>
+            <trans-unit id="attribute.unit" approved="yes"><source>Unit</source><target>Yksikkö</target></trans-unit>
+            <trans-unit id="attribute.unit.hint" approved="yes"><source>Shown after the value, e.g. “GB” or “users”.</source><target>Näytetään arvon jälkeen, esim. ”GB” tai ”käyttäjät”.</target></trans-unit>
+            <trans-unit id="attribute.footnote" approved="yes"><source>Footnote</source><target>Alaviite</target></trans-unit>
+            <trans-unit id="attribute.footnote.hint" approved="yes"><source>Shown in small print after the title in the comparison table.</source><target>Näytetään pienellä tekstillä otsikon jälkeen vertailutaulukossa.</target></trans-unit>
+            <trans-unit id="value.attribute" approved="yes"><source>Feature</source><target>Ominaisuus</target></trans-unit>
+            <trans-unit id="value.included" approved="yes"><source>Included</source><target>Sisältyy</target></trans-unit>
+            <trans-unit id="value.included.hint" approved="yes"><source>Applies to features of the type “Check or dash”.</source><target>Koskee ominaisuuksia, joiden tyyppi on ”Rasti tai viiva”.</target></trans-unit>
+            <trans-unit id="value.value" approved="yes"><source>Value</source><target>Arvo</target></trans-unit>
+            <trans-unit id="value.value.hint" approved="yes"><source>For number, text and percent. E.g. “unlimited”, “up to 48” or “2.1”.</source><target>Numeroille, tekstille ja prosentille. Esim. ”rajoittamaton”, ”jopa 48” tai ”2.1”.</target></trans-unit>
+            <trans-unit id="flexform.sheet" approved="yes"><source>Pricing table</source><target>Hinnoittelutaulukko</target></trans-unit>
+            <trans-unit id="flexform.table" approved="yes"><source>Pricing table</source><target>Hinnoittelutaulukko</target></trans-unit>
+            <trans-unit id="flexform.table.hint" approved="yes"><source>The record holding plans and features. The same table can appear on several pages in different layouts.</source><target>Tietue, joka sisältää suunnitelmat ja ominaisuudet. Sama taulukko voi esiintyä useilla sivuilla eri asetteluissa.</target></trans-unit>
+            <trans-unit id="flexform.layout" approved="yes"><source>Layout</source><target>Asettelu</target></trans-unit>
+            <trans-unit id="flexform.layout.hint" approved="yes"><source>Plan cards for a few plans, compact rows from about five, the comparison table for many features.</source><target>Suunnitelmakortit muutamalle suunnitelmalle, kompaktit rivit noin viidestä alkaen, vertailutaulukko monille ominaisuuksille.</target></trans-unit>
+            <trans-unit id="flexform.layout.cards" approved="yes"><source>Plan cards</source><target>Suunnitelmakortit</target></trans-unit>
+            <trans-unit id="flexform.layout.matrix" approved="yes"><source>Comparison table</source><target>Vertailutaulukko</target></trans-unit>
+            <trans-unit id="flexform.layout.groups" approved="yes"><source>Cards with feature groups</source><target>Kortit ominaisuusryhmillä</target></trans-unit>
+            <trans-unit id="flexform.layout.rows" approved="yes"><source>Compact rows</source><target>Kompaktit rivit</target></trans-unit>
+            <trans-unit id="flexform.layout.accordion" approved="yes"><source>Cards with expandable details</source><target>Kortit avattavilla tiedoilla</target></trans-unit>
+            <trans-unit id="flexform.showMatrix" approved="yes"><source>Also show comparison table</source><target>Näytä myös vertailutaulukko</target></trans-unit>
+            <trans-unit id="flexform.showMatrix.hint" approved="yes"><source>The comparison table then appears below the chosen layout.</source><target>Vertailutaulukko näkyy sitten valitun asettelun alapuolella.</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix" approved="yes"><source>Comparison table collapsed</source><target>Vertailutaulukko kutistettu</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix.hint" approved="yes"><source>The comparison table only opens on click — keeps the page calm with many features.</source><target>Vertailutaulukko avautuu vain napsauttamalla — pitää sivun rauhallisena, kun ominaisuuksia on paljon.</target></trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="is" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="tx_pricing_domain_model_table" approved="yes"><source>Pricing table</source><target>Verðtafla</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_plan" approved="yes"><source>Plan</source><target>Pakki</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_price" approved="yes"><source>Price</source><target>Verð</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_group" approved="yes"><source>Feature group</source><target>Eiginleikahópur</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_attribute" approved="yes"><source>Feature</source><target>Eiginleiki</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_value" approved="yes"><source>Value</source><target>Gildi</target></trans-unit>
+            <trans-unit id="plugin.table" approved="yes"><source>Pricing table</source><target>Verðtafla</target></trans-unit>
+            <trans-unit id="plugin.table.description" approved="yes"><source>Plan cards, comparison table or compact rows from one pricing table record.</source><target>Pakkaspjöld, samanburðartafla eða þjappaðar raðir úr einni verðtöflu.</target></trans-unit>
+            <trans-unit id="tab.general" approved="yes"><source>General</source><target>Almennt</target></trans-unit>
+            <trans-unit id="tab.plans" approved="yes"><source>Plans</source><target>Pakkar</target></trans-unit>
+            <trans-unit id="tab.attributes" approved="yes"><source>Features</source><target>Eiginleikar</target></trans-unit>
+            <trans-unit id="tab.prices" approved="yes"><source>Prices</source><target>Verð</target></trans-unit>
+            <trans-unit id="tab.highlight" approved="yes"><source>Highlight</source><target>Áhersla</target></trans-unit>
+            <trans-unit id="table.title" approved="yes"><source>Title</source><target>Heiti</target></trans-unit>
+            <trans-unit id="table.description" approved="yes"><source>Introductory note</source><target>Inngangstexti</target></trans-unit>
+            <trans-unit id="table.description.hint" approved="yes"><source>Shown above the prices in every layout, e.g. “All prices per month, plus VAT.”</source><target>Sýnt fyrir ofan verðin í öllu útlitinu, t.d. „Öll verð á mánuði, að viðbættum VSK.“</target></trans-unit>
+            <trans-unit id="table.taxMode" approved="yes"><source>Entered amounts are</source><target>Skráðar upphæðir eru</target></trans-unit>
+            <trans-unit id="table.taxMode.hint" approved="yes"><source>Defines how the entered amounts are read. Conversion only runs from net to gross, never the other way round.</source><target>Skilgreinir hvernig skráðar upphæðir eru lesnar. Umreikningur fer aðeins úr nettó yfir í brúttó, aldrei öfugt.</target></trans-unit>
+            <trans-unit id="table.taxMode.net" approved="yes"><source>Net prices</source><target>Nettóverð</target></trans-unit>
+            <trans-unit id="table.taxMode.gross" approved="yes"><source>Gross prices</source><target>Brúttóverð</target></trans-unit>
+            <trans-unit id="table.taxRate" approved="yes"><source>Tax rate in percent</source><target>Skattprósenta</target></trans-unit>
+            <trans-unit id="table.taxRate.hint" approved="yes"><source>Basis for the gross display. 0 skips the conversion.</source><target>Grunnur fyrir brúttóverð. 0 sleppir umreikningi.</target></trans-unit>
+            <trans-unit id="table.taxSwitchable" approved="yes"><source>Visitors may switch between net and gross</source><target>Gestir geta skipt á milli nettó og brúttó</target></trans-unit>
+            <trans-unit id="table.taxSwitchable.hint" approved="yes"><source>Unchecked, the page only shows the option selected above.</source><target>Ef ekki er hakað við, sýnir síðan aðeins þann valkost sem valinn er að ofan.</target></trans-unit>
+            <trans-unit id="table.currencySwitchable" approved="yes"><source>Currency switchable</source><target>Gjaldmiðill skiptanlegur</target></trans-unit>
+            <trans-unit id="table.currencySwitchable.hint" approved="yes"><source>The switch only appears if more than one currency is entered for the plans.</source><target>Skiptingin birtist aðeins ef fleiri en einn gjaldmiðill hefur verið skráður á pökkunum.</target></trans-unit>
+            <trans-unit id="table.periodSwitchable" approved="yes"><source>Billing period switchable</source><target>Greiðslutímabil skiptanlegt</target></trans-unit>
+            <trans-unit id="table.periodSwitchable.hint" approved="yes"><source>The switch only appears if more than one period is entered for the plans.</source><target>Skiptingin birtist aðeins ef fleiri en eitt tímabil hefur verið skráð á pökkunum.</target></trans-unit>
+            <trans-unit id="table.currencyPosition" approved="yes"><source>Currency symbol</source><target>Gjaldmiðilstákn</target></trans-unit>
+            <trans-unit id="table.currencyPosition.hint" approved="yes"><source>English usually puts it before the amount (“€ 99”), German and most continental European languages after it (“99 €”).</source><target>Enska setur það venjulega fyrir framan upphæðina („€ 99“), þýska og flest evrópsk meginlandsmál setja það á eftir henni („99 €“).</target></trans-unit>
+            <trans-unit id="table.currencyPosition.before" approved="yes"><source>before the amount (€ 99)</source><target>fyrir framan upphæðina (€ 99)</target></trans-unit>
+            <trans-unit id="table.currencyPosition.after" approved="yes"><source>after the amount (99 €)</source><target>á eftir upphæðinni (99 €)</target></trans-unit>
+            <trans-unit id="table.selectLabel" approved="yes"><source>Button label</source><target>Hnappatexti</target></trans-unit>
+            <trans-unit id="table.selectLabel.hint" approved="yes"><source>Applies to all plans without a label of their own. Empty means “Select”.</source><target>Á við alla pakka án eigin merkis. Tómt þýðir „Velja“.</target></trans-unit>
+            <trans-unit id="table.selectLabel.placeholder" approved="yes"><source>Select</source><target>Velja</target></trans-unit>
+            <trans-unit id="table.plans" approved="yes"><source>Plans</source><target>Pakkar</target></trans-unit>
+            <trans-unit id="table.groups" approved="yes"><source>Feature groups</source><target>Eiginleikahópar</target></trans-unit>
+            <trans-unit id="table.groups.hint" approved="yes"><source>Features belong to the table, not to a single plan — that is the only way the comparison table compares like with like.</source><target>Eiginleikar tilheyra töflunni, ekki einum pakka — það er eina leiðin til að samanburðartaflan beri saman sambærilegt.</target></trans-unit>
+            <trans-unit id="plan.title" approved="yes"><source>Name</source><target>Heiti</target></trans-unit>
+            <trans-unit id="plan.subtitle" approved="yes"><source>Subtitle</source><target>Undirtitill</target></trans-unit>
+            <trans-unit id="plan.subtitle.hint" approved="yes"><source>One line below the name, e.g. “6 job ads for 30 days each”.</source><target>Ein lína fyrir neðan heitið, t.d. „6 atvinnuauglýsingar í 30 daga hver“.</target></trans-unit>
+            <trans-unit id="plan.eyebrow" approved="yes"><source>Eyebrow</source><target>Yfirlína</target></trans-unit>
+            <trans-unit id="plan.eyebrow.hint" approved="yes"><source>Small line above the name, e.g. “48 resources included”.</source><target>Lítil lína fyrir ofan heitið, t.d. „48 auðlindir innifaldar“.</target></trans-unit>
+            <trans-unit id="plan.description" approved="yes"><source>Description</source><target>Lýsing</target></trans-unit>
+            <trans-unit id="plan.favourite" approved="yes"><source>Highlight</source><target>Áhersla</target></trans-unit>
+            <trans-unit id="plan.favourite.hint" approved="yes"><source>The plan gets a border and shadow in the accent colour, and a tinted column in the comparison table.</source><target>Pakkinn fær ramma og skugga í áherslulit, og litaðan dálk í samanburðartöflunni.</target></trans-unit>
+            <trans-unit id="plan.badge" approved="yes"><source>Badge text</source><target>Texti merkis</target></trans-unit>
+            <trans-unit id="plan.badge.hint" approved="yes"><source>Empty omits the badge. Common are “Popular” or “Recommended”.</source><target>Tómt sleppir merkinu. Algeng eru „Vinsælt“ eða „Mælt með“.</target></trans-unit>
+            <trans-unit id="plan.badge.placeholder" approved="yes"><source>Popular</source><target>Vinsæll</target></trans-unit>
+            <trans-unit id="plan.selectLink" approved="yes"><source>Select button target</source><target>Tengill valhnapps</target></trans-unit>
+            <trans-unit id="plan.selectLink.hint" approved="yes"><source>Without a link no button is rendered — neither an empty one nor a placeholder.</source><target>Án tengils er enginn hnappur birtur — hvorki tómur né staðgengill.</target></trans-unit>
+            <trans-unit id="plan.selectLabel" approved="yes"><source>Own label</source><target>Eiginn hnappatexti</target></trans-unit>
+            <trans-unit id="plan.selectLabel.hint" approved="yes"><source>Overrides the label from the pricing table, for this plan only.</source><target>Hnekkir hnappatextanum frá verðtöflunni, aðeins fyrir þennan pakka.</target></trans-unit>
+            <trans-unit id="plan.priceNote" approved="yes"><source>Note below the price</source><target>Athugasemd fyrir neðan verð</target></trans-unit>
+            <trans-unit id="plan.priceNote.hint" approved="yes"><source>E.g. “billed annually” or “excl. VAT”.</source><target>T.d. „greiðist árlega“ eða „án VSK“.</target></trans-unit>
+            <trans-unit id="plan.prices" approved="yes"><source>Prices</source><target>Verð</target></trans-unit>
+            <trans-unit id="plan.attributeValues" approved="yes"><source>Feature values</source><target>Eiginleikagildi</target></trans-unit>
+            <trans-unit id="plan.attributeValues.hint" approved="yes"><source>Features without a value count as not included and show a dash. Not every cell has to be filled.</source><target>Eiginleikar án gildis teljast ekki innifaldir og sýna bandstrik. Ekki þarf að fylla út í hvern reit.</target></trans-unit>
+            <trans-unit id="price.currency" approved="yes"><source>Currency</source><target>Gjaldmiðill</target></trans-unit>
+            <trans-unit id="price.period" approved="yes"><source>Period</source><target>Tímabil</target></trans-unit>
+            <trans-unit id="price.period.month" approved="yes"><source>per month</source><target>á mánuði</target></trans-unit>
+            <trans-unit id="price.period.year" approved="yes"><source>per year</source><target>á ári</target></trans-unit>
+            <trans-unit id="price.period.once" approved="yes"><source>one-time</source><target>einskipti</target></trans-unit>
+            <trans-unit id="price.period.custom" approved="yes"><source>custom</source><target>sérsniðið</target></trans-unit>
+            <trans-unit id="price.unitLabel" approved="yes"><source>Own unit</source><target>Eigin eining</target></trans-unit>
+            <trans-unit id="price.unitLabel.hint" approved="yes"><source>E.g. “per ad” or “per calendar”.</source><target>T.d. „á auglýsingu“ eða „á dagatal“.</target></trans-unit>
+            <trans-unit id="price.amount" approved="yes"><source>Amount</source><target>Upphæð</target></trans-unit>
+            <trans-unit id="price.onRequest" approved="yes"><source>Price on request</source><target>Verð að beiðni</target></trans-unit>
+            <trans-unit id="price.onRequestLabel" approved="yes"><source>Text instead of the amount</source><target>Texti í stað upphæðar</target></trans-unit>
+            <trans-unit id="price.onRequestLabel.hint" approved="yes"><source>Empty means “Price on request”.</source><target>Tómt þýðir „Verð að beiðni“.</target></trans-unit>
+            <trans-unit id="group.title" approved="yes"><source>Title</source><target>Heiti</target></trans-unit>
+            <trans-unit id="group.layout" approved="yes"><source>Layout</source><target>Útlit</target></trans-unit>
+            <trans-unit id="group.layout.hint" approved="yes"><source>A checklist for yes/no features, value pairs for details such as fees or quotas.</source><target>Gátlisti fyrir já/nei eiginleika, gildapör fyrir upplýsingar eins og gjöld eða kvóta.</target></trans-unit>
+            <trans-unit id="group.layout.list" approved="yes"><source>Checklist</source><target>Gátlisti</target></trans-unit>
+            <trans-unit id="group.layout.pairs" approved="yes"><source>Value pairs</source><target>Gildapör</target></trans-unit>
+            <trans-unit id="group.inCard" approved="yes"><source>Show on cards</source><target>Sýna á spjöldum</target></trans-unit>
+            <trans-unit id="group.inCard.hint" approved="yes"><source>Some groups belong in the comparison table only and would overload the card.</source><target>Sumir hópar eiga aðeins heima í samanburðartöflunni og myndu ofhlaða spjaldið.</target></trans-unit>
+            <trans-unit id="group.inMatrix" approved="yes"><source>Show in comparison table</source><target>Sýna í samanburðartöflu</target></trans-unit>
+            <trans-unit id="group.inMatrix.hint" approved="yes"><source>Unchecked, the group is left out of the comparison table.</source><target>Ef ekki er hakað við er hópnum sleppt úr samanburðartöflunni.</target></trans-unit>
+            <trans-unit id="group.attributes" approved="yes"><source>Features</source><target>Eiginleikar</target></trans-unit>
+            <trans-unit id="attribute.title" approved="yes"><source>Title</source><target>Heiti</target></trans-unit>
+            <trans-unit id="attribute.valueType" approved="yes"><source>Value type</source><target>Gildistegund</target></trans-unit>
+            <trans-unit id="attribute.valueType.hint" approved="yes"><source>Determines how the cell looks in the comparison table.</source><target>Ákvarðar hvernig reiturinn lítur út í samanburðartöflunni.</target></trans-unit>
+            <trans-unit id="attribute.valueType.check" approved="yes"><source>Check or dash</source><target>Hak eða bandstrik</target></trans-unit>
+            <trans-unit id="attribute.valueType.number" approved="yes"><source>Number</source><target>Tala</target></trans-unit>
+            <trans-unit id="attribute.valueType.text" approved="yes"><source>Text</source><target>Texti</target></trans-unit>
+            <trans-unit id="attribute.valueType.percent" approved="yes"><source>Percent</source><target>Prósent</target></trans-unit>
+            <trans-unit id="attribute.unit" approved="yes"><source>Unit</source><target>Eining</target></trans-unit>
+            <trans-unit id="attribute.unit.hint" approved="yes"><source>Shown after the value, e.g. “GB” or “users”.</source><target>Sýnt á eftir gildinu, t.d. „GB“ eða „notendur“.</target></trans-unit>
+            <trans-unit id="attribute.footnote" approved="yes"><source>Footnote</source><target>Neðanmálsgrein</target></trans-unit>
+            <trans-unit id="attribute.footnote.hint" approved="yes"><source>Shown in small print after the title in the comparison table.</source><target>Sýnt í smáu letri á eftir titlinum í samanburðartöflunni.</target></trans-unit>
+            <trans-unit id="value.attribute" approved="yes"><source>Feature</source><target>Eiginleiki</target></trans-unit>
+            <trans-unit id="value.included" approved="yes"><source>Included</source><target>Innifalið</target></trans-unit>
+            <trans-unit id="value.included.hint" approved="yes"><source>Applies to features of the type “Check or dash”.</source><target>Á við eiginleika af gerðinni „Hak eða bandstrik“.</target></trans-unit>
+            <trans-unit id="value.value" approved="yes"><source>Value</source><target>Gildi</target></trans-unit>
+            <trans-unit id="value.value.hint" approved="yes"><source>For number, text and percent. E.g. “unlimited”, “up to 48” or “2.1”.</source><target>Fyrir tölu, texta og prósentur. T.d. „ótakmarkað“, „allt að 48“ eða „2.1“.</target></trans-unit>
+            <trans-unit id="flexform.sheet" approved="yes"><source>Pricing table</source><target>Verðtafla</target></trans-unit>
+            <trans-unit id="flexform.table" approved="yes"><source>Pricing table</source><target>Verðtafla</target></trans-unit>
+            <trans-unit id="flexform.table.hint" approved="yes"><source>The record holding plans and features. The same table can appear on several pages in different layouts.</source><target>Færslan sem heldur utan um pakka og eiginleika. Sama tafla getur birst á nokkrum síðum með mismunandi útliti.</target></trans-unit>
+            <trans-unit id="flexform.layout" approved="yes"><source>Layout</source><target>Útlit</target></trans-unit>
+            <trans-unit id="flexform.layout.hint" approved="yes"><source>Plan cards for a few plans, compact rows from about five, the comparison table for many features.</source><target>Pakkaspjöld fyrir fáa pakka, þjappaðar raðir frá um fimm pökkum, samanburðartafla fyrir marga eiginleika.</target></trans-unit>
+            <trans-unit id="flexform.layout.cards" approved="yes"><source>Plan cards</source><target>Pakkaspjöld</target></trans-unit>
+            <trans-unit id="flexform.layout.matrix" approved="yes"><source>Comparison table</source><target>Samanburðartafla</target></trans-unit>
+            <trans-unit id="flexform.layout.groups" approved="yes"><source>Cards with feature groups</source><target>Spjöld með eiginleikahópum</target></trans-unit>
+            <trans-unit id="flexform.layout.rows" approved="yes"><source>Compact rows</source><target>Þjappaðar raðir</target></trans-unit>
+            <trans-unit id="flexform.layout.accordion" approved="yes"><source>Cards with expandable details</source><target>Spjöld með útfellanlegum upplýsingum</target></trans-unit>
+            <trans-unit id="flexform.showMatrix" approved="yes"><source>Also show comparison table</source><target>Sýna einnig samanburðartöflu</target></trans-unit>
+            <trans-unit id="flexform.showMatrix.hint" approved="yes"><source>The comparison table then appears below the chosen layout.</source><target>Samanburðartaflan birtist þá fyrir neðan valið útlit.</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix" approved="yes"><source>Comparison table collapsed</source><target>Samanburðartafla samanbrotin</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix.hint" approved="yes"><source>The comparison table only opens on click — keeps the page calm with many features.</source><target>Samanburðartaflan opnast aðeins við smell — heldur síðunni rólegri þegar margir eiginleikar eru til staðar.</target></trans-unit>
+        </body>
+    </file>
+</xliff>

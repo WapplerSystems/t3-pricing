@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="lv" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="tx_pricing_domain_model_table" approved="yes"><source>Pricing table</source><target>Cenu tabula</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_plan" approved="yes"><source>Plan</source><target>Plāns</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_price" approved="yes"><source>Price</source><target>Cena</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_group" approved="yes"><source>Feature group</source><target>Funkciju grupa</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_attribute" approved="yes"><source>Feature</source><target>Funkcija</target></trans-unit>
+            <trans-unit id="tx_pricing_domain_model_value" approved="yes"><source>Value</source><target>Vērtība</target></trans-unit>
+            <trans-unit id="plugin.table" approved="yes"><source>Pricing table</source><target>Cenu tabula</target></trans-unit>
+            <trans-unit id="plugin.table.description" approved="yes"><source>Plan cards, comparison table or compact rows from one pricing table record.</source><target>Plānu kartītes, salīdzināšanas tabula vai kompaktas rindas no viena cenu tabulas ieraksta.</target></trans-unit>
+            <trans-unit id="tab.general" approved="yes"><source>General</source><target>Vispārīgi</target></trans-unit>
+            <trans-unit id="tab.plans" approved="yes"><source>Plans</source><target>Plāni</target></trans-unit>
+            <trans-unit id="tab.attributes" approved="yes"><source>Features</source><target>Funkcijas</target></trans-unit>
+            <trans-unit id="tab.prices" approved="yes"><source>Prices</source><target>Cenas</target></trans-unit>
+            <trans-unit id="tab.highlight" approved="yes"><source>Highlight</source><target>Izcelšana</target></trans-unit>
+            <trans-unit id="table.title" approved="yes"><source>Title</source><target>Nosaukums</target></trans-unit>
+            <trans-unit id="table.description" approved="yes"><source>Introductory note</source><target>Ievadpiezīme</target></trans-unit>
+            <trans-unit id="table.description.hint" approved="yes"><source>Shown above the prices in every layout, e.g. “All prices per month, plus VAT.”</source><target>Tiek rādīta virs cenām katrā izkārtojumā, piem., „Visas cenas norādītas mēnesī, plus PVN.“</target></trans-unit>
+            <trans-unit id="table.taxMode" approved="yes"><source>Entered amounts are</source><target>Ievadītās summas ir</target></trans-unit>
+            <trans-unit id="table.taxMode.hint" approved="yes"><source>Defines how the entered amounts are read. Conversion only runs from net to gross, never the other way round.</source><target>Nosaka, kā ievadītās summas tiek interpretētas. Konvertēšana notiek tikai no neto uz bruto, nekad otrādi.</target></trans-unit>
+            <trans-unit id="table.taxMode.net" approved="yes"><source>Net prices</source><target>Neto cenas</target></trans-unit>
+            <trans-unit id="table.taxMode.gross" approved="yes"><source>Gross prices</source><target>Bruto cenas</target></trans-unit>
+            <trans-unit id="table.taxRate" approved="yes"><source>Tax rate in percent</source><target>Nodokļa likme procentos</target></trans-unit>
+            <trans-unit id="table.taxRate.hint" approved="yes"><source>Basis for the gross display. 0 skips the conversion.</source><target>Pamats bruto attēlošanai. 0 izlaiž konvertēšanu.</target></trans-unit>
+            <trans-unit id="table.taxSwitchable" approved="yes"><source>Visitors may switch between net and gross</source><target>Apmeklētāji var pārslēgties starp neto un bruto</target></trans-unit>
+            <trans-unit id="table.taxSwitchable.hint" approved="yes"><source>Unchecked, the page only shows the option selected above.</source><target>Neatzīmējot, lapa rāda tikai iepriekš izvēlēto opciju.</target></trans-unit>
+            <trans-unit id="table.currencySwitchable" approved="yes"><source>Currency switchable</source><target>Valūtas pārslēgšana</target></trans-unit>
+            <trans-unit id="table.currencySwitchable.hint" approved="yes"><source>The switch only appears if more than one currency is entered for the plans.</source><target>Pārslēgs parādās tikai tad, ja plāniem ievadīta vairāk nekā viena valūta.</target></trans-unit>
+            <trans-unit id="table.periodSwitchable" approved="yes"><source>Billing period switchable</source><target>Norēķinu perioda pārslēgšana</target></trans-unit>
+            <trans-unit id="table.periodSwitchable.hint" approved="yes"><source>The switch only appears if more than one period is entered for the plans.</source><target>Pārslēgs parādās tikai tad, ja plāniem ievadīts vairāk nekā viens periods.</target></trans-unit>
+            <trans-unit id="table.currencyPosition" approved="yes"><source>Currency symbol</source><target>Valūtas simbols</target></trans-unit>
+            <trans-unit id="table.currencyPosition.hint" approved="yes"><source>English usually puts it before the amount (“€ 99”), German and most continental European languages after it (“99 €”).</source><target>Angļu valodā to parasti liek pirms summas („€ 99“), vācu valodā un lielākajā daļā kontinentālās Eiropas valodu pēc summas („99 €“).</target></trans-unit>
+            <trans-unit id="table.currencyPosition.before" approved="yes"><source>before the amount (€ 99)</source><target>pirms summas (€ 99)</target></trans-unit>
+            <trans-unit id="table.currencyPosition.after" approved="yes"><source>after the amount (99 €)</source><target>pēc summas (99 €)</target></trans-unit>
+            <trans-unit id="table.selectLabel" approved="yes"><source>Button label</source><target>Pogas teksts</target></trans-unit>
+            <trans-unit id="table.selectLabel.hint" approved="yes"><source>Applies to all plans without a label of their own. Empty means “Select”.</source><target>Attiecas uz visiem plāniem, kuriem nav sava teksta. Tukšs nozīmē „Izvēlēties“.</target></trans-unit>
+            <trans-unit id="table.selectLabel.placeholder" approved="yes"><source>Select</source><target>Izvēlēties</target></trans-unit>
+            <trans-unit id="table.plans" approved="yes"><source>Plans</source><target>Plāni</target></trans-unit>
+            <trans-unit id="table.groups" approved="yes"><source>Feature groups</source><target>Funkciju grupas</target></trans-unit>
+            <trans-unit id="table.groups.hint" approved="yes"><source>Features belong to the table, not to a single plan — that is the only way the comparison table compares like with like.</source><target>Funkcijas pieder tabulai, nevis atsevišķam plānam — tikai tā salīdzināšanas tabula var salīdzināt līdzīgu ar līdzīgu.</target></trans-unit>
+            <trans-unit id="plan.title" approved="yes"><source>Name</source><target>Nosaukums</target></trans-unit>
+            <trans-unit id="plan.subtitle" approved="yes"><source>Subtitle</source><target>Apakšvirsraksts</target></trans-unit>
+            <trans-unit id="plan.subtitle.hint" approved="yes"><source>One line below the name, e.g. “6 job ads for 30 days each”.</source><target>Viena rinda zem nosaukuma, piem., „6 darba sludinājumi katrs uz 30 dienām“.</target></trans-unit>
+            <trans-unit id="plan.eyebrow" approved="yes"><source>Eyebrow</source><target>Ievadrindiņa</target></trans-unit>
+            <trans-unit id="plan.eyebrow.hint" approved="yes"><source>Small line above the name, e.g. “48 resources included”.</source><target>Maza rindiņa virs nosaukuma, piem., „Iekļauti 48 resursi“.</target></trans-unit>
+            <trans-unit id="plan.description" approved="yes"><source>Description</source><target>Apraksts</target></trans-unit>
+            <trans-unit id="plan.favourite" approved="yes"><source>Highlight</source><target>Izcelt</target></trans-unit>
+            <trans-unit id="plan.favourite.hint" approved="yes"><source>The plan gets a border and shadow in the accent colour, and a tinted column in the comparison table.</source><target>Plāns iegūst apmali un ēnu akcenta krāsā, kā arī tonētu kolonnu salīdzināšanas tabulā.</target></trans-unit>
+            <trans-unit id="plan.badge" approved="yes"><source>Badge text</source><target>Nozīmītes teksts</target></trans-unit>
+            <trans-unit id="plan.badge.hint" approved="yes"><source>Empty omits the badge. Common are “Popular” or “Recommended”.</source><target>Tukšs izlaiž nozīmīti. Bieži lieto „Populārs“ vai „Ieteicams“.</target></trans-unit>
+            <trans-unit id="plan.badge.placeholder" approved="yes"><source>Popular</source><target>Populārs</target></trans-unit>
+            <trans-unit id="plan.selectLink" approved="yes"><source>Select button target</source><target>Pogas mērķis</target></trans-unit>
+            <trans-unit id="plan.selectLink.hint" approved="yes"><source>Without a link no button is rendered — neither an empty one nor a placeholder.</source><target>Bez saites poga netiek attēlota — ne tukša, ne aizstājējvietas.</target></trans-unit>
+            <trans-unit id="plan.selectLabel" approved="yes"><source>Own label</source><target>Savs teksts</target></trans-unit>
+            <trans-unit id="plan.selectLabel.hint" approved="yes"><source>Overrides the label from the pricing table, for this plan only.</source><target>Aizstāj cenu tabulas tekstu tikai šim plānam.</target></trans-unit>
+            <trans-unit id="plan.priceNote" approved="yes"><source>Note below the price</source><target>Piezīme zem cenas</target></trans-unit>
+            <trans-unit id="plan.priceNote.hint" approved="yes"><source>E.g. “billed annually” or “excl. VAT”.</source><target>Piem., „apmaksa reizi gadā“ vai „bez PVN“.</target></trans-unit>
+            <trans-unit id="plan.prices" approved="yes"><source>Prices</source><target>Cenas</target></trans-unit>
+            <trans-unit id="plan.attributeValues" approved="yes"><source>Feature values</source><target>Funkciju vērtības</target></trans-unit>
+            <trans-unit id="plan.attributeValues.hint" approved="yes"><source>Features without a value count as not included and show a dash. Not every cell has to be filled.</source><target>Funkcijas bez vērtības tiek uzskatītas par neiekļautām un rāda svītru. Nav jāaizpilda katra šūna.</target></trans-unit>
+            <trans-unit id="price.currency" approved="yes"><source>Currency</source><target>Valūta</target></trans-unit>
+            <trans-unit id="price.period" approved="yes"><source>Period</source><target>Periods</target></trans-unit>
+            <trans-unit id="price.period.month" approved="yes"><source>per month</source><target>mēnesī</target></trans-unit>
+            <trans-unit id="price.period.year" approved="yes"><source>per year</source><target>gadā</target></trans-unit>
+            <trans-unit id="price.period.once" approved="yes"><source>one-time</source><target>vienreizējs</target></trans-unit>
+            <trans-unit id="price.period.custom" approved="yes"><source>custom</source><target>pielāgots</target></trans-unit>
+            <trans-unit id="price.unitLabel" approved="yes"><source>Own unit</source><target>Sava vienība</target></trans-unit>
+            <trans-unit id="price.unitLabel.hint" approved="yes"><source>E.g. “per ad” or “per calendar”.</source><target>Piem., „par sludinājumu“ vai „par kalendāru“.</target></trans-unit>
+            <trans-unit id="price.amount" approved="yes"><source>Amount</source><target>Summa</target></trans-unit>
+            <trans-unit id="price.onRequest" approved="yes"><source>Price on request</source><target>Cena pēc pieprasījuma</target></trans-unit>
+            <trans-unit id="price.onRequestLabel" approved="yes"><source>Text instead of the amount</source><target>Teksts summas vietā</target></trans-unit>
+            <trans-unit id="price.onRequestLabel.hint" approved="yes"><source>Empty means “Price on request”.</source><target>Tukšs nozīmē „Cena pēc pieprasījuma“.</target></trans-unit>
+            <trans-unit id="group.title" approved="yes"><source>Title</source><target>Nosaukums</target></trans-unit>
+            <trans-unit id="group.layout" approved="yes"><source>Layout</source><target>Izkārtojums</target></trans-unit>
+            <trans-unit id="group.layout.hint" approved="yes"><source>A checklist for yes/no features, value pairs for details such as fees or quotas.</source><target>Kontrolsaraksts jā/nē funkcijām, vērtību pāri detalizētai informācijai, piemēram, maksām vai kvotām.</target></trans-unit>
+            <trans-unit id="group.layout.list" approved="yes"><source>Checklist</source><target>Kontrolsaraksts</target></trans-unit>
+            <trans-unit id="group.layout.pairs" approved="yes"><source>Value pairs</source><target>Vērtību pāri</target></trans-unit>
+            <trans-unit id="group.inCard" approved="yes"><source>Show on cards</source><target>Rādīt kartītēs</target></trans-unit>
+            <trans-unit id="group.inCard.hint" approved="yes"><source>Some groups belong in the comparison table only and would overload the card.</source><target>Dažas grupas pieder tikai salīdzināšanas tabulai un pārslogotu kartīti.</target></trans-unit>
+            <trans-unit id="group.inMatrix" approved="yes"><source>Show in comparison table</source><target>Rādīt salīdzināšanas tabulā</target></trans-unit>
+            <trans-unit id="group.inMatrix.hint" approved="yes"><source>Unchecked, the group is left out of the comparison table.</source><target>Neatzīmējot, grupa netiek iekļauta salīdzināšanas tabulā.</target></trans-unit>
+            <trans-unit id="group.attributes" approved="yes"><source>Features</source><target>Funkcijas</target></trans-unit>
+            <trans-unit id="attribute.title" approved="yes"><source>Title</source><target>Nosaukums</target></trans-unit>
+            <trans-unit id="attribute.valueType" approved="yes"><source>Value type</source><target>Vērtības veids</target></trans-unit>
+            <trans-unit id="attribute.valueType.hint" approved="yes"><source>Determines how the cell looks in the comparison table.</source><target>Nosaka, kā šūna izskatās salīdzināšanas tabulā.</target></trans-unit>
+            <trans-unit id="attribute.valueType.check" approved="yes"><source>Check or dash</source><target>Atzīme vai svītra</target></trans-unit>
+            <trans-unit id="attribute.valueType.number" approved="yes"><source>Number</source><target>Skaitlis</target></trans-unit>
+            <trans-unit id="attribute.valueType.text" approved="yes"><source>Text</source><target>Teksts</target></trans-unit>
+            <trans-unit id="attribute.valueType.percent" approved="yes"><source>Percent</source><target>Procenti</target></trans-unit>
+            <trans-unit id="attribute.unit" approved="yes"><source>Unit</source><target>Mērvienība</target></trans-unit>
+            <trans-unit id="attribute.unit.hint" approved="yes"><source>Shown after the value, e.g. “GB” or “users”.</source><target>Tiek rādīta pēc vērtības, piem., „GB“ vai „lietotāji“.</target></trans-unit>
+            <trans-unit id="attribute.footnote" approved="yes"><source>Footnote</source><target>Zemsvītras piezīme</target></trans-unit>
+            <trans-unit id="attribute.footnote.hint" approved="yes"><source>Shown in small print after the title in the comparison table.</source><target>Tiek rādīta sīkā drukā pēc nosaukuma salīdzināšanas tabulā.</target></trans-unit>
+            <trans-unit id="value.attribute" approved="yes"><source>Feature</source><target>Funkcija</target></trans-unit>
+            <trans-unit id="value.included" approved="yes"><source>Included</source><target>Iekļauts</target></trans-unit>
+            <trans-unit id="value.included.hint" approved="yes"><source>Applies to features of the type “Check or dash”.</source><target>Attiecas uz funkcijām ar veidu „Atzīme vai svītra“.</target></trans-unit>
+            <trans-unit id="value.value" approved="yes"><source>Value</source><target>Vērtība</target></trans-unit>
+            <trans-unit id="value.value.hint" approved="yes"><source>For number, text and percent. E.g. “unlimited”, “up to 48” or “2.1”.</source><target>Skaitlim, tekstam un procentiem. Piem., „neierobežots“, „līdz 48“ vai „2.1“.</target></trans-unit>
+            <trans-unit id="flexform.sheet" approved="yes"><source>Pricing table</source><target>Cenu tabula</target></trans-unit>
+            <trans-unit id="flexform.table" approved="yes"><source>Pricing table</source><target>Cenu tabula</target></trans-unit>
+            <trans-unit id="flexform.table.hint" approved="yes"><source>The record holding plans and features. The same table can appear on several pages in different layouts.</source><target>Ieraksts, kurā ir plāni un funkcijas. Viena un tā pati tabula var parādīties vairākās lapās ar dažādiem izkārtojumiem.</target></trans-unit>
+            <trans-unit id="flexform.layout" approved="yes"><source>Layout</source><target>Izkārtojums</target></trans-unit>
+            <trans-unit id="flexform.layout.hint" approved="yes"><source>Plan cards for a few plans, compact rows from about five, the comparison table for many features.</source><target>Plānu kartītes dažiem plāniem, kompaktas rindas sākot no aptuveni pieciem, salīdzināšanas tabula daudzām funkcijām.</target></trans-unit>
+            <trans-unit id="flexform.layout.cards" approved="yes"><source>Plan cards</source><target>Plānu kartītes</target></trans-unit>
+            <trans-unit id="flexform.layout.matrix" approved="yes"><source>Comparison table</source><target>Salīdzināšanas tabula</target></trans-unit>
+            <trans-unit id="flexform.layout.groups" approved="yes"><source>Cards with feature groups</source><target>Kartītes ar funkciju grupām</target></trans-unit>
+            <trans-unit id="flexform.layout.rows" approved="yes"><source>Compact rows</source><target>Kompaktas rindas</target></trans-unit>
+            <trans-unit id="flexform.layout.accordion" approved="yes"><source>Cards with expandable details</source><target>Kartītes ar izvēršamu informāciju</target></trans-unit>
+            <trans-unit id="flexform.showMatrix" approved="yes"><source>Also show comparison table</source><target>Rādīt arī salīdzināšanas tabulu</target></trans-unit>
+            <trans-unit id="flexform.showMatrix.hint" approved="yes"><source>The comparison table then appears below the chosen layout.</source><target>Salīdzināšanas tabula pēc tam parādās zem izvēlētā izkārtojuma.</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix" approved="yes"><source>Comparison table collapsed</source><target>Salīdzināšanas tabula sakļauta</target></trans-unit>
+            <trans-unit id="flexform.collapseMatrix.hint" approved="yes"><source>The comparison table only opens on click — keeps the page calm with many features.</source><target>Salīdzināšanas tabula atveras tikai pēc klikšķa — lapu padara mierīgu ar daudzām funkcijām.</target></trans-unit>
+        </body>
+    </file>
+</xliff>

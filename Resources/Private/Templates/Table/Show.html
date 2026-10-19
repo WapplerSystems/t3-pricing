@@ -3,53 +3,53 @@
 
 <f:section name="Main">
 
-<f:if condition="{fehlt}">
+<f:if condition="{missing}">
     <f:then>
-        <p class="ws-preise-hinweis"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:keineTabelle"/></p>
+        <p class="ws-pricing-notice"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:noTable"/></p>
     </f:then>
     <f:else>
 
-<div class="ws-preise ws-preise--{darstellung}"
-     data-waehrung="{waehrung}"
-     data-zeitraum="{zeitraum}"
-     data-steuer="{steuer}">
+<div class="ws-pricing ws-pricing--{layout}"
+     data-currency="{currency}"
+     data-period="{period}"
+     data-tax="{taxMode}">
 
     <f:comment>
-    Der Beschreibungstext der Tabelle stand frueher nur in der Ecke der Matrix.
-    Ist die Matrix abgeschaltet - und in den Kartendarstellungen ist sie das oft -
-    war er gepflegt, aber nirgends zu sehen. Er gehoert vor die Schalter, weil er
-    erklaert, was die Preise darunter ueberhaupt bedeuten.
+    The description of the table used to sit in the corner of the matrix only.
+    With the matrix switched off - which it often is in the card layouts - it
+    was maintained but shown nowhere. It belongs before the switches, because
+    it explains what the prices below mean in the first place.
     </f:comment>
-    <f:if condition="{tabelle.description}">
-        <div class="ws-preise__einleitung"><f:format.html>{tabelle.description}</f:format.html></div>
+    <f:if condition="{table.description}">
+        <div class="ws-pricing__intro"><f:format.html>{table.description}</f:format.html></div>
     </f:if>
 
-    <f:render partial="Schalter" arguments="{_all}"/>
+    <f:render partial="Switches" arguments="{_all}"/>
 
-    <f:switch expression="{darstellung}">
-        <f:case value="matrix"><f:render partial="Darstellung/Matrix" arguments="{_all}"/></f:case>
-        <f:case value="groups"><f:render partial="Darstellung/Gruppen" arguments="{_all}"/></f:case>
-        <f:case value="rows"><f:render partial="Darstellung/Zeilen" arguments="{_all}"/></f:case>
-        <f:case value="accordion"><f:render partial="Darstellung/Aufklapper" arguments="{_all}"/></f:case>
-        <f:defaultCase><f:render partial="Darstellung/Karten" arguments="{_all}"/></f:defaultCase>
+    <f:switch expression="{layout}">
+        <f:case value="matrix"><f:render partial="Layout/Matrix" arguments="{_all}"/></f:case>
+        <f:case value="groups"><f:render partial="Layout/Groups" arguments="{_all}"/></f:case>
+        <f:case value="rows"><f:render partial="Layout/Rows" arguments="{_all}"/></f:case>
+        <f:case value="accordion"><f:render partial="Layout/Accordion" arguments="{_all}"/></f:case>
+        <f:defaultCase><f:render partial="Layout/Cards" arguments="{_all}"/></f:defaultCase>
     </f:switch>
 
-    <f:if condition="{matrixAnzeigen} && {darstellung} != 'matrix'">
-        <f:if condition="{matrixEingeklappt}">
+    <f:if condition="{showMatrix} && {layout} != 'matrix'">
+        <f:if condition="{collapseMatrix}">
             <f:then>
-                <details class="ws-preise__aufklapper ws-preise__aufklapper--matrix">
-                    <summary class="ws-preise__aufklapper-kopf">
-                        <span><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:matrixAufklappen"/></span>
-                        <svg class="ws-preise__pfeil" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                <details class="ws-pricing__details ws-pricing__details--matrix">
+                    <summary class="ws-pricing__details-summary">
+                        <span><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:compareDetails"/></span>
+                        <svg class="ws-pricing__chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </summary>
-                    <div class="ws-preise__aufklapper-inhalt">
-                        <f:render partial="Darstellung/Matrix" arguments="{_all}"/>
+                    <div class="ws-pricing__details-body">
+                        <f:render partial="Layout/Matrix" arguments="{_all}"/>
                     </div>
                 </details>
             </f:then>
             <f:else>
-                <div class="ws-preise__matrix-anhang">
-                    <f:render partial="Darstellung/Matrix" arguments="{_all}"/>
+                <div class="ws-pricing__matrix-attached">
+                    <f:render partial="Layout/Matrix" arguments="{_all}"/>
                 </div>
             </f:else>
         </f:if>

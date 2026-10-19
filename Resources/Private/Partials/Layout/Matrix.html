@@ -1,0 +1,99 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+Comparison table: one column per plan, one row per feature.
+
+Cells are matched to values by loop index: the presenter builds
+{plan.groups} in the same order as {groups}, and {g.rows} in the same order
+as {group.attributes}. So {plan.groups.{gi.index}.rows.{ai.index}} is enough -
+no lookup by uid needed.
+</f:comment>
+
+<f:variable name="columns" value="{plans -> f:count()}"/>
+
+<div class="ws-pricing__matrix-scroll" tabindex="0" role="region" aria-label="{f:translate(key: 'LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:comparisonTable')}">
+<table class="ws-pricing__matrix">
+
+    <thead>
+        <tr>
+            <th scope="col" class="ws-pricing__matrix-corner">
+                <f:comment>
+                The description used to sit here in the corner. It is now shown
+                once above the switches, in every layout - otherwise it would
+                disappear as soon as the matrix is switched off.
+                </f:comment>
+                <span class="ws-pricing__sr-only"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:feature"/></span>
+            </th>
+            <f:for each="{plans}" as="plan">
+                <th scope="col" class="ws-pricing__matrix-head{f:if(condition: plan.record.favourite, then: ' is-featured')}">
+
+                    <f:if condition="{plan.record.favourite} && {plan.record.badge}">
+                        <span class="ws-pricing__badge">{plan.record.badge}</span>
+                    </f:if>
+
+                    <f:if condition="{plan.record.eyebrow}">
+                        <span class="ws-pricing__eyebrow">{plan.record.eyebrow}</span>
+                    </f:if>
+                    <span class="ws-pricing__name">{plan.record.title}</span>
+
+                    <f:render partial="Plan/Price" arguments="{plan: plan}"/>
+                    <f:render partial="Plan/Button" arguments="{plan: plan}"/>
+
+                </th>
+            </f:for>
+        </tr>
+    </thead>
+
+    <tbody>
+        <f:for each="{groups}" as="group" iteration="gi">
+            <f:if condition="{group.record.inMatrix}">
+
+                <tr class="ws-pricing__matrix-group">
+                    <th scope="colgroup" colspan="{columns + 1}"><span class="ws-pricing__matrix-group-title">{group.record.title}</span></th>
+                </tr>
+
+                <f:for each="{group.attributes}" as="attribute" iteration="ai">
+                    <tr class="ws-pricing__matrix-row">
+
+                        <th scope="row" class="ws-pricing__matrix-label">{attribute.title}<f:if condition="{attribute.footnote}"><sup class="ws-pricing__footnote">{attribute.footnote}</sup></f:if></th>
+
+                        <f:for each="{plans}" as="plan">
+                            <f:variable name="row" value="{plan.groups.{gi.index}.rows.{ai.index}}"/>
+                            <td class="ws-pricing__matrix-cell{f:if(condition: plan.record.favourite, then: ' is-featured')}">
+                                <f:if condition="{attribute.valueType} == 'check'">
+                                    <f:then>
+                                        <f:if condition="{row.included}">
+                                            <f:then>
+                                                <svg class="ws-pricing__check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                                                <span class="ws-pricing__sr-only"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:included"/></span>
+                                            </f:then>
+                                            <f:else>
+                                                <span class="ws-pricing__dash" aria-hidden="true">—</span>
+                                                <span class="ws-pricing__sr-only"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:notIncluded"/></span>
+                                            </f:else>
+                                        </f:if>
+                                    </f:then>
+                                    <f:else>
+                                        <f:if condition="{row.text}">
+                                            <f:then><span class="ws-pricing__matrix-value">{row.text}<f:if condition="{attribute.unit}"> {attribute.unit}</f:if></span></f:then>
+                                            <f:else>
+                                                <span class="ws-pricing__dash" aria-hidden="true">—</span>
+                                                <span class="ws-pricing__sr-only"><f:translate key="LLL:EXT:pricing/Resources/Private/Language/locallang.xlf:notIncluded"/></span>
+                                            </f:else>
+                                        </f:if>
+                                    </f:else>
+                                </f:if>
+                            </td>
+                        </f:for>
+
+                    </tr>
+                </f:for>
+
+            </f:if>
+        </f:for>
+    </tbody>
+
+</table>
+</div>
+
+</html>

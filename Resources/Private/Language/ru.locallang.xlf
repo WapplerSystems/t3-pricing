@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="ru" datatype="plaintext" original="messages" date="2026-10-19T10:00:00Z" product-name="pricing">
+        <header/>
+        <body>
+            <trans-unit id="noTable" approved="yes"><source>No pricing table selected.</source><target>Таблица цен не выбрана.</target></trans-unit>
+            <trans-unit id="currency" approved="yes"><source>Currency</source><target>Валюта</target></trans-unit>
+            <trans-unit id="period" approved="yes"><source>Billing</source><target>Период оплаты</target></trans-unit>
+            <trans-unit id="period.month" approved="yes"><source>monthly</source><target>ежемесячно</target></trans-unit>
+            <trans-unit id="period.year" approved="yes"><source>yearly</source><target>ежегодно</target></trans-unit>
+            <trans-unit id="period.once" approved="yes"><source>one-time</source><target>разово</target></trans-unit>
+            <trans-unit id="period.custom" approved="yes"><source>other</source><target>другое</target></trans-unit>
+            <trans-unit id="unit.month" approved="yes"><source>per month</source><target>в месяц</target></trans-unit>
+            <trans-unit id="unit.year" approved="yes"><source>per year</source><target>в год</target></trans-unit>
+            <trans-unit id="unit.once" approved="yes"><source>one-time</source><target>разово</target></trans-unit>
+            <trans-unit id="prices" approved="yes"><source>Prices</source><target>Цены</target></trans-unit>
+            <trans-unit id="net" approved="yes"><source>excl. VAT</source><target>без НДС</target></trans-unit>
+            <trans-unit id="gross" approved="yes"><source>incl. VAT</source><target>с НДС</target></trans-unit>
+            <trans-unit id="select" approved="yes"><source>Select</source><target>Выбрать</target></trans-unit>
+            <trans-unit id="onRequest" approved="yes"><source>Price on request</source><target>Цена по запросу</target></trans-unit>
+            <trans-unit id="compareDetails" approved="yes"><source>Compare details</source><target>Сравнить подробности</target></trans-unit>
+            <trans-unit id="comparisonTable" approved="yes"><source>Comparison table</source><target>Таблица сравнения</target></trans-unit>
+            <trans-unit id="moreFeatures" approved="yes"><source>More features</source><target>Дополнительные характеристики</target></trans-unit>
+            <trans-unit id="feature" approved="yes"><source>Feature</source><target>Характеристика</target></trans-unit>
+            <trans-unit id="included" approved="yes"><source>included</source><target>включено</target></trans-unit>
+            <trans-unit id="notIncluded" approved="yes"><source>not included</source><target>не включено</target></trans-unit>
+        </body>
+    </file>
+</xliff>
