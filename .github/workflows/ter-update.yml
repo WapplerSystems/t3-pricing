@@ -1,0 +1,36 @@
+name: TER details
+
+# Sets the links shown on extensions.typo3.org (repository, issues, manual,
+# Composer name). Run by hand whenever one of them changes. docs.typo3.org
+# only renders the manual once the repository link is set here.
+on:
+  workflow_dispatch:
+
+jobs:
+  ter-update:
+    name: Update TER details
+    runs-on: ubuntu-latest
+    env:
+      TYPO3_EXTENSION_KEY: 'pricing'
+      TYPO3_API_TOKEN: ${{ secrets.TYPO3_API_TOKEN }}
+      TYPO3_API_USERNAME: ${{ secrets.TYPO3_API_USERNAME }}
+      TYPO3_API_PASSWORD: ${{ secrets.TYPO3_API_PASSWORD }}
+
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: intl, mbstring, xml, soap, zip, curl
+
+      - name: Install EXT:tailor
+        run: composer global require typo3/tailor --prefer-dist --no-progress
+
+      - name: Update details of EXT:${{ env.TYPO3_EXTENSION_KEY }}
+        run: |
+          php "$(composer global config bin-dir --absolute --quiet)/tailor" ter:update ${{ env.TYPO3_EXTENSION_KEY }} \
+            --composer=wapplersystems/t3-pricing \
+            --repository=https://github.com/WapplerSystems/t3-pricing \
+            --issues=https://github.com/WapplerSystems/t3-pricing/issues \
+            --manual=https://docs.typo3.org/p/wapplersystems/t3-pricing/main/en-us/ \
+            --tags=pricing,price-table,plans,comparison,subscription
